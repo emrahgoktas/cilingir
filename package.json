@@ -1,0 +1,11 @@
+{
+  "name": "cilingirsitesi",
+  "private": true,
+  "description": "Kökten çalıştırmak için — asıl Next.js uygulaması anahtarci-cilingir-servisi/ içinde.",
+  "scripts": {
+    "dev": "npm run dev --prefix anahtarci-cilingir-servisi",
+    "build": "npm run build --prefix anahtarci-cilingir-servisi",
+    "start": "npm run start --prefix anahtarci-cilingir-servisi",
+    "lint": "npm run lint --prefix anahtarci-cilingir-servisi"
+  }
+}
