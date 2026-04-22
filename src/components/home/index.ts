@@ -1,0 +1,12 @@
+export { CTABannerSection } from "./CTABannerSection";
+export { CertificationSection } from "./CertificationSection";
+export { ContactFormSection } from "./ContactFormSection";
+export { FAQSection } from "./FAQSection";
+export { HeroSection } from "./HeroSection";
+export { MapSection } from "./MapSection";
+export { PartnersSection } from "./PartnersSection";
+export { RegionsSection } from "./RegionsSection";
+export { ReviewsSection } from "./ReviewsSection";
+export { ServicesSection } from "./ServicesSection";
+export { StatsSection } from "./StatsSection";
+export { WhyUsSection } from "./WhyUsSection";

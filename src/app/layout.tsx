@@ -1,16 +1,25 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import dynamic from "next/dynamic";
+import { Inter } from "next/font/google";
+import Script from "next/script";
+import { FingerprintCookie } from "@/components/layout/FingerprintCookie";
+import { Footer, Header } from "@/components/layout";
+import { CLARITY_ID } from "@/lib/clarity";
+import { GTM_ID } from "@/lib/gtm";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const StickyCallBar = dynamic(
+  () =>
+    import("@/components/layout/StickyCallBar").then((m) => m.StickyCallBar),
+  { ssr: false, loading: () => null }
+);
+
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -24,11 +33,42 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="tr" className={inter.variable}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        {GTM_ID ? (
+          <Script id="google-tag-manager" strategy="afterInteractive">
+            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer',${JSON.stringify(GTM_ID)});`}
+          </Script>
+        ) : null}
+        {CLARITY_ID ? (
+          <Script id="microsoft-clarity" strategy="afterInteractive">
+            {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script",${JSON.stringify(CLARITY_ID)});`}
+          </Script>
+        ) : null}
+      </head>
+      <body className="overflow-x-hidden font-sans antialiased">
+        {GTM_ID ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height={0}
+              width={0}
+              style={{ display: "none", visibility: "hidden" }}
+              title="Google Tag Manager"
+            />
+          </noscript>
+        ) : null}
+        <FingerprintCookie />
+        <Header />
         {children}
+        <Footer />
+        <StickyCallBar />
       </body>
     </html>
   );

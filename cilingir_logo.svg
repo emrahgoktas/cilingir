@@ -1,0 +1,57 @@
+<svg width="100%" viewBox="0 0 680 240" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Çilingir Servisi Logo</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Anahtar ikonu ve yazıdan oluşan kurumsal çilingir servisi logosu</desc>
+
+  <defs>
+    
+  <mask id="imagine-text-gaps-efttzi" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="240" fill="white"/><rect x="-4" y="69.7548828125" width="162.92225646972656" height="44.80082321166992" fill="black" rx="2"/><rect x="-4" y="112.7548828125" width="145.8916778564453" height="44.80082321166992" fill="black" rx="2"/><rect x="-2" y="167.15530395507812" width="99.40045928955078" height="19.866987228393555" fill="black" rx="2"/><rect x="-2" y="190.17758178710938" width="222.4876708984375" height="16.089133262634277" fill="black" rx="2"/></mask></defs>
+
+  <!-- Icon container - dark shield/badge shape -->
+  <g transform="translate(60, 30)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <!-- Shield base -->
+    <path d="M60 0 L120 20 L120 90 Q120 130 60 150 Q0 130 0 90 L0 20 Z" fill="#1A1A2E" style="fill:rgb(26, 26, 46);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Shield inner highlight line -->
+    <path d="M60 8 L112 25 L112 90 Q112 125 60 143 Q8 125 8 90 L8 25 Z" fill="none" stroke="#F97316" stroke-width="2" opacity="0.4" mask="url(#imagine-text-gaps-efttzi)" style="fill:none;stroke:rgb(249, 115, 22);color:rgb(255, 255, 255);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Key icon inside shield -->
+    <!-- Key head (circle) -->
+    <circle cx="60" cy="62" r="24" fill="none" stroke="#F97316" stroke-width="5" style="fill:none;stroke:rgb(249, 115, 22);color:rgb(255, 255, 255);stroke-width:5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <circle cx="60" cy="62" r="12" fill="#F97316" opacity="0.15" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.15;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Key hole -->
+    <circle cx="60" cy="62" r="7" fill="#1A1A2E" style="fill:rgb(26, 26, 46);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Key shaft -->
+    <rect x="57" y="86" width="6" height="38" rx="3" fill="#F97316" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Key teeth -->
+    <rect x="63" y="96" width="10" height="5" rx="2" fill="#F97316" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="63" y="108" width="7" height="5" rx="2" fill="#F97316" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="63" y="118" width="10" height="5" rx="2" fill="#F97316" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Orange accent dot top of shield -->
+    <circle cx="60" cy="6" r="4" fill="#F97316" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  </g>
+
+  <!-- Vertical divider -->
+  <line x1="220" y1="45" x2="220" y2="195" stroke="#F97316" stroke-width="2.5" opacity="0.6" mask="url(#imagine-text-gaps-efttzi)" style="fill:rgb(0, 0, 0);stroke:rgb(249, 115, 22);color:rgb(255, 255, 255);stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Main text group -->
+  <g transform="translate(240, 0)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <!-- Company name line 1 -->
+    <text x="0" y="105" style="fill:rgb(248, 249, 250);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:36px;font-weight:700;text-anchor:start;dominant-baseline:auto">ÇİLİNGİR</text>
+    <!-- Company name line 2 with accent -->
+    <text x="0" y="148" style="fill:rgb(248, 249, 250);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:36px;font-weight:700;text-anchor:start;dominant-baseline:auto">SERVİSİ</text>
+
+    <!-- Orange accent bar under "SERVİSİ" -->
+    <rect x="2" y="158" width="200" height="3" rx="1.5" fill="#F97316" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Sub label -->
+    <text x="2" y="182" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:14px;font-weight:400;text-anchor:start;dominant-baseline:auto">İSTANBUL</text>
+
+    <!-- Tagline -->
+    <text x="2" y="202" style="fill:rgb(156, 163, 175);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Arial, sans-serif;font-size:11px;font-weight:400;text-anchor:start;dominant-baseline:auto">7/24 HASARSIZ GARANTİLİ HİZMET</text>
+  </g>
+
+  <!-- Decorative corner accent top right -->
+  <rect x="620" y="30" width="3" height="40" rx="1.5" fill="#F97316" opacity="0.5" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="600" y="30" width="22" height="3" rx="1.5" fill="#F97316" opacity="0.5" style="fill:rgb(249, 115, 22);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</svg>

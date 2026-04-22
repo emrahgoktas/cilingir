@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>Çilingir Servisi</title>
+  <rect width="200" height="200" rx="44" fill="#16213E"/>
+  <g transform="translate(14 13) scale(0.92)">
+    <g transform="translate(28, 14)">
+      <path
+        d="M72 0 L144 22 L144 100 Q144 148 72 170 Q0 148 0 100 L0 22 Z"
+        fill="#F8F9FA"
+      />
+      <path
+        d="M72 9 L135 28 L135 100 Q135 143 72 162 Q9 143 9 100 L9 28 Z"
+        fill="none"
+        stroke="#F97316"
+        stroke-width="2"
+        opacity="0.35"
+      />
+      <circle cx="72" cy="74" r="28" fill="none" stroke="#F97316" stroke-width="6"/>
+      <circle cx="72" cy="74" r="13" fill="#F97316" opacity="0.12"/>
+      <circle cx="72" cy="74" r="8" fill="#F8F9FA"/>
+      <rect x="68" y="102" width="8" height="42" rx="4" fill="#F97316"/>
+      <rect x="76" y="110" width="13" height="6" rx="3" fill="#F97316"/>
+      <rect x="76" y="123" width="9" height="6" rx="3" fill="#F97316"/>
+      <rect x="76" y="136" width="13" height="6" rx="3" fill="#F97316"/>
+      <circle cx="72" cy="7" r="5" fill="#F97316"/>
+    </g>
+  </g>
+</svg>
