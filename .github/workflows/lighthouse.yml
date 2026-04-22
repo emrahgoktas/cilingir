@@ -1,0 +1,33 @@
+name: Lighthouse CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: anahtarci-cilingir-servisi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run build
+      - name: Start Next.js server
+        run: |
+          npm run start &
+          npx wait-on@7.4.0 http://127.0.0.1:3000 --timeout 120000
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            http://localhost:3000
+            http://localhost:3000/bolgeler/besiktas-cilingir
+            http://localhost:3000/bolgeler/maslak-cilingir
+          configPath: anahtarci-cilingir-servisi/.lighthouserc.json
+          uploadArtifacts: true
