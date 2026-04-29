@@ -53,16 +53,18 @@ export function HeroDynamic({ utmCampaign }: HeroDynamicProps) {
         </span>
       </div>
       {showBadge ? (
-        <div className="mb-3 flex items-center justify-center gap-2">
-          {showUtmPulse || showGecePulse ? (
-            <span
-              className="h-2 w-2 shrink-0 animate-pulse rounded-full bg-accent"
-              aria-hidden
-            />
-          ) : null}
-          <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white/95 backdrop-blur-sm md:text-sm">
-            {utmBadge ?? timeBadge}
-          </span>
+        <div className="pointer-events-none absolute left-0 right-0 top-[4.75rem] z-30 flex justify-center px-4 md:top-[5.5rem]">
+          <div className="pointer-events-auto flex items-center justify-center gap-2">
+            {showUtmPulse || showGecePulse ? (
+              <span
+                className="h-2 w-2 shrink-0 animate-pulse rounded-full bg-accent"
+                aria-hidden
+              />
+            ) : null}
+            <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white/95 backdrop-blur-sm md:text-sm">
+              {utmBadge ?? timeBadge}
+            </span>
+          </div>
         </div>
       ) : null}
     </>

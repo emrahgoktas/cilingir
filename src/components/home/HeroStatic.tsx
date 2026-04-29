@@ -28,8 +28,8 @@ const GRID_PATTERN_STYLE: CSSProperties = {
  */
 export function HeroStatic() {
   return (
-    <div className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden md:min-h-[85vh]">
-      <div className="absolute inset-0">
+    <div className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 w-full">
         <Image
           src="/images/hero-bg.webp"
           alt=""
@@ -41,7 +41,8 @@ export function HeroStatic() {
           quality={85}
           placeholder="blur"
           blurDataURL={HERO_BG_BLUR_DATA_URL}
-          className="object-cover"
+          className="object-cover object-center"
+          style={{ objectFit: "cover", objectPosition: "center" }}
           sizes="100vw"
         />
         <div
@@ -54,7 +55,7 @@ export function HeroStatic() {
           aria-hidden
         />
       </div>
-      <div className="relative z-10 flex w-full max-w-3xl flex-col items-center justify-center px-4 py-20 text-center text-white">
+      <div className="relative z-10 flex w-full flex-col items-center justify-center px-4 py-20 text-center text-white">
         <h1 className="text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl">
           İstanbul Çilingir — 7/24 Kapınızda
         </h1>
@@ -64,7 +65,7 @@ export function HeroStatic() {
         <div className="mt-8 w-full max-w-sm">
           <CTAButtons layout="vertical" context="home" size="lg" />
         </div>
-        <div className="mt-8 w-full max-w-4xl [&_li]:border-white/20 [&_span]:text-primary [&_svg]:text-mid">
+        <div className="mt-8 w-full [&_li]:border-white/20 [&_span]:text-primary [&_svg]:text-mid">
           <TrustBadges />
         </div>
       </div>
