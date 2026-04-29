@@ -8,6 +8,8 @@ export { FAQAccordion } from "./FAQAccordion";
 export type { FAQAccordionProps } from "./FAQAccordion";
 export { FAQAccordionDynamic } from "./FAQAccordionDynamic";
 export type { FAQAccordionDynamicProps } from "./FAQAccordionDynamic";
+export { LazyMap } from "./LazyMap";
+export type { LazyMapProps } from "./LazyMap";
 export { RegionCard } from "./RegionCard";
 export { ServiceCard } from "./ServiceCard";
 export { TrustBadges } from "./TrustBadges";

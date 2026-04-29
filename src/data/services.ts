@@ -41,7 +41,7 @@ export const SERVICES: Service[] = [
       "İçeride kaldınız mı? Anahtar kaybı veya arızalı kilitte profesyonel kapı açma. Ortalama 10-20 dakikada yerinde müdahale, şeffaf fiyat ve mümkün olduğunca hasarsız teknik.",
     h1: "Kapı Açma ve Acil Çilingir Hizmeti",
     intro:
-      "Konut, işyeri veya daire kapılarında anahtar unutma, kırık anahtar veya bozuk silindir gibi durumlarda hızlı ekip yönlendiriyoruz. Silindir tipine göre uygun açılış seti seçerek çerçeve ve kapı yüzeyine gereksiz zarar vermemeye özen gösteriyoruz. Gece-gündüz aynı prosedürle kimlik ve mülkiyet teyidi sonrası çalışıyoruz.",
+      "Kapı çilingir hizmetimiz; anahtarın içerde unutulması, silindir arızası veya kırık anahtar gibi durumlarda kapıyı güvenli biçimde açmayı kapsar. Konut ve işyerinde önce kapı tipi ve silindir modelini soruyoruz; uygun tornavidan veya özel set ile çerçeveyi gereksiz zedelemeden çalışırız. Rakiplerimizden farkımız; aceleyle matkap kullanmak yerine önce teknik seçimi netleştirmek ve mülkiyet teyidini şeffaf yapmak. Ortalama 10–20 dakika içinde adresinize mobil ekibi yönlendiriyoruz; gece çağrılarında da aynı güvenlik prosedürünü uygularız.",
     icon: "DoorOpen",
     process: [
       {
@@ -110,7 +110,7 @@ export const SERVICES: Service[] = [
       "Kale ve uyumlu silindirlerde kilit değişimi, master anahtar düzeni ve güvenlik yükseltme. Yerinde ölçü, doğru set seçimi ve garanti kapsamında montaj.",
     h1: "Kale Kilit Değişimi ve Kurulum",
     intro:
-      "Kale marka veya Kale ölçüsüne uyumlu silindirlerde değişim, çift kontrol sistemleri ve güvenlik seviyesi yükseltme taleplerinde çalışıyoruz. Kapı kalınlığı ve kol yönü ölçülmeden montaj yapılmaz. İş sonunda anahtar sayısı ve teslim tutanağı netleştirilir.",
+      "Kale Kilit ve uyumlu silindirlerde profesyonel takım ile ölçü alır, kapı kalınlığı ve kol yönünü kontrol etmeden montaj yapmıyoruz. Talebinize göre çift kontrol, anahtar sayısı ve güvenlik sınıfını birlikte seçiyoruz; yanlış seri ile yüz yüze kalmamanız için yerinde doğrulama yaparız. İstanbul Anahtarcılar Odası kayıtlı ekibimizle iş sonunda anahtar teslim tutanağı ve garanti koşullarını yazılı özetliyoruz. Ortalama 10–25 dakikalık planlı rotasyonla adresinize geliyoruz.",
     icon: "Lock",
     process: [
       {
@@ -179,7 +179,7 @@ export const SERVICES: Service[] = [
       "Mul-T-Lock yüksek güvenlik silindiri: yetkisiz kopyaya karşı koruma, patentli anahtar ve profesyonel montaj. Konut ve işyeri için uzman keşif ve kurulum.",
     h1: "Mul-T-Lock Kilit Sistemleri",
     intro:
-      "Patentli anahtar yapısı ve drill-resistant özellikleriyle Mul-T-Lock, yüksek güvenlik beklentisi olan konut ve işyerlerinde tercih edilir. Montaj öncesi kapı ve mevcut kilit uygunluğu teknik olarak doğrulanır. Anahtar kopyalama yalnızca yetkili kart ve kimlik ile yapılabildiğinden teslim süreci şeffaf planlanır.",
+      "Mul-T-Lock yüksek güvenlik silindiri; patentli anahtar yapısı ve drill-resistant özellikleriyle izinsiz kopyaya karşı koruma sunar. Önce kapınıza uygun profil ve ölçüyü doğrularız; uygun olmayan montajda garantiyi riske atmamak için keşifsiz işlem önermeyiz. Yetkili kart ve kimlik ile anahtar teslimini şeffaf planlarız — çoğu rakipten farkımız montaj sonrası kod kartı ve kullanım eğitimini eksiksiz vermektir. Yoğun bölgelerde ortalama 15–30 dakikalık yerinde müdahale hedefliyoruz.",
     icon: "ShieldCheck",
     process: [
       {
@@ -241,7 +241,7 @@ export const SERVICES: Service[] = [
       "Araç kapısı açılışı, bagaj ve kontak çevresi kilit sorunlarında mobil çilingir. Model bazlı teknik, hasar minimizasyonu ve şeffaf fiyatlandırma.",
     h1: "Oto Çilingir ve Araç Kapı Açma",
     intro:
-      "Anahtar içeride kaldığında veya uzaktan kumanda arızasında marka ve modele göre kapı içi müdahale planlıyoruz. Conta ve cam çevresinde gereksiz zedelenmeyi önlemek için uygun açılış aletleri kullanıyoruz. Elektronik immobilizer veya kodlu sistemlerde üretici veya yetkili servis gerektiren durumları önceden ayırıyoruz.",
+      "Oto çilingir ile araç kapısı ve bagajda anahtarın içerde kalması, uzaktan kumanda veya merkezi kilit arızası gibi durumlarda yerinde müdahale sağlarız. Marka-model bilgisini alarak uygun kapı içi veya sessiz giriş tekniklerini seçiyoruz; conta ve cam çevresinde gereksiz zedelenmeyi önceliklendiririz. Koşulsuz garanti veremediğimiz immobilizer ve şifreli sistemlerde üretici veya yetkili servis gerektiren durumu baştan söyleriz. Ortalama 20–35 dakika içinde güvenli konumunuza doğru ekibi yönlendiririz.",
     icon: "Car",
     process: [
       {
@@ -309,7 +309,7 @@ export const SERVICES: Service[] = [
       "Elektronik ve mekanik kasa açılışı: şifre unutma, anahtar kaybı ve arıza. Yetki teyidi zorunludur; ofis ve konut için güvenli müdahale.",
     h1: "Kasa Açma ve Kasa Çilingir",
     intro:
-      "Kasa müdahalesi yüksek hassasiyet gerektirdiğinden önce yetki belgeleri ve kasa mülkiyeti netleştirilir. Mekanik ve elektronik kasalarda marka bilgisi çözüm süresini belirler. Başarısız deneme sonrası iç mekanizma hasarını büyütmemek için kontrollü teknik uygulanır.",
+      "Kasa çilingir hizmeti; şifre unutma, anahtar kaybı veya mekanik arızada kasayı güvenli biçimde açmayı kapsar — önce kimlik ve mülkiyet veya kullanım yetkisini yazılı/teyitli olarak istiyoruz. Mekanik ve elektronik kasada marka-model çözüm süresini ve riskleri baştan anlatırız; iç mekanizmaya gereksiz zedelenme vermemek için kontrollü teknik kullanırız. Diğer firmalardan farkımız yetkisiz talepte işlem yapmama kararıdır; hukuka uygun çalışırız. Karmaşık sistemlerde yerinde süre uzayabilir; tahmini süreyi adres netleştikçe güncelleriz.",
     icon: "Vault",
     process: [
       {
@@ -370,7 +370,7 @@ export const SERVICES: Service[] = [
       "Ojmar tipi dolap ve soyunma kilitlerinde arıza, kod sıfırlama ve anahtar düzeni. İşletme ve tesisler için kurumsal çilingir desteği.",
     h1: "Ojmar Kilitleri Servisi",
     intro:
-      "Spor salonu, yüzme tesisi ve ofis soyunma alanlarında Ojmar ve benzeri dolap kilitlerinde sıkışma, kayıp jeton veya elektronik arıza için saha deneyimi sunuyoruz. Tesis yönetimi onayı olmadan toplu alan müdahalesi yapılmaz. Yedek parça ve kod kartı gereksinimi modele göre önceden bildirilir.",
+      "Ojmar tipi dolap ve soyunma dolabı kilitlerinde sıkışma, kod sıfırlama ve anahtar düzeni için işletme deneyimiyle çalışıyoruz. Toplu kullanım alanında önce tesis veya işletme yetkilisi onayı alırız — güvenlik ve kayıt prosedürüne uymadan tek başına müdahale etmeyiz. Elektronik panel ile mekanik parça ayrımını yaparak gereksiz ana kart değişiminden kaçınırız. Ortalama 15–40 dakikalık sahaya çıkış süresi ile yerinde tamir veya sıfırlama planlarız.",
     icon: "Building2",
     process: [
       {
@@ -432,7 +432,7 @@ export const SERVICES: Service[] = [
       "7/24 acil çilingir: kapı açılışı, basit kilit arızası ve hızlı müdahale. İstanbul Avrupa hattında gece nöbetli ekip ve net iletişim.",
     h1: "7/24 Acil Çilingir Hizmeti",
     intro:
-      "Gece yarısı veya tatil günlerinde kapıda kalma durumunda öncelik sırası ve tahmini varış süresi şeffaf paylaşılır. Acil hat, düşük ve orta karmaşıklıktaki müdahalelere odaklanır; büyük güvenlik projeleri için randevulu keşif önerilir. Kimlik teyidi gece çağrılarında da aynı titizlikle uygulanır.",
+      "Acil çilingir hattımız 7/24 açıktır; kapıda kalma ve basit kilit arızalarında önce adres ve güvenlik durumunu alır, tahmini varış süresini şeffaf paylaşırız. Gece ve tatilde düşük–orta karmaşıklıktaki müdahalelere öncelik verir; büyük güvenlik projelerinde randevulu keşif öneririz. Rakiplerden farkımız gece kimlik teyidinde gevşememek ve aceleyle zararlı müdahaleden kaçınmaktır. Ortalama 10–25 dakikalık bandda mobil ekibi konunuza yönlendiririz.",
     icon: "PhoneCall",
     process: [
       {

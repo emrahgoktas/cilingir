@@ -14,7 +14,22 @@ export type Region = {
   priority: number;
 };
 
-export const REGIONS: Region[] = [
+function appendDistrictFaqs(region: Region): Region {
+  const tail: FAQ[] = [
+    {
+      question: `Gece ${region.district} ilçesinde çilingir bulabilir miyim?`,
+      answer: `Evet, ${region.district} ilçesinde 7/24 aktif ekibimiz nöbet düzeninde sahaya çıkar; ortalama yanıt süremizi adres netleştikçe paylaşırız.`,
+    },
+    {
+      question: "Fiyatı önceden öğrenebilir miyim?",
+      answer:
+        "Kesinlikle. Sizi aramadan önce iş kalemini ve yaklaşık ücret aralığını telefonda netleştiriyoruz; olası ek kalemleri gelmeden önce bildiririz.",
+    },
+  ];
+  return { ...region, faqs: [...region.faqs, ...tail] };
+}
+
+const RAW_REGIONS: Region[] = [
   {
     slug: "besiktas-cilingir",
     name: "Beşiktaş Çilingir",
@@ -23,7 +38,7 @@ export const REGIONS: Region[] = [
       "Beşiktaş’ta çilingir hizmeti: kapı açılışı, kilit değişimi ve güvenlik çözümleri. Ortalama 10-15 dakikada yerinde servis, şeffaf fiyat ve garantili işçilik.",
     h1: "Beşiktaş Çilingir ve Acil Kapı Açma",
     intro:
-      "Çarşıdan İskele’ye uzanan yoğun güzergâhlarda anahtar kaybı veya arızalı kilitler için hızlı ekip yönlendirmesi yapıyoruz. Site ve işyeri girişlerinde hasarsız açılış tekniklerine öncelik veriyoruz. Gece-gündüz aynı hız standardıyla sahaya çıkıyoruz.",
+      "Çarşı, Abbasağa, Ortaköy ve İskele hattında anahtar kaybı veya arızalı kilitler için mobil ekibimizi yönlendiriyoruz; yoğun güzergâhlarda önce adres ve kapı tipini netleştiriyoruz. Ortalama 10 dakika içinde kapınıza yaklaşmayı hedefleyerek konuşlanmış araçları kullanıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız, 14 yıllık deneyimiyle Akaretler ve Sinanpaşa civarında güvenilir çilingir servisidir. Beşiktaş’ta hem işyeri hem konutta şeffaf fiyat ve garantili işçilik sunarız.",
     responseTime: "10-15 dakika",
     district: "Beşiktaş",
     oldSlug: "bolge-besiktas-cilingir-128",
@@ -59,7 +74,7 @@ export const REGIONS: Region[] = [
       "Levent’te çilingir: plaza katları, rezidans ve ofislerde kapı açılışı ve kilit onarımı. Hızlı varış, kurumsal standartlarda servis ve net fiyatlandırma.",
     h1: "Levent Çilingir Hizmeti",
     intro:
-      "Plaza girişlerinde kartlı sistemlerle birlikte geleneksel kilit arızaları sık görülür; kat ve otopark erişimlerini birlikte ele alıyoruz. Rezidanslarda güvenlik görevlisi koordinasyonunu sizin yerinize netleştirmeye yardımcı oluyoruz. İş çıkışı saatlerinde talep yoğunluğunu öngörerek ekip planlıyoruz.",
+      "Büyükdere üzeri plaza katları ve çevre rezidanslarda kartlı girişlerle birlikte gelen silindir ve gömme kilit arızalarına uzmanız; lobiden kata çıkış sürecini önceden tarif etmenizi rica ediyoruz. Ortalama 10 dakikalık yanıt süresiyle ekibimiz plaza güvenlik protokollerine uyarak sahaya çıkar. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Levent’te kurumsal standartta çilingirlik yapıyor. Özel güvenlik gerektiren kapılarda önce ölçü ve model teyidiyle riskli müdahaleden kaçınıyoruz.",
     responseTime: "10-15 dakika",
     district: "Beşiktaş",
     oldSlug: "bolge-levent-cilingir-127",
@@ -95,7 +110,7 @@ export const REGIONS: Region[] = [
       "Maslak’ta çilingir: rezidans, AVM ve ofis bloklarında acil kapı açılışı. Hızlı yönlendirme, profesyonel ekipman ve şeffaf ücretlendirme ile yanınızdayız.",
     h1: "Maslak Çilingir ve Kapı Açma",
     intro:
-      "Maslak’taki yüksek katlı projelerde asansör önceliği ve otopark kat kodları süreci uzatabiliyor; bu yüzden adrese girmeden önce blok ve kapı numarasını netleştiriyoruz. İş merkezlerinde toplantı saatlerine denk gelen çağrılarda sessiz çalışma tercih eden ekip kullanıyoruz. Hafta sonu etkinlik alanları yakınında yedek ekip tutuyoruz.",
+      "Maslak, İstanbul’un en prestijli iş ve yaşam merkezlerinden biridir. Vadistanbul, Maslak 1453, Skyland ve Nidapark gibi modern rezidanslara 7/24 hizmet veriyoruz. Ekibimiz ortalama 10 dakika içinde kapınızda olacak şekilde konuşlanmıştır. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız, 14 yıllık deneyimiyle Maslak’ın güvendiği çilingir servisidir.",
     responseTime: "12-18 dakika",
     district: "Sarıyer",
     oldSlug: "bolge-maslak-cilingir-113",
@@ -132,7 +147,7 @@ export const REGIONS: Region[] = [
       "Vadistanbul’da çilingir: rezidans kuleleri ve çevre ofislerde acil kapı açılışı. Otopark ve lobide hızlı yönlendirme, şeffaf fiyat.",
     h1: "Vadistanbul Çilingir",
     intro:
-      "Tek çatı altında konut ve ticari hattın birleştiği projede blok ve cephe tarifi olmadan doğru girişe inmek zor olabiliyor; bu yüzden kule harfi ve kapı yönünü telefonda netleştiriyoruz. AVM bağlantılı katlarda güvenlik geçişleri süreyi uzatabileceği için önceden yönetim veya resepsiyon bilgisi rica ediyoruz. Yoğun iş çıkışı saatlerinde otopark çıkış kodunu paylaşmanız yaklaşımı hızlandırır.",
+      "Vadistanbul’da konut ve ticari kuleleri tek çatı altında birleştiği için blok harfi, cephe tarafı ve AVM bağlantılı kat bilgisini önce telefonda netleştiriyoruz; yanlış girişte zaman kaybını önlüyoruz. Ortalama 10–12 dakikalık yanıt süresiyle rezidans lobisi veya ticari ünite kapınıza mobil ekiple geliyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıllık deneyimiyle Vadistanbul çevresinde şeffaf fiyat ve garantili işçilik sunar. Akşam iş çıkışı ve hafta sonu yoğunluğunda alternatif buluşma noktası önererek yaklaşımı hızlandırırız.",
     responseTime: "10-15 dakika",
     district: "Sarıyer",
     priority: 1,
@@ -167,7 +182,7 @@ export const REGIONS: Region[] = [
       "Maslak 1453’te çilingir: konut ve ticari bloklarda acil kapı açılışı. Site içi güvenlik prosedürlerine uyum, hızlı ekip yönlendirmesi.",
     h1: "Maslak 1453 Çilingir",
     intro:
-      "Geniş peyzajlı site düzeninde yan bloklar birbirine benzeyebiliyor; renkli kapı veya balkon cephesi tarifi karışıklığı önlüyor. Ticari hatta kepenk ve cam kapı kilitlerinde iş saati dışı çağrılarda güvenlik devriyesiyle koordinasyon gerekebiliyor. Otopark katlarında asansör bankosu bilgisi olmadan üst kata çıkmak zaman kaybettiriyor.",
+      "Geniş peyzajlı Maslak 1453 sitesinde yan blokları ayırt etmek için kapı rengi, balkon cephesi veya blok harfi tarifi kritiktir; adresinizi birlikte netleştiriyoruz. Ortalama 10 dakikalık hedef yanıt süresiyle konut ve ticari ünite kapılarınıza uzman ekiple çıkıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır site güvenlik süreçlerine uygun çilingirlik yapıyor. Otopark kat kodu ve asansör bankosu bilgisini önceden paylaşmanız sahaya çıkışı hızlandırır.",
     responseTime: "10-15 dakika",
     district: "Sarıyer",
     priority: 1,
@@ -202,7 +217,7 @@ export const REGIONS: Region[] = [
       "Nişantaşı’nda çilingir: mağaza, apartman ve lüks konutlarda kapı açılışı. Özel kilit sistemlerine deneyimli müdahale ve hızlı varış.",
     h1: "Nişantaşı Çilingir Hizmeti",
     intro:
-      "Mağaza vitrin ve arka servis kapılarında yüksek güvenlikli sistemler sık kullanıldığı için yanlış müdahaleden kaçınmak adına önce model tespiti yapıyoruz. Tarihi apartman girişlerinde koruma kurallarına dikkat ederek çalışıyoruz. Dar sokak park düzenine göre mobil ekip rotasını optimize ediyoruz.",
+      "Teşvikiye, Rumeli ve Valikonağı çevresindeki mağaza, vitrin ve arka servis kapılarında yüksek güvenlikli silindir ve elektrikli sistemler sıktır; önce marka-model teyidi yapıyoruz. Ortalama 10–15 dakikalık yanıt süresiyle Nişantaşı’nın dar sokaklarında mobil ekibi adresinize yönlendiriyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır lüks konut ve ticari işletmelere garantili işçilik sunar. Tarihi apartman girişlerinde koruma kurallarına uyarak riskli müdahaleden kaçınırız.",
     responseTime: "10-15 dakika",
     district: "Şişli",
     oldSlug: "bolge-nisantasi-cilingir-148",
@@ -238,7 +253,7 @@ export const REGIONS: Region[] = [
       "Etiler’de çilingir: villa, site ve mağaza kapılarında acil açılış ve kilit değişimi. Hızlı ekip, deneyimli teknisyen ve şeffaf fiyat politikası.",
     h1: "Etiler Çilingir ve Kilit Servisi",
     intro:
-      "Bahçeli yapılarda yan giriş ve garaj kapıları ayrı kilit setleri taşıdığı için adres tarifinde hangi kapının arızalı olduğunu netleştirmenizi istiyoruz. Etiler’in eğimli sokaklarında park ve yaklaşım süresini önceden hesaplıyoruz. Gece saatlerinde site içi sessiz çalışma taleplerine uyum sağlıyoruz.",
+      "Konaklar, Ümitköy üstü ve Nispetiye eteklerinde villa ve bahçeli yapılarda yan giriş, garaj ve ana kapı için farklı kilit setleri olduğundan önce hangi kapının arızalı olduğunu netleştiriyoruz. Ortalama 10–18 dakikalık bandımızda Etiler’in eğimli sokaklarına uygun mobil araç rotasıyla geliyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıllık deneyimiyle gece sessiz çalışma prosedürüne uygun ekiple hizmet verir. Mülk güvenliği için kimlik ve kullanım teyidini yerinde şeffaf şekilde yaparız.",
     responseTime: "10-18 dakika",
     district: "Beşiktaş",
     priority: 1,
@@ -273,7 +288,7 @@ export const REGIONS: Region[] = [
       "Sarıyer’de çilingir: merkez ve çevre mahallelerde kapı açılışı, kilit tamiri ve değişimi. Geniş bölge kapsaması ve hızlı yönlendirme.",
     h1: "Sarıyer Çilingir Hizmeti",
     intro:
-      "Sarıyer geniş coğrafyada olduğundan çağrıyı hangi mahalle ve caddeye düştüğünüze göre en yakın aracı yönlendiriyoruz. Sahil hattı ile iç kesim arasında trafik farkı süreyi etkileyebilir. Köy içi dar yollarda küçük servis aracı tercih eden ekiplerimiz bulunur.",
+      "Rumelihisarı’ndan Bahçeköy ve Kilyos’a kadar Sarıyer geniş olduğu için mahalle ve caddeyi baştan netleştiriyoruz; sahilden iç kesime göre tahmini süreyi güncelliyoruz. Ortalama 12–22 dakikalık bandımızda dar köy yollarına uygun küçük servis ekibi veya motosikletli teknisyen yönlendirebiliyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Boğaz hattında güvenilir çilingirlik yapıyor. Yoğun yağış veya köprü trafiğinde rotayı önceden konuşarak sürpriz gecikmeleri azaltırız.",
     responseTime: "12-22 dakika",
     district: "Sarıyer",
     oldSlug: "bolge-sariyer-cilingir-120",
@@ -309,7 +324,7 @@ export const REGIONS: Region[] = [
       "Zekeriyaköy’de çilingir: kapalı siteler ve müstakil yapılarda acil kapı açılışı. Site prosedürlerine uyum, hızlı iletişim ve güvenilir servis.",
     h1: "Zekeriyaköy Çilingir",
     intro:
-      "Kapalı sitelerde güvenlik kulübesi kaydı süreci bazen beş dakikayı buluyor; plaka ve daire bilgisini önceden iletmeniz süreyi kısaltıyor. Müstakil villalarda uzun bahçe yollarında kapı önü buluşma noktasını netleştiriyoruz. Gece çağrılarında site içi hız limitine uyarak ilerliyoruz.",
+      "Kapalı sitelerde güvenlik kaydı için plaka ve daire bilgisini önceden ilettiğinizde kulübe süresini kısaltıyoruz; yanlış blok girişinde zaman kaybını önlüyoruz. Ortalama 15–25 dakikalık bandımızda müstakil villalarda uzun bahçe yolunda kapı önü buluşma noktasını birlikte tarif ediyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıllık deneyimiyle Zekeriyaköy’de hem konut hem ticari ünite kapılarında garantili işçilik sunar. Gece nöbetlerinde site içi hız ve sessiz çalışma kurallarına uyarız.",
     responseTime: "15-25 dakika",
     district: "Sarıyer",
     oldSlug: "bolge-zekeriyakoy-cilingir-125",
@@ -345,7 +360,7 @@ export const REGIONS: Region[] = [
       "Tarabya’da çilingir: konut, işyeri ve marinaya yakın bölgelerde kilit servisi. Nem ve tuzlu hava koşullarına uygun bakım önerileriyle destek.",
     h1: "Tarabya Çilingir Hizmeti",
     intro:
-      "Sahil kesiminde kilitlerde korozyona bağlı sıkışmalar daha sık görülüyor; müdahale sonrası kısa süreli koruyucu öneriler paylaşıyoruz. Yokuşlu sokaklarda araç yaklaşımını önceden planlıyoruz. Marinaya yakın işletmelerde gece nöbet saatlerine uyumlu servis sunuyoruz.",
+      "Tarabya sahilinde tuzlu havaya bağlı korozyonda silindir sıkışması sıktır; müdahaleden sonra kısa süreli koruyucu bakım öneriyoruz. Ortalama 12–20 dakikalık hedef yanıt süresiyle yokuşlu sokaklarda araç yaklaşımını önceden planlıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır marinaya yakın işletme ve konutlarda çilingirlik yapıyor. Gece nöbetlerinde güvenlik koordinasyonunu şeffaf şekilde yürütürüz.",
     responseTime: "12-20 dakika",
     district: "Sarıyer",
     oldSlug: "bolge-tarabya-cilingir-122",
@@ -922,7 +937,7 @@ export const REGIONS: Region[] = [
       "İstinye’de çilingir: marina, sahil yolu ve konut sitelerinde kapı açılışı. Sarıyer hattında hızlı yönlendirme ve hasarsız öncelik.",
     h1: "İstinye Çilingir Hizmeti",
     intro:
-      "Sahil yolu ve marina çevresinde park kısıtı ve tek yön düzenleri yaklaşım süresini etkileyebiliyor; buluşmayı iskele veya ana cadde üzeri sabit noktalara çektiğimizde daha hızlı bağlanıyoruz. Site içi rampa ve kat kodları olmadan otopark tabanında kaybolma riskini azaltmak için blok giriş fotoğrafı veya renk tarifi rica ediyoruz. Boğaz nemine bağlı silindir sıkışmalarında zorlamadan önce yağlama ve kontrollü açılış tercih ediyoruz.",
+      "İstinye marina ve sahil yolunda tek yön ile park kısıtları yaklaşım süresini etkileyebildiği için buluşmayı iskele veya ana cadde üzeri sabit bir noktaya almak bağlantıyı hızlandırır. Ortalama 10–15 dakikalık bandımızda site rampası ve kat kodu bilgisini önceden paylaştığınızda otopark içinde zaman kaybetmezsiniz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıllık deneyimiyle İstinye’nin rezidans ve ticari ünitelerinde şeffaf fiyat sunar. Boğaz nemine bağlı sıkışmalarda önce kontrollü yağlama ve güvenli açılışı uygularız.",
     responseTime: "10-15 dakika",
     district: "Sarıyer",
     priority: 1,
@@ -1231,6 +1246,8 @@ export const REGIONS: Region[] = [
     ],
   },
 ];
+
+export const REGIONS: Region[] = RAW_REGIONS.map(appendDistrictFaqs);
 
 export const getRegionBySlug = (slug: string): Region | undefined =>
   REGIONS.find((r) => r.slug === slug);

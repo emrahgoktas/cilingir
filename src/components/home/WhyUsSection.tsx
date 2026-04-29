@@ -5,24 +5,25 @@ const blocks = [
     title: "Hız",
     icon: Zap,
     body:
-      "Adres netleşince ekip yönlendirmesi yapılır; yoğun bölgelerde ortalama 10–20 dakika hedefiyle çalışırız.",
+      "Ortalama 12 dakika yanıt süresi — adres netleşince en yakın mobil ekibe yönlendirme yapılır.",
   },
   {
     title: "Güven",
     icon: Shield,
     body:
-      "Kimlik ve mülkiyet teyidi, oda kayıtlı işletme standardı ve şeffaf süreçle güvenli müdahale.",
+      "1.200+ memnun müşteri; kimlik ve mülkiyet teyidi ile oda kayıtlı işletme standardında müdahale.",
   },
   {
     title: "Fiyat Şeffaflığı",
     icon: CircleDollarSign,
-    body: "Gelmeden önce fiyat, sürpriz ücret yok.",
+    body:
+      "Gelmeden önce telefonda net fiyat — sürpriz kalemleri önceden bildiririz.",
   },
   {
     title: "Garanti",
     icon: BadgeCheck,
     body:
-      "Yapılan işçilik ve takılan parçalar için net garanti koşulları; sorun halinde geri dönüş hattı.",
+      "İşçilik garantisi — memnun kalmazsanız ücretsiz düzeltme; takılan parçalar için üretici şartları geçerlidir.",
   },
 ] as const;
 

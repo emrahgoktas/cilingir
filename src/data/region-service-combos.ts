@@ -60,7 +60,7 @@ function hashString(s: string): number {
   return h >>> 0;
 }
 
-/** İki cümle — havuzlar çaprazlandığında 80+ benzersiz kombinasyon. */
+/** Üç+ cümle — [ilçe]/hizmet havuzları çaprazlanır; bölge adı iki kez geçer. */
 function buildIntro(region: Region, service: Service): string {
   const r = regionTitleLabel(region);
   const sv = serviceLabelForSentence(service);
@@ -68,7 +68,9 @@ function buildIntro(region: Region, service: Service): string {
   const h = hashString(key);
   const i = h % OPENERS.length;
   const j = (Math.floor(h / OPENERS.length) + service.slug.length) % CLOSERS.length;
-  return `${OPENERS[i]!(r, sv, region)} ${CLOSERS[j]!(r, sv, service, region)}`;
+  const core = `${OPENERS[i]!(r, sv, region)} ${CLOSERS[j]!(r, sv, service, region)}`;
+  const bridge = `${r} çevresinde ${region.district} mahalle ve güzergâhlarında ${sv} için sık sahaya çıkan ekibimiz; ${r}'ta İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız olarak önce güvenlik teyidi ve sonra teknik seçimi birlikte netleştiriyoruz.`;
+  return `${core} ${bridge}`;
 }
 
 const OPENERS: Array<

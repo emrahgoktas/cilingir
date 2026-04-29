@@ -20,9 +20,9 @@ type StatItem =
     };
 
 const STATS: StatItem[] = [
-  { kind: "count", target: 847, suffix: "+", label: "Mutlu Müşteri" },
+  { kind: "count", target: 1200, suffix: "+", label: "Mutlu Müşteri" },
   { kind: "count", target: 14, suffix: "", label: "Yıllık Deneyim" },
-  { kind: "count", target: 30, suffix: "+", label: "Hizmet Bölgesi" },
+  { kind: "count", target: 32, suffix: "", label: "Hizmet Bölgesi" },
   { kind: "static", value: "7/24", label: "Kesintisiz Hizmet" },
 ];
 

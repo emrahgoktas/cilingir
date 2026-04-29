@@ -1,6 +1,26 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
+const PPC_FRAUD_SIGNATURES = [
+  "PetalBot",
+  "SemrushBot",
+  "AhrefsBot",
+  "MJ12bot",
+  "DotBot",
+  "BLEXBot",
+  "DataForSeoBot",
+  "serpstatbot",
+  "rogerbot",
+  "linkdexbot",
+  "Baiduspider",
+  "YandexBot",
+  "archive.org_bot",
+  "ia_archiver",
+] as const;
+
+const WINDOW_MS = 5000;
+const FP_RL_COOKIE = "fp_rl";
+
 function parseBlockedFingerprints(): string[] {
   const raw = process.env.BLOCKED_FINGERPRINTS ?? "";
   return raw
@@ -9,18 +29,76 @@ function parseBlockedFingerprints(): string[] {
     .filter(Boolean);
 }
 
-export function middleware(request: NextRequest) {
-  const blocked = parseBlockedFingerprints();
-  if (blocked.length === 0) {
-    return NextResponse.next();
+function isPpcFraudBot(userAgent: string): boolean {
+  const ua = userAgent.toLowerCase();
+  return PPC_FRAUD_SIGNATURES.some((sig) =>
+    ua.includes(sig.toLowerCase())
+  );
+}
+
+function applyFpRateLimit(
+  request: NextRequest,
+  response: NextResponse
+): NextResponse | null {
+  const fpId = request.cookies.get("fp_id")?.value;
+  if (!fpId) return null;
+
+  const now = Date.now();
+  const bucket = Math.floor(now / WINDOW_MS);
+  const raw = request.cookies.get(FP_RL_COOKIE)?.value ?? "";
+  let count = 1;
+
+  if (raw) {
+    const parts = raw.split(":");
+    const storedFp = parts[0] ?? "";
+    const storedBucket = Number(parts[1]);
+    const prev = Number(parts[2]);
+    if (
+      storedFp === fpId &&
+      storedBucket === bucket &&
+      Number.isFinite(prev)
+    ) {
+      count = prev + 1;
+    }
   }
 
-  const fpId = request.cookies.get("fp_id")?.value;
-  if (fpId && blocked.includes(fpId)) {
+  /* Aynı fp_id ile 5 sn içinde 3 ve üzeri istek → 429 */
+  if (count >= 3) {
+    return new NextResponse("Too Many Requests", { status: 429 });
+  }
+
+  response.cookies.set(FP_RL_COOKIE, `${fpId}:${bucket}:${count}`, {
+    path: "/",
+    maxAge: 60,
+    httpOnly: true,
+    sameSite: "lax",
+  });
+
+  return null;
+}
+
+export function middleware(request: NextRequest) {
+  const ua = request.headers.get("user-agent") ?? "";
+
+  if (isPpcFraudBot(ua)) {
     return new NextResponse("Forbidden", { status: 403 });
   }
 
-  return NextResponse.next();
+  if (!ua || ua.length < 20) {
+    return new NextResponse("Forbidden", { status: 403 });
+  }
+
+  const blocked = parseBlockedFingerprints();
+  const fpId = request.cookies.get("fp_id")?.value;
+  if (fpId && blocked.length > 0 && blocked.includes(fpId)) {
+    return new NextResponse("Forbidden", { status: 403 });
+  }
+
+  const response = NextResponse.next();
+  const rateLimited = applyFpRateLimit(request, response);
+  if (rateLimited) return rateLimited;
+
+  return response;
 }
 
 export const config = {

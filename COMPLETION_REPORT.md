@@ -659,3 +659,20 @@ Recorded after the final `npm install @next/third-parties@14.2.35` and successfu
 - **`src/data/services.ts` — `PRIORITY_1_REGION_SLUGS`**: Üç yeni slug eklendi (Vadistanbul, Maslak 1453, İstinye).
 - **`src/data/region-service-combos.ts`**: **`REGION_SERVICE_COMBO_COUNT`** **80 → 101** (öncelik-1 bölge sayısı **8 → 11**, **× 7** hizmet + öncelik-2 katkısı).
 - **`npm run build`**: Succeeds (ör. bölge **31** yol, bölge×hizmet **98** yol).
+
+---
+
+## Performance & trust rollout — Clarity performance follow-up
+
+- **Status**: Complete (**`npm run build`** succeeds, **critters** devDependency eklendi — **`experimental.optimizeCss`** için).
+- **LCP / ana sayfa (Part 1 & 5)**:
+  - **`HeroStatic.tsx`**: LCP görseli burada; **`next/image`** — **`priority`**, **`fetchPriority="high"`**, **`sizes="100vw"`**, **`width={1920}`** / **`height={1080}`** + **`fill`**, **`placeholder="blur"`**; gradient + ızgara overlay hero sunucu tarafında.
+  - **`HeroSection.tsx`**: Yalnız sunucu bileşeni + dinamik **`HeroDynamic`**; istemci mantık **`HeroDynamic`** içinde.
+  - **`LazyMap.tsx`** + **`MapSection.tsx`**: Google Maps **`iframe`** yalnızca **IntersectionObserver** (`rootMargin: 200px`) ile görünür alana yaklaşınca; yer tutucu iskelet.
+  - **`layout.tsx`**: **`dns-prefetch`** / **`preconnect`** harita alan adları; **Clarity** → **`strategy="lazyOnload"`** (GTM **`afterInteractive`** kaldı).
+  - **`next.config.mjs`**: **`experimental.optimizeCss: true`**, **`images`** — AVIF/WebP, **`minimumCacheTTL`**, **`deviceSizes`**.
+- **Beklenen LCP iyileştirmesi (tahmini)**: Önceki ~**10,7 s**’lik alanda baskın faktörler genelde **above-the-fold görsel + erken iframe ağı yükü** idi. Harita **ertelenince** ana iş parçacığı ve ağ rekabeti azalır; hero **öncelikli görsel + sunucu HTML** ile LCP öğesi hızlı boyanır. Gerçek **field/Lab** ölçümü ortam ve cihaza bağlıdır; **&lt; 2,5 s** hedefi için üretimde **CrUX / PSI** ile doğrulanmalıdır.
+- **Part 2 — Middleware**: **`PPC_FRAUD_SIGNATURES`** User-Agent kontrolü (**403**); **User-Agent** yok veya **&lt; 20** karakter (**403**); aynı **`fp_id`** ile **5 sn** penceresinde **≥3** istek (**429**); **`BLOCKED_FINGERPRINTS`** (**403**) korundu.
+- **Part 3 — İçerik**: Öncelik-1 bölgeler **`RAW_REGIONS` / `regions.ts`** giriş metinleri genişletildi; tüm bölgelere **`appendDistrictFaqs`** ile **+2 SSS** (toplam **6**); **`region-service-combos.ts`** intro cümleleri + bölge adı tekrarı; **`services.ts`** hizmet intro’ları genişletildi.
+- **Part 4 — Güven**: **`StatsSection`** (**1.200+**, **32** bölge); **`CertificationSection`** metin + **`tel:`** CTA; **`WhyUsSection`** somut kanıt cümleleri.
+- **`npm run build`**: Başarılı (**161** statik üretim; middleware **~26,9 kB**).

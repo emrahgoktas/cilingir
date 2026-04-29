@@ -1,7 +1,8 @@
 import { Clock, MapPin, MessageCircle, Phone } from "lucide-react";
+import { LazyMap } from "@/components/ui/LazyMap";
 import { SITE_CONFIG } from "@/lib/metadata";
 
-const MAP_EMBED_SRC =
+export const MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.9148171098104!2d29.0230747!3d41.114551399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab525c73e5e5b%3A0x4c9476f07dc2ba37!2sMaslak%20Anahtarium%20anahtar%20ve%20%C3%87ilingir!5e0!3m2!1str!2str!4v1775910445552!5m2!1str!2str";
 
 const PHONE_DISPLAY = "0532 303 91 69";
@@ -19,20 +20,10 @@ export function MapSection({ mapHeight = 400 }: MapSectionProps) {
     <section className="overflow-x-hidden border-t border-border bg-white px-4 py-14 md:py-16">
       <div className="mx-auto grid min-w-0 max-w-6xl gap-8 lg:grid-cols-5 lg:items-stretch lg:gap-10">
         <div className="min-w-0 lg:col-span-3">
-          <iframe
-            src={MAP_EMBED_SRC}
-            width="100%"
-            height={mapHeight}
-            style={{
-              border: 0,
-              borderRadius: "12px",
-              minHeight: mapHeight,
-            }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+          <LazyMap
+            embedSrc={MAP_EMBED_SRC}
+            mapHeight={mapHeight}
             title="Maslak Anahtarium Konum"
-            className="w-full max-w-full bg-surface/50"
           />
         </div>
 

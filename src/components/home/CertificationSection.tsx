@@ -40,8 +40,14 @@ export function CertificationSection() {
               Yetki Belgesi
             </p>
             <p className="mt-2 text-sm text-muted">
-              [Müşteriden görsel bekleniyor]
+              Belgemizi görmek için iletişime geçin
             </p>
+            <a
+              href="tel:+905323039169"
+              className="mt-6 inline-flex w-full max-w-xs items-center justify-center rounded-lg bg-accent px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-accent-light"
+            >
+              Hemen Ara: 0532 303 91 69
+            </a>
           </div>
         </div>
       </div>
