@@ -18,7 +18,9 @@ const PPC_FRAUD_SIGNATURES = [
   "ia_archiver",
 ] as const;
 
-const WINDOW_MS = 5000;
+/** Aynı fp_id için pencere başına üst istek sınırı (10 sn içinde en fazla bu kadar). */
+const MAX_REQUESTS_PER_WINDOW = 10;
+const WINDOW_MS = 10000;
 const FP_RL_COOKIE = "fp_rl";
 
 function parseBlockedFingerprints(): string[] {
@@ -62,14 +64,13 @@ function applyFpRateLimit(
     }
   }
 
-  /* Aynı fp_id ile 5 sn içinde 3 ve üzeri istek → 429 */
-  if (count >= 3) {
+  if (count > MAX_REQUESTS_PER_WINDOW) {
     return new NextResponse("Too Many Requests", { status: 429 });
   }
 
   response.cookies.set(FP_RL_COOKIE, `${fpId}:${bucket}:${count}`, {
     path: "/",
-    maxAge: 60,
+    maxAge: 120,
     httpOnly: true,
     sameSite: "lax",
   });
@@ -78,6 +79,17 @@ function applyFpRateLimit(
 }
 
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  const isNextInternal =
+    pathname.startsWith("/_next/") ||
+    pathname.startsWith("/api/") ||
+    request.nextUrl.searchParams.has("_rsc");
+
+  if (isNextInternal) {
+    return NextResponse.next();
+  }
+
   const ua = request.headers.get("user-agent") ?? "";
 
   if (isPpcFraudBot(ua)) {
