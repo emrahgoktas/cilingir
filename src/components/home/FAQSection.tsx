@@ -1,5 +1,22 @@
-import { FAQAccordionDynamic } from "@/components/ui/FAQAccordionDynamic";
+import dynamic from "next/dynamic";
 import { HOME_PAGE_FAQS } from "@/data/home-faqs";
+
+const FAQAccordionDynamic = dynamic(
+  () =>
+    import("@/components/ui/FAQAccordionDynamic").then(
+      (m) => m.FAQAccordionDynamic
+    ),
+  {
+    ssr: false,
+    loading: () => (
+      <div
+        className="min-h-[220px] animate-pulse rounded-xl bg-white/50"
+        aria-busy
+        aria-label="SSS yükleniyor"
+      />
+    ),
+  }
+);
 
 export function FAQSection() {
   return (

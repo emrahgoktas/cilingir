@@ -14,7 +14,7 @@ type HeroSectionProps = {
 /** Sunucu bileşeni — arka plan görseli HeroStatic içinde (LCP); istemci sadece HeroDynamic. */
 export function HeroSection({ utmCampaign }: HeroSectionProps) {
   return (
-    <section className="relative flex min-h-[min(100vh,640px)] items-center justify-center overflow-hidden md:min-h-[85vh]">
+    <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden md:min-h-[85vh]">
       <HeroDynamic utmCampaign={utmCampaign} />
       <HeroStatic />
     </section>
