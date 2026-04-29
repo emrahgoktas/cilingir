@@ -75,6 +75,15 @@ export const DISTRICT_BOUNDS: Record<
   },
 };
 
+/** Kahraman / banner için — ilçe adı ile kullanım kolaylığı. */
+export async function getUserLocation(): Promise<{
+  district: string;
+} | null> {
+  const d = await detectUserDistrict();
+  if (!d) return null;
+  return { district: d.name };
+}
+
 export async function detectUserDistrict(): Promise<{
   name: string;
   slug: string;
