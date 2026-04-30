@@ -48,7 +48,7 @@ export default function RegionPage({ params }: PageProps) {
           items={[
             { name: "Ana Sayfa", href: "/" },
             { name: "Bölgeler", href: "/bolgeler" },
-            { name: region.district, href: `/bolgeler/${region.slug}` },
+            { name: region.name, href: `/bolgeler/${region.slug}` },
           ]}
         />
       </div>

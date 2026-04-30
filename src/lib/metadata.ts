@@ -30,10 +30,6 @@ function clipMetaDescription(text: string, max = 155): string {
   return `${base}…`;
 }
 
-function regionTitleLabel(region: Region): string {
-  return region.name.replace(/\s*çilingir\s*$/i, "").trim();
-}
-
 function serviceTitleLabel(service: Service): string {
   const parts = service.name.split("—").map((p) => p.trim());
   return parts.length > 1 ? parts[1]! : parts[0]!;
@@ -110,7 +106,7 @@ export function generateRegionServiceComboMetadata(
 }
 
 export function generateRegionMetadata(region: Region): Metadata {
-  const title = `${regionTitleLabel(region)} Çilingir 7/24 — 15 Dakikada Kapınızda | Hasarsız`;
+  const title = region.title;
   const description = clipMetaDescription(region.description, 155);
   const canonical = `${SITE_CONFIG.url}/bolgeler/${region.slug}`;
 
