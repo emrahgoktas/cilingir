@@ -60,6 +60,9 @@ const MapSection = dynamic(() =>
 );
 const VideoEmbed = dynamic(() => import("@/components/ui/VideoEmbed"), {
   ssr: false,
+  loading: () => (
+    <div className="w-full aspect-video rounded-xl bg-gray-800 animate-pulse" />
+  ),
 });
 
 export const metadata = generateHomeMetadata();
@@ -97,14 +100,16 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       <LocationBanner />
       <HeroSection utmCampaign={utmCampaign} />
       <ServicesSection />
-      <div className="mx-auto max-w-3xl px-4 py-8">
-        <h2 className="mb-4 text-center text-2xl font-bold text-white">
-          Nasıl Çalışıyoruz?
-        </h2>
-        <VideoEmbed
-          youtubeId="IvXytbBWvlM"
-          title="Maslak Çilingir Servisi — 7/24 Hizmet"
-        />
+      <div className="bg-dark py-10">
+        <div className="mx-auto max-w-3xl px-4">
+          <h2 className="mb-4 text-center text-2xl font-bold text-white">
+            Nasıl Çalışıyoruz?
+          </h2>
+          <VideoEmbed
+            youtubeId="IvXytbBWvlM"
+            title="Maslak Çilingir Servisi — 7/24 Hizmet"
+          />
+        </div>
       </div>
       <RegionsSection />
       <WhyUsSection />
