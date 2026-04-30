@@ -9,6 +9,8 @@ const GOOGLE_BUSINESS_PROFILE_PLACEHOLDER =
 
 const BUSINESS_ID = `${SITE_CONFIG.url}/#locksmith`;
 const WEBSITE_ID = `${SITE_CONFIG.url}/#website`;
+const GOOGLE_MAPS_BUSINESS_URL =
+  "https://maps.google.com/?q=Maslak+Anahtarium+İstanbul";
 
 /** Maslak yakını — gerçek adres teyit edilince güncellenmeli. */
 const BUSINESS_LAT = 41.1085;
@@ -23,6 +25,22 @@ export type SchemaReviewInput = {
   ratingValue: number;
   datePublished?: string;
 };
+
+export function buildVideoSchema(): JsonLdObject {
+  return {
+    "@type": "VideoObject",
+    name: "Maslak Çilingir Servisi — 7/24 Hizmet",
+    description:
+      "İstanbul Maslak ve çevresinde 7/24 profesyonel çilingir ve anahtarcı hizmetimizi tanıtan video.",
+    thumbnailUrl: "https://img.youtube.com/vi/IvXytbBWvlM/maxresdefault.jpg",
+    uploadDate: "2024-01-01",
+    embedUrl: "https://www.youtube.com/embed/IvXytbBWvlM",
+    publisher: {
+      "@type": "Organization",
+      name: "Anahtarcı Çilingir Servisi",
+    },
+  };
+}
 
 function buildServiceOfferCatalogItems(): JsonLdObject[] {
   return SERVICES.map((service, index) => ({
@@ -52,7 +70,20 @@ export function buildLocalBusinessGraphNode(): JsonLdObject {
     telephone: SITE_CONFIG.phone,
     url: SITE_CONFIG.url,
     priceRange: "₺₺",
-    areaServed: [{ "@type": "City", name: "İstanbul" }],
+    areaServed: [
+      "Maslak",
+      "Vadistanbul",
+      "Maslak 1453",
+      "Ayazağa",
+      "İstinye",
+      "Reşitpaşa",
+      "Emirgan",
+      "Seyrantepe",
+      "Levent",
+      "Beşiktaş",
+      "Sarıyer",
+    ],
+    hasMap: GOOGLE_MAPS_BUSINESS_URL,
     geo: {
       "@type": "GeoCoordinates",
       latitude: BUSINESS_LAT,
@@ -184,6 +215,7 @@ export function buildHomePageGraphSchema(options?: {
   const graph: JsonLdObject[] = [
     localBusiness,
     buildSiteLinksSearchBoxSchema(),
+    buildVideoSchema(),
   ];
   const reviews = options?.reviews;
   if (reviews?.length) {

@@ -676,3 +676,35 @@ Recorded after the final `npm install @next/third-parties@14.2.35` and successfu
 - **Part 3 — İçerik**: Öncelik-1 bölgeler **`RAW_REGIONS` / `regions.ts`** giriş metinleri genişletildi; tüm bölgelere **`appendDistrictFaqs`** ile **+2 SSS** (toplam **6**); **`region-service-combos.ts`** intro cümleleri + bölge adı tekrarı; **`services.ts`** hizmet intro’ları genişletildi.
 - **Part 4 — Güven**: **`StatsSection`** (**1.200+**, **32** bölge); **`CertificationSection`** metin + **`tel:`** CTA; **`WhyUsSection`** somut kanıt cümleleri.
 - **`npm run build`**: Başarılı (**161** statik üretim; middleware **~26,9 kB**).
+
+---
+
+## Semantic SEO upgrade — region pages (completion)
+
+- **Status**: Complete.
+- **`src/data/regions.ts`**: İstenen 9 bölge için semantik SEO yükseltmesi uygulandı (**Maslak, Ayazağa, İstinye, Reşitpaşa, Emirgan, Seyrantepe, Vadistanbul, Maslak 1453, Levent**):
+  - **`title`** alanları landmark odaklı ve “Hasarsız” vurgulu olacak şekilde güncellendi.
+  - **`description`** alanları her bölgede lokal anahtar kelime + landmark + hız iddiası + güven sinyali ile genişletildi.
+  - **`h1`** metinleri yeni pattern’e çekildi (landmark + 7/24 kapsama vurgusu).
+  - **`intro`** ilk paragrafları doğal akışta **3+ landmark** içerecek şekilde yeniden yazıldı.
+  - Her bölgede **“[Bölge] hangi mahallelere hizmet veriyorsunuz?”** SSS girdisi güncellendi.
+- **`src/lib/schema.ts`**:
+  - **`buildLocalBusinessGraphNode()`** içine istenen **`areaServed`** listesi eklendi:
+    `Maslak, Vadistanbul, Maslak 1453, Ayazağa, İstinye, Reşitpaşa, Emirgan, Seyrantepe, Levent, Beşiktaş, Sarıyer`
+  - **`hasMap`** alanı eklendi (`https://maps.google.com/?q=Maslak+Anahtarium+İstanbul`).
+- **`npm run build`**: Succeeds.
+
+---
+
+## Video embed rollout (completion)
+
+- **Status**: Complete.
+- **`src/components/ui/VideoEmbed.tsx`**: Yeni istemci bileşeni eklendi — **IntersectionObserver** ile lazy görünürlük, tıklama sonrası iframe oynatma, YouTube thumbnail önizleme.
+- **`src/app/page.tsx`**:
+  - `VideoEmbed` **`next/dynamic`** ile `ssr: false` import edildi.
+  - Ana sayfada **`ServicesSection`** ile **`RegionsSection`** arasına eklendi.
+  - Başlık + container uygulandı: **“Nasıl Çalışıyoruz?”** + video kartı.
+- **`src/lib/schema.ts`**:
+  - **`buildVideoSchema()`** eklendi (`VideoObject`, thumbnail/embed URL, description, publisher).
+  - Ana sayfa grafına `buildHomePageGraphSchema()` içinde `buildVideoSchema()` eklendi.
+- **`npm run build`**: Succeeds.

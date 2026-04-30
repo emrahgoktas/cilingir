@@ -58,6 +58,9 @@ const ContactFormSection = dynamic(
 const MapSection = dynamic(() =>
   import("@/components/home/MapSection").then((m) => m.MapSection)
 );
+const VideoEmbed = dynamic(() => import("@/components/ui/VideoEmbed"), {
+  ssr: false,
+});
 
 export const metadata = generateHomeMetadata();
 
@@ -94,6 +97,15 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       <LocationBanner />
       <HeroSection utmCampaign={utmCampaign} />
       <ServicesSection />
+      <div className="mx-auto max-w-3xl px-4 py-8">
+        <h2 className="mb-4 text-center text-2xl font-bold text-white">
+          Nasıl Çalışıyoruz?
+        </h2>
+        <VideoEmbed
+          youtubeId="IvXytbBWvlM"
+          title="Maslak Çilingir Servisi — 7/24 Hizmet"
+        />
+      </div>
       <RegionsSection />
       <WhyUsSection />
       <StatsSection />
