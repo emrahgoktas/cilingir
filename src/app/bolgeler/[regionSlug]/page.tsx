@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Clock } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import { RegionPageViewTracker } from "@/components/region/RegionPageViewTracker";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
@@ -11,7 +12,10 @@ import { TrustBadges } from "@/components/ui/TrustBadges";
 import { getRegionBySlug, REGIONS } from "@/data/regions";
 import { SERVICES } from "@/data/services";
 import { generateRegionMetadata } from "@/lib/metadata";
-import { buildRegionServicesGraphSchema } from "@/lib/schema";
+import {
+  buildRegionServicesGraphSchema,
+  buildRegionTechnicalArticleSchema,
+} from "@/lib/schema";
 
 type PageProps = {
   params: { regionSlug: string };
@@ -36,12 +40,14 @@ export default function RegionPage({ params }: PageProps) {
   }
 
   const serviceSchema = buildRegionServicesGraphSchema(SERVICES, region);
+  const technicalArticleSchema = buildRegionTechnicalArticleSchema(region);
   const regionNameForCta = region.name;
 
   return (
     <main className="pb-28">
       <RegionPageViewTracker region={region} />
       <JsonLd schema={serviceSchema} />
+      {technicalArticleSchema ? <JsonLd schema={technicalArticleSchema} /> : null}
 
       <div className="mx-auto max-w-6xl px-4 pt-3 pb-2 md:pt-4">
         <BreadcrumbNav
@@ -84,6 +90,27 @@ export default function RegionPage({ params }: PageProps) {
           </p>
         </div>
       </section>
+
+      {region.richContent ? (
+        <section className="border-b border-border px-4 py-10 md:py-12">
+          <div className="prose prose-sm md:prose-base prose-headings:text-primary prose-headings:font-bold prose-p:text-muted prose-p:leading-relaxed prose-ol:text-muted prose-li:text-muted mx-auto max-w-3xl">
+            <ReactMarkdown>{region.richContent}</ReactMarkdown>
+          </div>
+        </section>
+      ) : null}
+
+      {region.technicalArticle ? (
+        <section className="border-b border-border bg-surface/30 px-4 py-10 md:py-14">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-6 text-xl font-bold text-primary md:text-2xl">
+              {region.name.replace(" Çilingir", "")} Kilit ve Çilingir Rehberi
+            </h2>
+            <div className="prose prose-sm md:prose-base prose-headings:text-primary prose-headings:font-semibold prose-p:text-muted prose-p:leading-relaxed prose-strong:text-primary max-w-none">
+              <ReactMarkdown>{region.technicalArticle}</ReactMarkdown>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="border-b border-border bg-surface/40 px-4 py-10 md:py-14">
         <div className="mx-auto max-w-6xl">

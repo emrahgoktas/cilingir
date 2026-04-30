@@ -708,3 +708,66 @@ Recorded after the final `npm install @next/third-parties@14.2.35` and successfu
   - **`buildVideoSchema()`** eklendi (`VideoObject`, thumbnail/embed URL, description, publisher).
   - Ana sayfa grafına `buildHomePageGraphSchema()` içinde `buildVideoSchema()` eklendi.
 - **`npm run build`**: Succeeds.
+
+---
+
+## Major SEO upgrade — 9 target regions (completion)
+
+- **Status**: Complete.
+- **Kapsam (`src/data/regions.ts`)**: Hedef 9 bölge için (`maslak`, `vadistanbul`, `ayazaga`, `levent`, `istinye`, `emirgan`, `tarabya`, `resitpasa`, `kirecburnu`) aşağıdaki alanlar güncellendi:
+  - **Title**: Landmark odaklı yeni formatta güncellendi.
+  - **Description**: Bölge + landmark + 10–15 dk iddiası + güven sinyali + telefon içerecek şekilde güncellendi.
+  - **H1**: Yeni “landmark + 7/24” formatına çekildi.
+  - **Intro**: Özellikle Emirgan / Tarabya / Reşitpaşa / Kireçburnu girişleri 4+ cümleli, yerel referanslı, güven ve hız sinyalli hale getirildi.
+- **FAQ derinleştirme**:
+  - `emirgan-cilingir`, `tarabya-cilingir`, `resitpasa-cilingir`, `kirecburnu-cilingir` için 6 soruluk bölgeye özel FAQ setleri yazıldı.
+  - `appendDistrictFaqs` fonksiyonu, mevcut FAQ sayısı **6+** ise ekleme yapmayacak şekilde güncellendi (çift eklemeyi engeller).
+- **Schema (`src/lib/schema.ts`)**:
+  - `areaServed` listesine istenen kapsam genişletmesi eklendi; özellikle `Tarabya` ve `Kireçburnu` dahil edildi.
+- **Region-service combos (`src/data/region-service-combos.ts`)**:
+  - Hedef 9 bölge için landmark haritası eklendi.
+  - `buildIntro` çıktısında hedef bölgelerde landmark referansı + bölge adının tekrar geçtiği ek cümle eklendi.
+- **`npm run build`**: Succeeds.
+
+---
+
+## Rich region content rollout (completion)
+
+- **Status**: Complete.
+- **Dependency**: `react-markdown` eklendi (region sayfalarında zengin markdown içerik render’ı için).
+- **`src/data/regions.ts`**:
+  - `Region` tipine **`richContent?: string`** alanı eklendi.
+  - Hedef 9 bölge (`maslak`, `vadistanbul`, `ayazaga`, `levent`, `istinye`, `emirgan`, `tarabya`, `resitpasa`, `kirecburnu`) için intro metinleri hikaye odaklı ve sosyal kanıt/fiyat şeffaflığı vurgusuyla genişletildi.
+  - Aynı 9 bölgeye markdown biçiminde **`richContent`** blokları eklendi (süreç, fiyat, yerel operasyon, güven odaklı alt başlıklar).
+  - `appendDistrictFaqs` fonksiyonu, **`faqs.length >= 6`** durumunda ekleme yapmayacak şekilde korumaya alındı (double-append engeli).
+- **`src/app/bolgeler/[regionSlug]/page.tsx`**:
+  - `ReactMarkdown` import edildi.
+  - Intro ile hizmetler bölümü arasına `region.richContent` varsa render eden yeni section eklendi.
+  - Tipografik sınıflar (`prose`, başlık/metin/liste renkleri) ile okunabilir içerik sunumu uygulandı.
+- **`src/lib/schema.ts`**:
+  - Önceki kapsam genişletmeleri korunarak hedef bölgeler `areaServed` içerisinde yer almaya devam ediyor.
+- **`npm run build`**: Succeeds.
+
+---
+
+## Technical article rollout — 9 target regions (completion)
+
+- **Status**: Complete.
+- **`src/data/regions.ts`**:
+  - `Region` tipine **`technicalArticle?: string`** alanı eklendi.
+  - Hedef 9 bölge (`maslak`, `vadistanbul`, `ayazaga`, `levent`, `istinye`, `emirgan`, `tarabya`, `resitpasa`, `kirecburnu`) için teknik içerik üretimi eklendi.
+  - İçerikler; silindir tipleri (tek noktalı/çok noktalı/barel), mandal-emniyet-gece mandalı, çelik kapı yapısı, Mul-T-Lock/Kale/Yale farkları, bakım periyotları, acil açma teknikleri (picking/bump key/drill), elektronik kilit, oto çilingir (transponder/immobilizer), kasa tipleri ve bölgeye özel pratik bilgileri doğal akışta kapsayacak şekilde üretildi.
+  - Teknik makaleler bölge adıyla başlar, bölge adını doğal biçimde tekrar eder ve CTA cümlesiyle **`0536 940 56 56`** numarasına yönlendirir.
+- **`src/app/bolgeler/[regionSlug]/page.tsx`**:
+  - `richContent` bölümünden sonra, `region.technicalArticle` varsa yeni bir section ile `ReactMarkdown` render’ı eklendi.
+  - Başlık formatı: **`{region.name.replace(' Çilingir', '')} Kilit ve Çilingir Rehberi`**.
+  - İstenen `prose` tipografi sınıfları ve yüzey stili (`bg-surface/30`) uygulandı.
+- **`src/lib/schema.ts`**:
+  - `buildRegionTechnicalArticleSchema(region)` fonksiyonu eklendi.
+  - `technicalArticle` mevcutsa `@graph` içine `Article` nesnesi üretiliyor:
+    - `headline`: `[region.name] Kilit ve Çilingir Rehberi`
+    - `description`: `technicalArticle` ilk 150 karakter (normalize edilerek)
+    - `author` / `publisher`: `İstanbul Çilingir Anahtarcı Servisi`
+    - `mainEntityOfPage.@id`: `https://anahtarcicilingirservisi.com/bolgeler/[slug]`
+  - Bölge sayfasında bu şema ikinci `JsonLd` bloğu olarak koşullu render ediliyor.
+- **`npm run build`**: Succeeds (tek uyarı: `VideoEmbed.tsx` içinde mevcut `<img>` lint warning, önceki durumla aynı).

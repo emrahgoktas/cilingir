@@ -78,6 +78,8 @@ export function buildLocalBusinessGraphNode(): JsonLdObject {
       "İstinye",
       "Reşitpaşa",
       "Emirgan",
+      "Tarabya",
+      "Kireçburnu",
       "Seyrantepe",
       "Levent",
       "Beşiktaş",
@@ -302,6 +304,45 @@ export function buildRegionServicesGraphSchema(
   return {
     "@context": "https://schema.org",
     "@graph": graph,
+  };
+}
+
+function clipArticleDescription(text: string, max = 150): string {
+  const plain = text
+    .replace(/^#+\s+/gm, "")
+    .replace(/\n+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (plain.length <= max) return plain;
+  return `${plain.slice(0, max).trimEnd()}…`;
+}
+
+export function buildRegionTechnicalArticleSchema(
+  region: Region
+): JsonLdObject | null {
+  if (!region.technicalArticle) return null;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: `${region.name} Kilit ve Çilingir Rehberi`,
+        description: clipArticleDescription(region.technicalArticle, 150),
+        author: {
+          "@type": "Organization",
+          name: "İstanbul Çilingir Anahtarcı Servisi",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "İstanbul Çilingir Anahtarcı Servisi",
+          url: "https://anahtarcicilingirservisi.com",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `${SITE_CONFIG.url}/bolgeler/${region.slug}`,
+        },
+      },
+    ],
   };
 }
 

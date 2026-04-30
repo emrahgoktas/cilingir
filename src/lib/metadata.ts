@@ -73,9 +73,9 @@ function baseTwitter(title: string, description: string): Metadata["twitter"] {
 /** Ana sayfa — sabit 155 karakterlik açıklama (anahtar kelime yoğun). */
 export function generateHomeMetadata(): Metadata {
   const title =
-    "İstanbul Çilingir 7/24 | Hasarsız Garantili | 0536 940 56 56";
+    "İstanbul Çilingir 7/24 | Maslak, Levent, Ayazağa, İstinye, Vadistanbul | Hasarsız";
   const description =
-    "İstanbul çilingir 7/24: hasarsız kapı açma, kilit değişimi, Kale & Mul-T-Lock, acil servis. 0536 940 56 56 — hızlı ekip, garantili işçilik. Şeffaf ücret.";
+    "Maslak, Levent, Ayazağa, İstinye, Vadistanbul, Emirgan, Tarabya ve Kireçburnu'nda 7/24 çilingir hizmeti. Hasarsız garantili, oda kayıtlı yetkili firma. 0536 940 56 56";
   const canonical = SITE_CONFIG.url;
 
   return {

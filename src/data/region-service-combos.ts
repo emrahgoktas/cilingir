@@ -22,6 +22,18 @@ const TOP_3_SERVICE_SLUGS = [
   "acil-cilingir",
 ] as const;
 
+const TARGET_REGION_LANDMARKS: Record<string, string[]> = {
+  "maslak-cilingir": ["Vadistanbul", "Maslak 1453", "Skyland"],
+  "vadistanbul-cilingir": ["Vadi AVM", "Rezidans Blokları", "Ayazağa hattı"],
+  "ayazaga-cilingir": ["Ayazağa Metro", "Şişli Ayazağa", "Levent hattı"],
+  "levent-cilingir": ["Büyükdere Caddesi", "Metrocity", "Kanyon"],
+  "istinye-cilingir": ["İstinye Park", "Yeniköy", "Baltalimanı"],
+  "emirgan-cilingir": ["Emirgan Korusu", "Boğaz sahili", "Tarabya hattı"],
+  "tarabya-cilingir": ["Tarabya Marina", "Kireçburnu", "Boğaz sahili"],
+  "resitpasa-cilingir": ["İTÜ Kampüsü", "Maslak Sanayi", "Ayazağa"],
+  "kirecburnu-cilingir": ["Tarabya", "Yeniköy Caddesi", "Boğaz hattı"],
+};
+
 /** Programatik SEO — öncelik-1 bölgeler × tüm hizmetler + öncelik-2 × üst 3 hizmet. */
 export const REGION_SERVICE_COMBO_COUNT = 101;
 
@@ -69,8 +81,13 @@ function buildIntro(region: Region, service: Service): string {
   const i = h % OPENERS.length;
   const j = (Math.floor(h / OPENERS.length) + service.slug.length) % CLOSERS.length;
   const core = `${OPENERS[i]!(r, sv, region)} ${CLOSERS[j]!(r, sv, service, region)}`;
+  const landmarks = TARGET_REGION_LANDMARKS[region.slug];
+  const landmarksSentence =
+    landmarks && landmarks.length >= 2
+      ? `${r} bölgesinde ${landmarks[0]}, ${landmarks[1]}${landmarks[2] ? ` ve ${landmarks[2]}` : ""} çevresinde ${sv} için sahaya hızlı çıkıyoruz.`
+      : `${r} bölgesinde ${sv} için konuma göre en yakın ekibi yönlendiriyoruz.`;
   const bridge = `${r} çevresinde ${region.district} mahalle ve güzergâhlarında ${sv} için sık sahaya çıkan ekibimiz; ${r}'ta İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız olarak önce güvenlik teyidi ve sonra teknik seçimi birlikte netleştiriyoruz.`;
-  return `${core} ${bridge}`;
+  return `${core} ${landmarksSentence} ${bridge}`;
 }
 
 const OPENERS: Array<

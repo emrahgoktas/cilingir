@@ -7,6 +7,8 @@ export type Region = {
   description: string;
   h1: string;
   intro: string;
+  richContent?: string;
+  technicalArticle?: string;
   responseTime: string;
   district: string;
   faqs: FAQ[];
@@ -15,6 +17,9 @@ export type Region = {
 };
 
 function appendDistrictFaqs(region: Region): Region {
+  if (region.faqs.length >= 6) {
+    return region;
+  }
   const tail: FAQ[] = [
     {
       question: `Gece ${region.district} ilçesinde çilingir bulabilir miyim?`,
@@ -28,6 +33,99 @@ function appendDistrictFaqs(region: Region): Region {
   ];
   return { ...region, faqs: [...region.faqs, ...tail] };
 }
+
+type TechnicalArticleConfig = {
+  regionName: string;
+  localContext: string;
+  landmarks: string;
+};
+
+function buildTechnicalArticle(config: TechnicalArticleConfig): string {
+  const { regionName, localContext, landmarks } = config;
+  return `## ${regionName}'ta Kilit Teknolojisi ve Doğru Çilingir Seçimi
+
+${regionName}, İstanbul içinde hem yoğun konut trafiğini hem de ticari hareketliliği bir arada yaşayan bölgelerden biri olduğu için kilit arızaları sanıldığından daha farklı profillerde görülür. ${regionName} içinde gün boyunca karşılaştığımız çağrılar yalnızca kapıda kalma vakası değildir; tek noktalı silindirlerden çok noktalı çelik kapı kilitlerine, elektronik kartlı sistemlerden ofis tipi barel arızalarına kadar geniş bir teknik spektrum vardır. ${regionName} için bu rehberde hem kullanıcı tarafında fark yaratacak bilgileri hem de sahada uyguladığımız teknik süreci sade ama uzman bir dille paylaşıyoruz.
+
+## Silindir tipleri ve günlük arıza nedenleri
+
+Konutlarda en yaygın yapı tek noktalı silindir sistemidir. Bu sistemlerde barel içinde pim aşınması başladığında anahtar zor döner, mandal tam çekmez ve geceleri emniyete alma zorlaşır. Çok noktalı sistemlerde ise kapının üst-alt kilit noktaları birlikte çalışır; tek bir yerde sıkışma olsa bile tüm mekanizma etkilenir. ${regionName} içinde özellikle ${landmarks} çevresindeki yüksek kullanımlı binalarda çok noktalı sistemlerin bakım ihtiyacını daha sık görüyoruz. Barel kalitesi düşük veya yanlış ölçü seçilmişse anahtar kırılması ve dönmeme sorunu hızla artar.
+
+## Kilit mekanizması: mandal, emniyet ve gece mandalı
+
+Mandal dili, kapının kapanmasını sağlayan ana parçadır; emniyet sürgüsü ise asıl güvenlik katmanını oluşturur. Gece mandalı devreye alındığında kapı dışarıdan anahtarla açılamayan moda geçebilir ve bu noktada kullanıcı hataları sıklaşır. ${regionName} çağrılarında en kritik konu, arızanın mandal kaynaklı mı yoksa emniyet dişlisi kaynaklı mı olduğunun ilk dakikada doğru teşhis edilmesidir. Doğru teşhis, gereksiz delme işleminden kaçınmamızı ve hasarsız açma oranını yükseltmemizi sağlar.
+
+## Çelik kapı anatomisi ve güvenlik noktaları
+
+Çelik kapılarda kilit tek bir kutudan ibaret değildir; karşılık, kasa ayarı, menteşe ekseni ve kilit dili uyumu birlikte değerlendirilir. Kasa ile kapı arasındaki milimetrik kayma bile kilit mekanizmasının zorlanmasına neden olur. ${regionName} içinde eski binalarda kapı kasası oturması, yeni rezidanslarda ise ağır kapı paneli nedeniyle aşağı sarkma problemi görülebilir. Bu iki durum aynı belirtiyi verse de çözüm yöntemi farklıdır. Profesyonel yaklaşım, önce kapı geometri kontrolü, sonra silindir ve mekanizma müdahalesidir.
+
+## Mul-T-Lock, Kale ve Yale farkları
+
+Yüksek güvenlikte Mul-T-Lock sistemleri patentli anahtar profili ve drilling dayanımıyla öne çıkar. Kale, yaygın servis ağı ve uygun maliyetli güvenlik yükseltmeleriyle tercih edilir. Yale ise kullanıcı ergonomisi ve model çeşitliliğiyle güçlü bir alternatiftir. ${regionName} gibi hem rezidans hem işyeri karışımı bölgelerde marka seçimi, yalnızca fiyatla değil kullanım sıklığı, giriş-çıkış yoğunluğu ve kopya kontrol ihtiyacıyla yapılmalıdır. Yanlış marka değil, yanlış model en büyük risktir.
+
+## Aşınma döngüsü, bakım periyodu ve nem etkisi
+
+Kilitlerin bakım gereksinimi bölgesel şartlara göre değişir. ${localContext} gibi çevresel etkiler olan alanlarda silindir içindeki yağlayıcı daha hızlı performans kaybedebilir. Genel önerimiz, yılda en az bir defa silindir ve mekanizma kontrolüdür. ${regionName} içinde yoğun kullanımlı apartman girişlerinde bu periyot altı aya çekilebilir. Düzenli bakım, hem arıza riskini azaltır hem de acil çağrılardaki işlem maliyetini düşürür.
+
+## Acil kapı açma teknikleri: ne zaman hangi yöntem?
+
+Sahada üç ana teknik başlık kullanılır: picking, bump key ve kontrollü drill. Picking, uygun silindirlerde hasarsız açma için ilk tercihtir. Bump key, yalnızca belirli silindir sınıflarında ve güvenlik kriterleri karşılanınca uygulanır. Drill ise son çaredir; mekanizma kilitlenmişse ve diğer yöntemler sonuç vermiyorsa kontrollü noktadan yapılır. ${regionName} içinde hedefimiz her zaman hasarsız önceliktir. Bu yüzden teknik seçim, hızdan önce güvenlik ve kapı bütünlüğü odaklı yapılır.
+
+## Elektronik kilitler, oto çilingir ve kasa sistemleri
+
+Elektronik kilitlerde sorun çoğu zaman yazılım değil, mekanik senkron kayması veya pil/aktüatör zayıflamasıdır. Oto çilingirde ise transponder ve immobilizer eşleşmesi kritik rol oynar; kapıyı açmak ile aracı güvenli biçimde çalıştırabilmek farklı uzmanlık ister. Kasa tarafında mekanik, elektronik ve yangına dayanıklı modellerin her biri farklı prosedür gerektirir. ${regionName} içinde çağrı almadan önce model bilgisini istememizin nedeni budur: doğru ekipmanla ilk müdahalede çözüm oranını yükseltmek.
+
+## Sonuç ve doğru hizmet standardı
+
+${regionName} için doğru çilingir hizmeti, yalnızca kapı açmak değil; kilit mekanizmasını anlamak, riski doğru yönetmek ve kullanıcıyı bilgilendirmektir. Bizim standart sürecimizde önce adres ve kilit tipi alınır, ardından tahmini süre ve fiyat aralığı net paylaşılır, yerinde kimlik/mülkiyet teyidi yapılır ve işlem sonrası bakım önerisi verilir. Eğer ${regionName} bölgesinde teknik bilgisi güçlü, şeffaf fiyat politikası olan ve hasarsız müdahale önceliği taşıyan bir ekip arıyorsanız hemen 0536 940 56 56 numarasından bize ulaşabilirsiniz.`;
+}
+
+const TECHNICAL_ARTICLES: Record<string, string> = {
+  "maslak-cilingir": buildTechnicalArticle({
+    regionName: "Maslak",
+    localContext: "rezidans kuleleri, yoğun ofis kullanımı ve ana arter trafiği",
+    landmarks: "Vadistanbul, Maslak 1453 ve Skyland",
+  }),
+  "vadistanbul-cilingir": buildTechnicalArticle({
+    regionName: "Vadistanbul",
+    localContext: "katmanlı blok güvenliği, AVM ve ofis geçiş yoğunluğu",
+    landmarks: "Vadi AVM, A/B rezidans blokları ve Ayazağa hattı",
+  }),
+  "ayazaga-cilingir": buildTechnicalArticle({
+    regionName: "Ayazağa",
+    localContext: "eski-yeni bina karması ve metro bağlantı trafiği",
+    landmarks: "Ayazağa Metro, Şişli Ayazağa ve Levent hattı",
+  }),
+  "levent-cilingir": buildTechnicalArticle({
+    regionName: "Levent",
+    localContext: "plaza giriş prosedürleri ve yüksek ofis sirkülasyonu",
+    landmarks: "Büyükdere, Metrocity ve Kanyon",
+  }),
+  "istinye-cilingir": buildTechnicalArticle({
+    regionName: "İstinye",
+    localContext: "marina etkisi, sahil nemi ve AVM prosedürleri",
+    landmarks: "İstinye Park, Yeniköy ve Baltalimanı",
+  }),
+  "emirgan-cilingir": buildTechnicalArticle({
+    regionName: "Emirgan",
+    localContext: "Boğaz hattı nemi, tarihi yapı kapıları ve etkinlik trafiği",
+    landmarks: "Emirgan Korusu, Emirgan İskelesi ve Tarabya hattı",
+  }),
+  "tarabya-cilingir": buildTechnicalArticle({
+    regionName: "Tarabya",
+    localContext: "marina çevresi tuzlu hava ve yokuşlu dar sokaklar",
+    landmarks: "Tarabya Marina, Kireçburnu ve Boğaz sahili",
+  }),
+  "resitpasa-cilingir": buildTechnicalArticle({
+    regionName: "Reşitpaşa",
+    localContext: "kampüs, sanayi ve konut karışımı yoğun kullanım",
+    landmarks: "İTÜ Kampüsü, Maslak Sanayi ve Ayazağa",
+  }),
+  "kirecburnu-cilingir": buildTechnicalArticle({
+    regionName: "Kireçburnu",
+    localContext: "sahil nemi, tuzlu hava ve tarihi yapı kilitleri",
+    landmarks: "Tarabya, Yeniköy Caddesi ve Boğaz hattı",
+  }),
+};
 
 const RAW_REGIONS: Region[] = [
   {
@@ -70,12 +168,14 @@ const RAW_REGIONS: Region[] = [
     slug: "levent-cilingir",
     name: "Levent Çilingir",
     title:
-      "Levent Çilingir 7/24 | Büyükdere Cad, 1. Levent, 4. Levent, Metrocity | Hasarsız",
+      "Levent Çilingir 7/24 | Büyükdere, Metrocity, Kanyon, 4.Levent | Hasarsız",
     description:
-      "Levent çilingir arıyorsanız doğru yerdesiniz. Büyükdere Caddesi, 1. Levent, 4. Levent ve Metrocity çevresine 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Levent çilingir hattı 0536 940 56 56, Levent çilingir desteği 7/24 aktiftir.",
+      "Levent çilingir hizmeti: Büyükdere Cad, Metrocity, Kanyon ve 4. Levent'e 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Levent çilingir 0536 940 56 56",
     h1: "Levent Çilingir — Büyükdere, Metrocity ve Tüm Mahallelere 7/24",
     intro:
-      "Levent’te çilingir mi arıyorsunuz? 1. Levent, 2. Levent, 4. Levent, Büyükdere Caddesi, Metrocity AVM ve Kanyon AVM çevresine ortalama 10-15 dakikada ulaşıyoruz. Levent Metro ve Zincirlikuyu hattında adres teyidini hızlandırarak ekip yönlendirmesi yapıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Levent’te hasarsız ve garantili hizmet sunar.",
+      "Levent'te çilingir hizmeti için en doğru adrestesiniz. 1. Levent, 2. Levent, 4. Levent, Büyükdere Caddesi plaza katları, Metrocity AVM ve Kanyon AVM çevresine ortalama 10-15 dakikada ulaşıyoruz. Levent'in kurumsal yapısını ve plaza giriş sistemlerini bilen ekibimiz, ofis ve rezidans kilit sorunlarını minimum beklemeyle çözüyor. Fiyatı önceden söyler, gelince kimlik teyidi yaparız. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Levent'in güvendiği çilingir servisidir.",
+    richContent:
+      "## Levent'te Ofis Kapısı Açtırmak İçin Ne Gerekir?\n\nOfis katlarında çilingir hizmeti almak için bina yöneticisi veya ofis yetkilisinin yerinde olması ya da onay vermesi gerekir. Ekibimiz geldiğinde standart kimlik ve yetki teyidi yapar — bu hem sizin hem bizim güvencemizdir.\n\n## Plaza Güvenliği ile Koordinasyon\n\nLevent'teki büyük plazalarda güvenlik kaydı gerekebilir. Bizi önceden aramanız ve plazanın adını söylemeniz, ekibimizin hazırlıklı gelmesini sağlar. Bazı plazaların kayıtlı çilingir listesi vardır — firmamız bu listelerde yer almaktadır.\n\n## Gece Levent'te Çilingir\n\nGece Levent'te kapıda kalmak tehlikeli olabilir. 7/24 aktif ekibimiz ortalama 10-15 dakikada yanınızda. Gece servisi ek ücreti önceden bildirilir.",
     responseTime: "10-15 dakika",
     district: "Beşiktaş",
     oldSlug: "bolge-levent-cilingir-127",
@@ -107,12 +207,14 @@ const RAW_REGIONS: Region[] = [
     slug: "maslak-cilingir",
     name: "Maslak Çilingir",
     title:
-      "Maslak Çilingir 7/24 | Vadistanbul, Maslak 1453, Skyland, Nidapark | Hasarsız",
+      "Maslak Çilingir 7/24 | Vadistanbul, Maslak 1453, Skyland | Hasarsız",
     description:
-      "Maslak çilingir arıyorsanız doğru yerdesiniz. Vadistanbul, Maslak 1453, Skyland ve Nidapark'a 10 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Maslak çilingir 0536 940 56 56, Maslak çilingir desteği 7/24 aktiftir.",
+      "Maslak çilingir hizmeti: Vadistanbul, Maslak 1453, Skyland ve Nidapark'a 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Maslak çilingir 0536 940 56 56",
     h1: "Maslak Çilingir — Vadistanbul, 1453 ve Tüm Mahallelere 7/24",
     intro:
-      "Maslak’ta çilingir mi arıyorsunuz? Vadistanbul, Maslak 1453, Skyland, Nidapark, Maslak Mahallesi, Büyükdere Caddesi ve Eski Büyükdere hattına ortalama 10-15 dakikada ulaşıyoruz. Rezidans, ofis ve ticari bloklarda hasarsız açılış ve kilit değişiminde hızlı adres teyidiyle çalışıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Maslak’ta güvenilir 7/24 hizmet verir.",
+      "Maslak'ta çilingir ihtiyacı duyanlar için doğru adrestesiniz. Vadistanbul rezidans blokları, Maslak 1453 kuleleri, Skyland ve Nidapark AVM çevresine ortalama 10-15 dakikada ulaşıyoruz. Büyükdere Caddesi üzerindeki ofis kulelerine, Eski Büyükdere'deki sanayi yapılarına ve Maslak Mahallesi'nin ara sokaklarına olan derin bilgimizle en kısa rotayı kullanıyoruz. Ekibimiz geliş öncesinde size mutlaka fiyat bilgisi verir — kapıda sürpriz rakamla karşılaşmazsınız. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı 14 yıllık firmamız, Maslak'ta en çok tercih edilen yetkili çilingir servisidir.",
+    richContent:
+      "## Maslak'ta Sık Karşılaşılan Kilit Sorunları\n\nVadistanbul ve Maslak 1453 gibi yüksek katlı rezidanslarda en sık karşılaştığımız sorun, elektronik ve mekanik kilitlerin birlikte kullanıldığı kombine sistemlerdir. Bu yapılarda kapı açmak önce doğru ekipman, sonra bina güvenliğiyle koordinasyon gerektirir — ekibimiz her ikisini de hızla sağlar.\n\n## Maslak'ta Çilingir Fiyatları\n\nFiyat, kapı tipi ve kilit modeline göre değişir. Standart bir çelik kapı açma işlemi için gelmeden önce net aralık paylaşırız. Gece servisi, tarifli ek ücret içerebilir — ama bunu da önceden söyleriz. Rakiplerimizin aksine 'kapıda fiyat' uygulamıyoruz.\n\n## Nasıl Çalışıyoruz?\n\n1. Sizi ararsınız, adres ve kapı tipini sorarız\n2. Tahmini süre ve yaklaşık fiyat bildiririz\n3. En yakın ekip yola çıkar\n4. Gelince kimlik ve mülkiyet teyidi yaparız\n5. Hasarsız açış sonrası garantili işçilik belgesi veririz",
     responseTime: "12-18 dakika",
     district: "Sarıyer",
     oldSlug: "bolge-maslak-cilingir-113",
@@ -144,12 +246,14 @@ const RAW_REGIONS: Region[] = [
     slug: "vadistanbul-cilingir",
     name: "Vadistanbul Çilingir",
     title:
-      "Vadistanbul Çilingir 7/24 | Vadi Istanbul AVM, Vadistanbul Rezidans, Maslak | Hasarsız",
+      "Vadistanbul Çilingir 7/24 | Vadi AVM, Rezidans, Ayazağa | Hasarsız",
     description:
-      "Vadistanbul çilingir arıyorsanız doğru yerdesiniz. Vadi Istanbul AVM, Vadistanbul Rezidans Blokları, Vadistanbul Ofis ve Ayazağa sınırına 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Vadistanbul çilingir hattı 0536 940 56 56, Vadistanbul çilingir desteği 7/24 aktiftir.",
-    h1: "Vadistanbul Çilingir — Vadi AVM, Rezidans ve Tüm Hatta 7/24",
+      "Vadistanbul çilingir hizmeti: Vadi AVM, rezidans ve ofis bloklarına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Vadistanbul çilingir 0536 940 56 56",
+    h1: "Vadistanbul Çilingir — Vadi AVM, Rezidans ve Tüm Bloklara 7/24",
     intro:
-      "Vadistanbul'da çilingir mi arıyorsunuz? Vadi Istanbul AVM, Vadistanbul Rezidans Blokları, Vadistanbul Ofis ve Ayazağa sınırına ortalama 10-15 dakikada ulaşıyoruz. Vadistanbul Metro ve Maslak bağlantı hattında konum teyidini hızlandırarak ekip yönlendiriyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız bünyesinde 14 yıldır hasarsız ve garantili hizmet veriyoruz.",
+      "Vadistanbul'da çilingir arıyorsanız en doğru yerdesiniz. Vadi İstanbul AVM, A ve B Rezidans Blokları, Ofis Kulesi ve Ayazağa Metro çıkışına ortalama 10 dakikada ulaşıyoruz. Vadistanbul kompleksinin katmanlı güvenlik sistemi ve blok numarası koordinasyonunu bildiğimizden bekleme süresini minimize ediyoruz. Gelmeden önce net fiyat, kapıda sürpriz yok. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Vadistanbul sakinlerine hizmet veriyor.",
+    richContent:
+      "## Vadistanbul'da Çilingir Süreç Nasıl İşler?\n\nVadistanbul'da çilingir çağırmak standart bir adresten farklıdır. Güvenlik kulübesine giriş kaydı, doğru blok ve daire teyidi gerektirir. Ekibimiz bu prosedürü biliyor — gereksiz bekleme olmadan doğrudan kapınıza ulaşıyoruz.\n\n## AVM Katta mı, Rezidans Katta mı?\n\nVadi AVM içindeki mağaza ve ofisler için bina yönetimi onayıyla çalışıyoruz. Rezidans bloklarında daire sahibinin ya da kiracının yerinde bulunması yeterli. Her iki durumda da kimlik teyidi standart prosedürümüzdür.\n\n## Sık Sorulan: 'Gece Vadistanbul'a Geliyor musunuz?'\n\nEvet, 7/24 aktif ekibimiz var. Gece servisinde ek ücret olabilir — ama aramadan önce söyleriz. Hiçbir zaman 'geldim, ücret bu' demedik, demeyiz.",
     responseTime: "10-15 dakika",
     district: "Sarıyer",
     priority: 1,
@@ -358,36 +462,49 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "tarabya-cilingir",
     name: "Tarabya Çilingir",
-    title: "Tarabya Çilingir | Sahil ve Konut Acil Kapı Açma",
+    title:
+      "Tarabya Çilingir 7/24 | Tarabya Marina, Kireçburnu, Boğaz | Hasarsız",
     description:
-      "Tarabya’da çilingir: konut, işyeri ve marinaya yakın bölgelerde kilit servisi. Nem ve tuzlu hava koşullarına uygun bakım önerileriyle destek.",
-    h1: "Tarabya Çilingir Hizmeti",
+      "Tarabya çilingir hizmeti: Tarabya Marina, Kireçburnu ve Boğaz sahiline 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Tarabya çilingir 0536 940 56 56",
+    h1: "Tarabya Çilingir — Marina, Kireçburnu ve Boğaz Hattına 7/24",
     intro:
-      "Tarabya sahilinde tuzlu havaya bağlı korozyonda silindir sıkışması sıktır; müdahaleden sonra kısa süreli koruyucu bakım öneriyoruz. Ortalama 12–20 dakikalık hedef yanıt süresiyle yokuşlu sokaklarda araç yaklaşımını önceden planlıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır marinaya yakın işletme ve konutlarda çilingirlik yapıyor. Gece nöbetlerinde güvenlik koordinasyonunu şeffaf şekilde yürütürüz.",
+      "Tarabya'da çilingir ihtiyacınız için doğru yerdesiniz. Tarabya Marina, Kireçburnu Mahallesi, Tarabya Mahallesi, Boğaz sahil şeridi ve Yeniköy bağlantı hattına ortalama 10-15 dakikada ulaşıyoruz. Marina çevresindeki konutlarda nem ve tuz aşınmasına karşı deneyimli ekibimiz, açış sonrası bakım önerileriyle uzun vadeli çözüm sunar. Gelmeden fiyat, gelince teyit — sürpriz yok. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Tarabya'da güvenilir hizmet veriyor.",
+    richContent:
+      "## Tarabya Marina Çevresinde Çilingir\n\nTarabya Marina yakınındaki konutlar ve iş yerlerinde deniz nemi, kilit mekanizmalarını ciddi ölçüde etkiler. Yılda en az bir kez silindir bakımı tavsiye edilir. Ekibimiz acil açış sonrasında ücretsiz durum değerlendirmesi yapıyor.\n\n## Yokuşlu Sokaklarda Ulaşım\n\nTarabya'nın bazı sokakları dar ve yokuşludur. Adres paylaşırken en yakın büyük yol veya işaret noktasını belirtmeniz ekibimizin hızla ulaşmasını sağlar.\n\n## Gece Tarabya'da Güvenli Hizmet\n\nGece saatlerinde Tarabya sahil yolu trafiği azalır, ekibimiz daha hızlı ulaşır. 7/24 aktif servisimizle gece çilingir ihtiyacınızda da yanınızdayız.",
     responseTime: "12-20 dakika",
     district: "Sarıyer",
     oldSlug: "bolge-tarabya-cilingir-122",
     priority: 1,
     faqs: [
       {
-        question: "Deniz havası kilitleri ne kadar hızlı bozar?",
+        question: "Tarabya hangi mahallelere hizmet veriyorsunuz?",
         answer:
-          "Paslanmaya bağlı sıkışma aylardan yıllara kadar değişir; düzenli yağlama ve pas önleyici sprey ömrü uzatır.",
+          "Tarabya ve çevresindeki Tarabya Mahallesi, Tarabya Marina çevresi, Kireçburnu ve Boğaz sahili dahil tüm Tarabya semtlerine hizmet veriyoruz. Ortalama 10-15 dakikada kapınızdayız.",
       },
       {
-        question: "Tarabya yokuşlarında acil servis gecikir mi?",
+        question: "Tarabya'de gece çilingir bulabilir miyim?",
         answer:
-          "Park ve trafik yoğunluğunda birkaç dakika fark oluşabilir; en kısa güzergâhı kullanırız.",
+          "Evet, Tarabya'de 7/24 aktif ekibimiz her gece sahada. Ortalama yanıt süremizi adres netleştikçe paylaşırız.",
       },
       {
-        question: "Yazlık kapalı ev ilk girişte açılmıyor, ne yapılır?",
+        question: "Fiyatı önceden öğrenebilir miyim?",
         answer:
-          "Uzun süre kullanılmayan kilitlerde mekanizma yapışması olur; yerinde temizlik veya kontrollü açılış uygulanır.",
+          "Kesinlikle. Gelmeden önce iş kalemini ve yaklaşık ücret aralığını telefonda netleştiriyoruz.",
       },
       {
-        question: "İşyeri sigorta poliçesi kilit değişimini kapsar mı?",
+        question: "Tarabya Marina çevresinde park zorluğu olursa ne yapıyorsunuz?",
         answer:
-          "Poliçe şartlarına bağlıdır; fatura ve tutanak taleplerinize uygun belge düzenleyebiliriz.",
+          "Marina yoğunluğunda en yakın güvenli buluşma noktasını telefonda belirleyip yürüyerek son metreyi tamamlıyoruz; bu sayede müdahale süresi uzamaz.",
+      },
+      {
+        question: "Tarabya'da oda kayıtlı yetkili firma olduğunuzu nasıl doğrularım?",
+        answer:
+          "İstanbul Anahtarcılar ve Çilingirciler Odası kaydımızı talep halinde paylaşırız; 14 yıllık saha deneyimimizle hasarsız ve garantili çalışırız.",
+      },
+      {
+        question: "Boğaz sahilindeki nem kilit ömrünü kısaltır mı?",
+        answer:
+          "Evet, tuzlu-nemli hava silindir aşınmasını hızlandırabilir. Tarabya sahil hattında müdahale sonrası koruyucu bakım ve periyodik kontrol öneriyoruz.",
       },
     ],
   },
@@ -683,12 +800,14 @@ const RAW_REGIONS: Region[] = [
     slug: "ayazaga-cilingir",
     name: "Ayazağa Çilingir",
     title:
-      "Ayazağa Çilingir 7/24 | Ayazağa Köyü, Şişli Ayazağa, Metro İstasyonu Çevresi | Hasarsız",
+      "Ayazağa Çilingir 7/24 | Metro, Şişli Ayazağa, Levent Hattı | Hasarsız",
     description:
-      "Ayazağa çilingir arıyorsanız doğru yerdesiniz. Ayazağa Köyü, Ayazağa Mahallesi, Şişli Ayazağa ve Ayazağa Metro çevresine 12-20 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Ayazağa çilingir 0536 940 56 56, Ayazağa çilingir desteği 7/24 aktiftir.",
-    h1: "Ayazağa Çilingir — Köy, Metro ve Tüm Mahallelere 7/24",
+      "Ayazağa çilingir hizmeti: Ayazağa Metro, Şişli Ayazağa ve Levent hattına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Ayazağa çilingir 0536 940 56 56",
+    h1: "Ayazağa Çilingir — Metro, Şişli Ayazağa ve Tüm Mahallelere 7/24",
     intro:
-      "Ayazağa’da çilingir mi arıyorsunuz? Ayazağa Köyü, Ayazağa Mahallesi, Şişli Ayazağa, Ayazağa Metro, Kanyon yakını ve Levent-Ayazağa hattına ortalama 12-20 dakikada ulaşıyoruz. Sanayi ve konut dokusunda sokak tabelası ile bina referansını hızlı doğrulayarak yanlış rota riskini düşürüyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Ayazağa’da hasarsız ve garantili hizmet verir.",
+      "Ayazağa'da çilingir ihtiyacınız için doğru firmadasınız. Ayazağa Metro İstasyonu çevresi, Şişli Ayazağa Mahallesi, Levent-Ayazağa bağlantı hattı ve Kanyon AVM yakınına ortalama 10-15 dakikada ulaşıyoruz. Ayazağa'nın hem toplu konut hem de kurumsal yapı karışımını bilen ekibimiz, sizi en kısa sürede kapınızda buluşturuyor. Gelmeden fiyat, gelince kimlik teyidi — şeffaf ve güvenli hizmet anlayışımız değişmez. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Ayazağa'da hizmet veriyor.",
+    richContent:
+      "## Ayazağa'da Kilit Sorunları Neden Yaygın?\n\nAyazağa, hem eski Şişli konutlarını hem de yeni rezidansları barındırıyor. Eski yapılarda aşınmış silindir, yeni yapılarda çok noktalı kilit sistemi sorunları yaygındır. Her iki türde de deneyimli ekibimiz doğru yöntemi belirler.\n\n## Metro Çıkışına Yakın mısınız?\n\nAyazağa Metro çıkışına 5 dakika yürüme mesafesindeyseniz buluşma noktası belirleyerek süreci hızlandırabilirsiniz. Özellikle geç saatlerde bu yöntem daha güvenlidir.\n\n## Ayazağa'da Fiyat Ne Kadar?\n\nStandart kapı açma için telefonda net aralık veriyoruz. Silindir değişimi gerekiyorsa ürün seçeneklerini ve fiyatlarını önceden paylaşıyoruz. Sürpriz ücret yok.",
     responseTime: "12-20 dakika",
     district: "Sarıyer",
     oldSlug: "bolge-ayazaga-cilingir-121",
@@ -720,12 +839,14 @@ const RAW_REGIONS: Region[] = [
     slug: "resitpasa-cilingir",
     name: "Reşitpaşa Çilingir",
     title:
-      "Reşitpaşa Çilingir 7/24 | İTÜ Kampüsü, Reşitpaşa Mah, Maslak Çevresi | Hasarsız",
+      "Reşitpaşa Çilingir 7/24 | İTÜ, Maslak Sanayi, Ayazağa | Hasarsız",
     description:
-      "Reşitpaşa çilingir arıyorsanız doğru yerdesiniz. İTÜ Kampüsü, Reşitpaşa Mahallesi, Maslak Sanayi ve Reşitpaşa Metro çevresine 12-22 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Reşitpaşa çilingir 0536 940 56 56, Reşitpaşa çilingir desteği 7/24 aktiftir.",
-    h1: "Reşitpaşa Çilingir — İTÜ, Sanayi ve Tüm Mahallelere 7/24",
+      "Reşitpaşa çilingir hizmeti: İTÜ Kampüsü, Maslak Sanayi ve Ayazağa hattına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Reşitpaşa çilingir 0536 940 56 56",
+    h1: "Reşitpaşa Çilingir — İTÜ, Maslak Sanayi ve Ayazağa'ya 7/24",
     intro:
-      "Reşitpaşa’da çilingir mi arıyorsunuz? İTÜ Kampüsü, Reşitpaşa Mahallesi, Maslak Sanayi, Kağıthane sınırı ve Reşitpaşa Metro hattına ortalama 12-22 dakikada ulaşıyoruz. Yokuşlu sokak ve site güvenliği kaynaklı gecikmeleri önlemek için plaka ve kapı bilgilerini önceden doğruluyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Reşitpaşa’da hasarsız ve garantili hizmet verir.",
+      "Reşitpaşa'da çilingir hizmetinde doğru firmadasınız. İTÜ Ayazağa Kampüsü çevresi, Reşitpaşa Mahallesi, Maslak Sanayi bölgesi ve Ayazağa hattına ortalama 10-15 dakikada ulaşıyoruz. Hem üniversite yurdu ve öğrenci konutları hem de sanayi yapıları için deneyimli ekibimiz farklı kilit sistemlerine hızla uyum sağlar. Gelmeden fiyat, gelince teyit — değişmeyen hizmet anlayışımız. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Reşitpaşa'da güvenilir çilingir hizmeti sunuyor.",
+    richContent:
+      "## İTÜ Kampüsü Çevresinde Çilingir\n\nİTÜ Ayazağa Kampüsü içindeki yurt ve lojmanlarda kilit sorunları için kampüs güvenliğiyle koordinasyon gerekebilir. Ekibimiz bu prosedürü biliyor ve süreçi birlikte yönetiyor. Öğrenci kimliği veya yetkili yönetici varlığı standart teyit prosedürümüzdür.\n\n## Reşitpaşa Sanayi Yapılarında Acil Servis\n\nSanayi yapılarında rulo kepenk, endüstriyel kapı ve özel kilit sistemleri yaygındır. Ekibimiz bu sistemler için gerekli ekipmana sahiptir; ama karmaşık durumlarda önce yerinde inceleme yaparak doğru çözümü belirleriz.\n\n## Gece Reşitpaşa'da Yanıt Süresi\n\nReşitpaşa trafiği gece azalır. 7/24 ekibimiz gece saatlerinde çoğunlukla 8-12 dakika içinde ulaşır.",
     responseTime: "12-22 dakika",
     district: "Sarıyer",
     oldSlug: "bolge-resitpasa-cilingir-123",
@@ -734,22 +855,32 @@ const RAW_REGIONS: Region[] = [
       {
         question: "Reşitpaşa hangi mahallelere hizmet veriyorsunuz?",
         answer:
-          "Reşitpaşa ve çevresindeki Reşitpaşa Mahallesi, İTÜ Kampüsü çevresi, Maslak Sanayi, Kağıthane sınırı ve Reşitpaşa Metro hattı dahil tüm Reşitpaşa semtlerine hizmet veriyoruz. Ortalama 12-22 dakikada kapınızdayız.",
+          "Reşitpaşa ve çevresindeki Reşitpaşa Mahallesi, İTÜ Kampüsü çevresi, Maslak Sanayi ve Ayazağa hattı dahil tüm Reşitpaşa semtlerine hizmet veriyoruz. Ortalama 10-15 dakikada kapınızdayız.",
       },
       {
-        question: "Site içinde iki farklı blokta işlem yapılır mı?",
+        question: "Reşitpaşa'de gece çilingir bulabilir miyim?",
         answer:
-          "Evet, ikinci blok için makul ek süre ve ücret öngörülebilir; önceden bildirin.",
+          "Evet, Reşitpaşa'de 7/24 aktif ekibimiz her gece sahada. Ortalama yanıt süremizi adres netleştikçe paylaşırız.",
       },
       {
-        question: "Kışın kilit donması yaşanırsa ne yapılır?",
+        question: "Fiyatı önceden öğrenebilir miyim?",
         answer:
-          "Zorla çevirmeyin; kontrollü ısıtma ve teknik açılış yöntemi uygulanır, gerekirse silindir değişir.",
+          "Kesinlikle. Gelmeden önce iş kalemini ve yaklaşık ücret aralığını telefonda netleştiriyoruz.",
       },
       {
-        question: "Villa interkomu çalışmıyor, çilingir nasıl girer?",
+        question: "İTÜ yurtları ve kampüs çevresinde kimlik doğrulaması gerekiyor mu?",
         answer:
-          "Ev sahibi kapıda karşılamalı veya güvenlik eşlik etmelidir; aksi halde müdahale ertelenebilir.",
+          "Evet, kampüs ve yurt çevresinde güvenlik prosedürüne uygun şekilde kimlik/kullanım teyidi alıyoruz; bu süreç sonrası hızlıca müdahaleye geçiyoruz.",
+      },
+      {
+        question: "Reşitpaşa'da güvenilir ve yetkili firma olduğunuzu nasıl anlarım?",
+        answer:
+          "İstanbul Anahtarcılar ve Çilingirciler Odası kaydımızı talep halinde gösteriyoruz; 14 yıllık deneyimimizle hasarsız ve garantili işçilik sağlıyoruz.",
+      },
+      {
+        question: "Maslak Sanayi ve Ayazağa hattında trafik süreyi etkiler mi?",
+        answer:
+          "Yoğun saatlerde güzergah değişebilir; Reşitpaşa-Maslak-Sanayi hattında en hızlı rota ile hareket edip güncel varış süresini arayarak paylaşıyoruz.",
       },
     ],
   },
@@ -901,12 +1032,14 @@ const RAW_REGIONS: Region[] = [
     slug: "emirgan-cilingir",
     name: "Emirgan Çilingir",
     title:
-      "Emirgan Çilingir 7/24 | Emirgan Korusu, Emirgan Sahili, Boğaz Hattı | Hasarsız",
+      "Emirgan Çilingir 7/24 | Emirgan Korusu, Boğaz, Tarabya Hattı | Hasarsız",
     description:
-      "Emirgan çilingir arıyorsanız doğru yerdesiniz. Emirgan Korusu, Emirgan İskelesi, Emirgan Mahallesi ve Boğaz sahiline 12-22 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Emirgan çilingir 0536 940 56 56, Emirgan çilingir desteği 7/24 aktiftir.",
-    h1: "Emirgan Çilingir — Koru, İskele ve Tüm Mahallelere 7/24",
+      "Emirgan çilingir hizmeti: Emirgan Korusu, Boğaz sahili ve Tarabya hattına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Emirgan çilingir 0536 940 56 56",
+    h1: "Emirgan Çilingir — Korusu, Boğaz Sahili ve Tüm Mahallelere 7/24",
     intro:
-      "Emirgan’da çilingir mi arıyorsunuz? Emirgan Korusu, Emirgan İskelesi, Emirgan Mahallesi, Boğaz sahili ve Emirgan-Tarabya hattına ortalama 12-22 dakikada ulaşıyoruz. Hafta sonu ziyaretçi trafiğinde buluşma noktasını doğru seçerek park kaynaklı gecikmeleri azaltıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Emirgan’da hasarsız ve garantili hizmet sunar.",
+      "Emirgan'da çilingir hizmeti için doğru adrestesiniz. Emirgan Korusu çevresi, Emirgan İskelesi, Boğaz sahil şeridi, Emirgan Mahallesi ve Tarabya-Emirgan hattına ortalama 10-15 dakikada ulaşıyoruz. Boğaz'a yakın konumdaki konutlarda tuzlu havanın kilit mekanizmalarına etkisini bilen ekibimiz, hem açış hem de uzun vadeli bakım önerileri sunar. Gelmeden fiyat, gelince teyit. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Emirgan'ın güvendiği çilingir servisidir.",
+    richContent:
+      "## Emirgan'da Kilit Sorunlarının Temel Nedeni\n\nEmirgan'daki konutların büyük bölümü Boğaz'a 200-500 metre mesafededir. Bu mesafede tuzlu nem, standart silindirlerde yılda bir bakım gerektiren bir aşınmaya neden olur. Ekibimiz açış sonrası ücretsiz silindir değerlendirmesi sunar.\n\n## Emirgan Korusu Etkinliklerinde Araç Parkı\n\nKoru etkinlikleri döneminde trafik yoğunluğu artar. Bu saatlerde buluşma noktası olarak İskele caddesi önerilir — ekibimiz bu rotayı iyi bilir.\n\n## Sahil Konutlarında Hasarsız Kapı Açma\n\nEmirgan'daki tarihi köşk ve yalılarda kapı yapısına zarar vermemek kritiktir. Ekibimiz ahşap kapı mekanizmalarında özel teknikler kullanır.",
     responseTime: "12-22 dakika",
     district: "Sarıyer",
     oldSlug: "bolge-emirgan-cilingir-137",
@@ -915,22 +1048,32 @@ const RAW_REGIONS: Region[] = [
       {
         question: "Emirgan hangi mahallelere hizmet veriyorsunuz?",
         answer:
-          "Emirgan ve çevresindeki Emirgan Mahallesi, Emirgan Korusu çevresi, Emirgan İskelesi, Boğaz sahili ve Emirgan-Tarabya hattı dahil tüm Emirgan semtlerine hizmet veriyoruz. Ortalama 12-22 dakikada kapınızdayız.",
+          "Emirgan ve çevresindeki Emirgan Mahallesi, Emirgan Korusu çevresi, Emirgan İskelesi ve Tarabya hattı dahil tüm Emirgan semtlerine hizmet veriyoruz. Ortalama 10-15 dakikada kapınızdayız.",
       },
       {
-        question: "Ahşap kapı kilit montajı farklı mıdır?",
+        question: "Emirgan'de gece çilingir bulabilir miyim?",
         answer:
-          "Evet, özel aparat ve ölçü gerekir; yerinde keşif sonrası doğru set önerilir.",
+          "Evet, Emirgan'de 7/24 aktif ekibimiz her gece sahada. Ortalama yanıt süremizi adres netleştikçe paylaşırız.",
       },
       {
-        question: "Site içinde sessiz çalışma talep edilebilir mi?",
+        question: "Fiyatı önceden öğrenebilir miyim?",
         answer:
-          "Mümkün olduğunca düşük sesle çalışırız; gerekirse el aleti tercih edilir.",
+          "Kesinlikle. Gelmeden önce iş kalemini ve yaklaşık ücret aralığını telefonda netleştiriyoruz.",
       },
       {
-        question: "Koru etkinlik günlerinde ek güvenlik olur mu?",
+        question: "Emirgan Korusu çevresinde hafta sonu trafik olursa ne yapıyorsunuz?",
         answer:
-          "Olabilir; güvenlik yönlendirmesine uymak zorunludur.",
+          "Koru yoğunluğunda buluşma noktasını iskele veya ana cadde tarafına kaydırıp alternatif rota ile geliyoruz; güncel varış süresini telefonla bildiriyoruz.",
+      },
+      {
+        question: "Emirgan'da yetkili ve güvenilir olduğunuzu nasıl doğrularım?",
+        answer:
+          "İstanbul Anahtarcılar ve Çilingirciler Odası kaydımızı paylaşırız; 14 yıllık deneyimimizle hasarsız müdahale ve garantili işçilik sunarız.",
+      },
+      {
+        question: "Boğaz sahiline yakın evlerde kilit neden sık arıza verir?",
+        answer:
+          "Tuzlu hava ve nem silindirde aşınmayı artırabilir. Emirgan-Boğaz hattında müdahale sonrası koruyucu bakım önerileriyle tekrar arıza riskini azaltıyoruz.",
       },
     ],
   },
@@ -938,12 +1081,14 @@ const RAW_REGIONS: Region[] = [
     slug: "istinye-cilingir",
     name: "İstinye Çilingir",
     title:
-      "İstinye Çilingir 7/24 | İstinye Park, Yeniköy Cad, Sarıyer İstinye | Hasarsız",
+      "İstinye Çilingir 7/24 | İstinye Park, Yeniköy, Baltalimanı | Hasarsız",
     description:
-      "İstinye çilingir arıyorsanız doğru yerdesiniz. İstinye Park AVM, İstinye Mahallesi, Yeniköy Caddesi ve Baltalimanı hattına 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. İstinye çilingir 0536 940 56 56, İstinye çilingir desteği 7/24 aktiftir.",
+      "İstinye çilingir hizmeti: İstinye Park AVM, Yeniköy ve Baltalimanı'na 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. İstinye çilingir 0536 940 56 56",
     h1: "İstinye Çilingir — İstinye Park, Yeniköy ve Tüm Hatta 7/24",
     intro:
-      "İstinye’de çilingir mi arıyorsunuz? İstinye Park AVM, İstinye Mahallesi, Yeniköy Caddesi, Baltalimanı ve Sarıyer-İstinye hattına ortalama 10-15 dakikada ulaşıyoruz. Marina ve sahil tek yönlerinde doğru buluşma noktasıyla yaklaşımı hızlandırıp otopark kat kaybını azaltıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle İstinye’de hasarsız ve garantili hizmet verir.",
+      "İstinye'de çilingir arıyorsanız doğru firmadasınız. İstinye Park AVM, İstinye Mahallesi, Yeniköy Caddesi, Baltalimanı ve Sarıyer-İstinye hattına ortalama 10-15 dakikada ulaşıyoruz. İstinye'nin marina çevresindeki konutlarda nem kaynaklı silindir sorunlarına ve AVM içi mağaza kilitlerinde yetki prosedürlerine olan bilgi birikimimiz hız farkı yaratıyor. Gelmeden fiyat, gelince teyit — değişmeyen hizmet anlayışımız. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır İstinye'de güvenilir hizmet veriyor.",
+    richContent:
+      "## İstinye Park AVM'de Mağaza Kilidi Açtırmak\n\nİstinye Park AVM içindeki mağazalar için AVM yönetimi onayı ve mağaza yetkilisinin varlığı şarttır. Ekibimiz bu prosedürü biliyor ve gerekli koordinasyonu sizinle birlikte yönetiyor.\n\n## İstinye'de Deniz Nemine Karşı Kilit Bakımı\n\nBoğaz'a yakın konumda tuzlu nem, silindir mekanizmalarını standarttan hızlı aşındırır. Müdahale sonrası önerdiğimiz bakım adımları kapınızın ömrünü uzatır.\n\n## İstinye-Yeniköy Hattında Yanıt Süresi\n\nYeniköy Caddesi üzerindeki konutlara ve İstinye iç sokaklarına ortalama 12-15 dakikada ulaşıyoruz. Trafik yoğunluğunda alternatif güzergah kullanan ekibimiz süreyi minimize eder.",
     responseTime: "10-15 dakika",
     district: "Sarıyer",
     priority: 1,
@@ -1185,35 +1330,48 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "kirecburnu-cilingir",
     name: "Kireçburnu Çilingir",
-    title: "Kireçburnu Çilingir | Sahil Sitesi ve Villa Kilit Servisi",
+    title:
+      "Kireçburnu Çilingir 7/24 | Tarabya, Yeniköy, Boğaz Hattı | Hasarsız",
     description:
-      "Kireçburnu’nda çilingir: sahil siteleri ve villalarda acil kapı açılışı. Dar rampa ve eğimli güzergâhlarda güvenli yaklaşım.",
-    h1: "Kireçburnu Çilingir Hizmeti",
+      "Kireçburnu çilingir hizmeti: Tarabya, Yeniköy ve Boğaz hattına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Kireçburnu çilingir 0536 940 56 56",
+    h1: "Kireçburnu Çilingir — Tarabya, Yeniköy ve Boğaz Hattına 7/24",
     intro:
-      "Sahil sitelerinde rampa ve dönel yollar dar olduğundan büyük servis aracı yerine kompakt araç tercih edilebiliyor. Villalarda deniz tarafı giriş ile cadde tarafı giriş farklı kilit setleri taşıyabiliyor. Gece rüzgârında kapı slam sonrası kilit sıkışması sık görülüyor.",
-    responseTime: "12-24 dakika",
+      "Kireçburnu'nda çilingir arıyorsanız doğru yerdesiniz. Kireçburnu Mahallesi, Tarabya hattı, Yeniköy Caddesi ve Boğaz sahil şeridine ortalama 10-15 dakikada ulaşıyoruz. Boğaz'a sıfır konumdaki bu mahallede nem ve tuz kaynaklı kilit aşınması sıktır — ekibimiz açış sonrası bakım önerileriyle uzun vadeli çözüm sunar. Gelmeden fiyat, gelince teyit. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Kireçburnu'nda güvenilir hizmet veriyor.",
+    richContent:
+      "## Kireçburnu'nda Kilit Sorunları Neden Sık?\n\nKireçburnu, Boğaz sahiline sıfır konumda bir mahalledir. Tuzlu deniz havası, silindir mekanizmalarını yılda 2-3 kat daha hızlı aşındırır. Bu nedenle yılda bir silindir bakımı önerilir. Müdahale sonrası ücretsiz değerlendirme yapıyoruz.\n\n## Dar Sahil Sokaklarında Ulaşım\n\nKireçburnu'nun bazı sahil sokakları araç girişine kapalı ya da çok dardır. Adresinizi paylaşırken yakın cadde veya iskele noktasını belirtin — ekibimiz bu bölgeyi çok iyi bilir.\n\n## Tarihi Yapılarda Hasarsız Açma\n\nKireçburnu'ndaki yalı ve eski konut kapılarında ahşap ve antika kilit mekanizmaları olabilir. Özel açma teknikleriyle kapınıza zarar vermeden müdahale ediyoruz.",
+    responseTime: "10-15 dakika",
     district: "Sarıyer",
     priority: 3,
     faqs: [
       {
-        question: "Kireçburnu rampalarında araç üstte kalır mı?",
+        question: "Kireçburnu hangi mahallelere hizmet veriyorsunuz?",
         answer:
-          "Dar rampalarda güvenli duruş noktası seçilir; gerekirse alt parka yönlendirilirsiniz.",
+          "Kireçburnu ve çevresindeki Kireçburnu Mahallesi, Tarabya, Yeniköy Caddesi ve Boğaz sahili dahil tüm Kireçburnu semtlerine hizmet veriyoruz. Ortalama 10-15 dakikada kapınızdayız.",
       },
       {
-        question: "Villada iki ayrı giriş kilidi var, ikisi de açılır mı?",
+        question: "Kireçburnu'de gece çilingir bulabilir miyim?",
         answer:
-          "Evet, her biri ayrı değerlendirilir; süre ve ücret kapı başına konuşulur.",
+          "Evet, Kireçburnu'de 7/24 aktif ekibimiz her gece sahada. Ortalama yanıt süremizi adres netleştikçe paylaşırız.",
       },
       {
-        question: "Rüzgârda kapı çarpması kilidi bozar mı?",
+        question: "Fiyatı önceden öğrenebilir miyim?",
         answer:
-          "Çarpma mekanizmaya stres yapar; kontrol ve ayar gerekir, ağır hasarda parça değişir.",
+          "Kesinlikle. Gelmeden önce iş kalemini ve yaklaşık ücret aralığını telefonda netleştiriyoruz.",
       },
       {
-        question: "Sitede vale kapısı ile ana giriş farklı, hangisini tarif etmeliyim?",
+        question: "Kireçburnu sahilindeki dar sokaklarda nasıl hızlı ulaşıyorsunuz?",
         answer:
-          "Müdahale edilecek kapıyı seçin; teknisyen o noktaya yönlendirilir.",
+          "Dar Boğaz sokaklarında kompakt araç ve yürüyüş bağlantısı kullanıyoruz; Tarabya-Yeniköy hattında en yakın buluşma noktasını birlikte belirliyoruz.",
+      },
+      {
+        question: "Kireçburnu'nda güvenilir ve yetkili firma olduğunuzu nasıl kanıtlarsınız?",
+        answer:
+          "İstanbul Anahtarcılar ve Çilingirciler Odası kaydımızı paylaşırız; 14 yıllık deneyimimizle hasarsız ve garantili müdahale yaparız.",
+      },
+      {
+        question: "Boğaz nemi Kireçburnu kilitlerinde neden sık sorun çıkarıyor?",
+        answer:
+          "Tuzlu nemli hava silindir aşınmasını hızlandırabilir. Kireçburnu-Boğaz hattında müdahale sonrası bakım ve koruyucu önerilerle tekrar arızayı azaltıyoruz.",
       },
     ],
   },
@@ -1254,7 +1412,11 @@ const RAW_REGIONS: Region[] = [
   },
 ];
 
-export const REGIONS: Region[] = RAW_REGIONS.map(appendDistrictFaqs);
+export const REGIONS: Region[] = RAW_REGIONS.map((region) => ({
+  ...region,
+  technicalArticle:
+    TECHNICAL_ARTICLES[region.slug] ?? region.technicalArticle,
+})).map(appendDistrictFaqs);
 
 export const getRegionBySlug = (slug: string): Region | undefined =>
   REGIONS.find((r) => r.slug === slug);

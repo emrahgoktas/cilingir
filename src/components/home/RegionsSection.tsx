@@ -1,9 +1,23 @@
 import Link from "next/link";
 import { RegionCard } from "@/components/ui/RegionCard";
-import { getTopRegionsForHome } from "@/data/regions";
+import { getRegionBySlug } from "@/data/regions";
+
+const HOMEPAGE_REGION_ORDER = [
+  "maslak-cilingir",
+  "vadistanbul-cilingir",
+  "ayazaga-cilingir",
+  "levent-cilingir",
+  "istinye-cilingir",
+  "emirgan-cilingir",
+  "tarabya-cilingir",
+  "resitpasa-cilingir",
+  "kirecburnu-cilingir",
+] as const;
 
 export function RegionsSection() {
-  const regions = getTopRegionsForHome(12);
+  const regions = HOMEPAGE_REGION_ORDER.map((slug) =>
+    getRegionBySlug(slug)
+  ).filter((region) => region != null);
 
   return (
     <section className="overflow-x-hidden border-t border-border bg-surface px-4 py-14 md:py-16">
@@ -12,7 +26,7 @@ export function RegionsSection() {
           Hizmet Bölgelerimiz
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-muted md:text-base">
-          Öncelikli Avrupa yakası bölgelerinde hızlı varış süreleri.
+          Maslak, Vadistanbul, Ayazağa, Levent, İstinye, Emirgan, Tarabya, Reşitpaşa ve Kireçburnu&#39;nda hızlı varış.
         </p>
         <ul className="mt-10 grid list-none gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {regions.map((region) => (
