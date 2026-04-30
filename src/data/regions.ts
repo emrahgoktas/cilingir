@@ -72,7 +72,7 @@ const RAW_REGIONS: Region[] = [
     title:
       "Levent Çilingir 7/24 | Büyükdere Cad, 1. Levent, 4. Levent, Metrocity | Hasarsız",
     description:
-      "Levent çilingir arıyorsanız doğru yerdesiniz. Büyükdere Caddesi, 1. Levent, 4. Levent ve Metrocity çevresine 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Levent çilingir hattı 0532 303 91 69, Levent çilingir desteği 7/24 aktiftir.",
+      "Levent çilingir arıyorsanız doğru yerdesiniz. Büyükdere Caddesi, 1. Levent, 4. Levent ve Metrocity çevresine 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Levent çilingir hattı 0536 940 56 56, Levent çilingir desteği 7/24 aktiftir.",
     h1: "Levent Çilingir — Büyükdere, Metrocity ve Tüm Mahallelere 7/24",
     intro:
       "Levent’te çilingir mi arıyorsunuz? 1. Levent, 2. Levent, 4. Levent, Büyükdere Caddesi, Metrocity AVM ve Kanyon AVM çevresine ortalama 10-15 dakikada ulaşıyoruz. Levent Metro ve Zincirlikuyu hattında adres teyidini hızlandırarak ekip yönlendirmesi yapıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Levent’te hasarsız ve garantili hizmet sunar.",
@@ -109,7 +109,7 @@ const RAW_REGIONS: Region[] = [
     title:
       "Maslak Çilingir 7/24 | Vadistanbul, Maslak 1453, Skyland, Nidapark | Hasarsız",
     description:
-      "Maslak çilingir arıyorsanız doğru yerdesiniz. Vadistanbul, Maslak 1453, Skyland ve Nidapark'a 10 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Maslak çilingir 0532 303 91 69, Maslak çilingir desteği 7/24 aktiftir.",
+      "Maslak çilingir arıyorsanız doğru yerdesiniz. Vadistanbul, Maslak 1453, Skyland ve Nidapark'a 10 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Maslak çilingir 0536 940 56 56, Maslak çilingir desteği 7/24 aktiftir.",
     h1: "Maslak Çilingir — Vadistanbul, 1453 ve Tüm Mahallelere 7/24",
     intro:
       "Maslak’ta çilingir mi arıyorsunuz? Vadistanbul, Maslak 1453, Skyland, Nidapark, Maslak Mahallesi, Büyükdere Caddesi ve Eski Büyükdere hattına ortalama 10-15 dakikada ulaşıyoruz. Rezidans, ofis ve ticari bloklarda hasarsız açılış ve kilit değişiminde hızlı adres teyidiyle çalışıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Maslak’ta güvenilir 7/24 hizmet verir.",
@@ -146,7 +146,7 @@ const RAW_REGIONS: Region[] = [
     title:
       "Vadistanbul Çilingir 7/24 | Vadi Istanbul AVM, Vadistanbul Rezidans, Maslak | Hasarsız",
     description:
-      "Vadistanbul çilingir arıyorsanız doğru yerdesiniz. Vadi Istanbul AVM, Vadistanbul Rezidans Blokları, Vadistanbul Ofis ve Ayazağa sınırına 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Vadistanbul çilingir hattı 0532 303 91 69, Vadistanbul çilingir desteği 7/24 aktiftir.",
+      "Vadistanbul çilingir arıyorsanız doğru yerdesiniz. Vadi Istanbul AVM, Vadistanbul Rezidans Blokları, Vadistanbul Ofis ve Ayazağa sınırına 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Vadistanbul çilingir hattı 0536 940 56 56, Vadistanbul çilingir desteği 7/24 aktiftir.",
     h1: "Vadistanbul Çilingir — Vadi AVM, Rezidans ve Tüm Hatta 7/24",
     intro:
       "Vadistanbul'da çilingir mi arıyorsunuz? Vadi Istanbul AVM, Vadistanbul Rezidans Blokları, Vadistanbul Ofis ve Ayazağa sınırına ortalama 10-15 dakikada ulaşıyoruz. Vadistanbul Metro ve Maslak bağlantı hattında konum teyidini hızlandırarak ekip yönlendiriyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız bünyesinde 14 yıldır hasarsız ve garantili hizmet veriyoruz.",
@@ -182,7 +182,7 @@ const RAW_REGIONS: Region[] = [
     title:
       "Maslak 1453 Çilingir 7/24 | 1453 Rezidans, Maslak 1453 Sitesi, Sarıyer | Hasarsız",
     description:
-      "Maslak 1453 çilingir arıyorsanız doğru yerdesiniz. 1453 Konutları, Maslak 1453 Ana Blokları ve 1453 Ticaret Merkezi çevresine 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Maslak 1453 çilingir 0532 303 91 69, Maslak 1453 çilingir desteği 7/24 aktiftir.",
+      "Maslak 1453 çilingir arıyorsanız doğru yerdesiniz. 1453 Konutları, Maslak 1453 Ana Blokları ve 1453 Ticaret Merkezi çevresine 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Maslak 1453 çilingir 0536 940 56 56, Maslak 1453 çilingir desteği 7/24 aktiftir.",
     h1: "Maslak 1453 Çilingir — 1453 Blokları ve Tüm Sitede 7/24",
     intro:
       "Maslak 1453’te çilingir mi arıyorsunuz? 1453 Konutları, Maslak 1453 Ana Blokları, Sarıyer-Maslak sınırı ve 1453 Ticaret Merkezi çevresine ortalama 10-15 dakikada ulaşıyoruz. Site giriş güvenliği ve blok numarası doğrulamasını hızlı yaparak yanlış giriş kaynaklı gecikmeleri azaltıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle hasarsız ve garantili hizmet sunar.",
@@ -685,7 +685,7 @@ const RAW_REGIONS: Region[] = [
     title:
       "Ayazağa Çilingir 7/24 | Ayazağa Köyü, Şişli Ayazağa, Metro İstasyonu Çevresi | Hasarsız",
     description:
-      "Ayazağa çilingir arıyorsanız doğru yerdesiniz. Ayazağa Köyü, Ayazağa Mahallesi, Şişli Ayazağa ve Ayazağa Metro çevresine 12-20 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Ayazağa çilingir 0532 303 91 69, Ayazağa çilingir desteği 7/24 aktiftir.",
+      "Ayazağa çilingir arıyorsanız doğru yerdesiniz. Ayazağa Köyü, Ayazağa Mahallesi, Şişli Ayazağa ve Ayazağa Metro çevresine 12-20 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Ayazağa çilingir 0536 940 56 56, Ayazağa çilingir desteği 7/24 aktiftir.",
     h1: "Ayazağa Çilingir — Köy, Metro ve Tüm Mahallelere 7/24",
     intro:
       "Ayazağa’da çilingir mi arıyorsunuz? Ayazağa Köyü, Ayazağa Mahallesi, Şişli Ayazağa, Ayazağa Metro, Kanyon yakını ve Levent-Ayazağa hattına ortalama 12-20 dakikada ulaşıyoruz. Sanayi ve konut dokusunda sokak tabelası ile bina referansını hızlı doğrulayarak yanlış rota riskini düşürüyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Ayazağa’da hasarsız ve garantili hizmet verir.",
@@ -722,7 +722,7 @@ const RAW_REGIONS: Region[] = [
     title:
       "Reşitpaşa Çilingir 7/24 | İTÜ Kampüsü, Reşitpaşa Mah, Maslak Çevresi | Hasarsız",
     description:
-      "Reşitpaşa çilingir arıyorsanız doğru yerdesiniz. İTÜ Kampüsü, Reşitpaşa Mahallesi, Maslak Sanayi ve Reşitpaşa Metro çevresine 12-22 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Reşitpaşa çilingir 0532 303 91 69, Reşitpaşa çilingir desteği 7/24 aktiftir.",
+      "Reşitpaşa çilingir arıyorsanız doğru yerdesiniz. İTÜ Kampüsü, Reşitpaşa Mahallesi, Maslak Sanayi ve Reşitpaşa Metro çevresine 12-22 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Reşitpaşa çilingir 0536 940 56 56, Reşitpaşa çilingir desteği 7/24 aktiftir.",
     h1: "Reşitpaşa Çilingir — İTÜ, Sanayi ve Tüm Mahallelere 7/24",
     intro:
       "Reşitpaşa’da çilingir mi arıyorsunuz? İTÜ Kampüsü, Reşitpaşa Mahallesi, Maslak Sanayi, Kağıthane sınırı ve Reşitpaşa Metro hattına ortalama 12-22 dakikada ulaşıyoruz. Yokuşlu sokak ve site güvenliği kaynaklı gecikmeleri önlemek için plaka ve kapı bilgilerini önceden doğruluyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Reşitpaşa’da hasarsız ve garantili hizmet verir.",
@@ -903,7 +903,7 @@ const RAW_REGIONS: Region[] = [
     title:
       "Emirgan Çilingir 7/24 | Emirgan Korusu, Emirgan Sahili, Boğaz Hattı | Hasarsız",
     description:
-      "Emirgan çilingir arıyorsanız doğru yerdesiniz. Emirgan Korusu, Emirgan İskelesi, Emirgan Mahallesi ve Boğaz sahiline 12-22 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Emirgan çilingir 0532 303 91 69, Emirgan çilingir desteği 7/24 aktiftir.",
+      "Emirgan çilingir arıyorsanız doğru yerdesiniz. Emirgan Korusu, Emirgan İskelesi, Emirgan Mahallesi ve Boğaz sahiline 12-22 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Emirgan çilingir 0536 940 56 56, Emirgan çilingir desteği 7/24 aktiftir.",
     h1: "Emirgan Çilingir — Koru, İskele ve Tüm Mahallelere 7/24",
     intro:
       "Emirgan’da çilingir mi arıyorsunuz? Emirgan Korusu, Emirgan İskelesi, Emirgan Mahallesi, Boğaz sahili ve Emirgan-Tarabya hattına ortalama 12-22 dakikada ulaşıyoruz. Hafta sonu ziyaretçi trafiğinde buluşma noktasını doğru seçerek park kaynaklı gecikmeleri azaltıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Emirgan’da hasarsız ve garantili hizmet sunar.",
@@ -940,7 +940,7 @@ const RAW_REGIONS: Region[] = [
     title:
       "İstinye Çilingir 7/24 | İstinye Park, Yeniköy Cad, Sarıyer İstinye | Hasarsız",
     description:
-      "İstinye çilingir arıyorsanız doğru yerdesiniz. İstinye Park AVM, İstinye Mahallesi, Yeniköy Caddesi ve Baltalimanı hattına 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. İstinye çilingir 0532 303 91 69, İstinye çilingir desteği 7/24 aktiftir.",
+      "İstinye çilingir arıyorsanız doğru yerdesiniz. İstinye Park AVM, İstinye Mahallesi, Yeniköy Caddesi ve Baltalimanı hattına 10-15 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. İstinye çilingir 0536 940 56 56, İstinye çilingir desteği 7/24 aktiftir.",
     h1: "İstinye Çilingir — İstinye Park, Yeniköy ve Tüm Hatta 7/24",
     intro:
       "İstinye’de çilingir mi arıyorsunuz? İstinye Park AVM, İstinye Mahallesi, Yeniköy Caddesi, Baltalimanı ve Sarıyer-İstinye hattına ortalama 10-15 dakikada ulaşıyoruz. Marina ve sahil tek yönlerinde doğru buluşma noktasıyla yaklaşımı hızlandırıp otopark kat kaybını azaltıyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle İstinye’de hasarsız ve garantili hizmet verir.",
@@ -976,7 +976,7 @@ const RAW_REGIONS: Region[] = [
     title:
       "Seyrantepe Çilingir 7/24 | Vodafone Park Çevresi, Beşiktaş Seyrantepe | Hasarsız",
     description:
-      "Seyrantepe çilingir arıyorsanız doğru yerdesiniz. Vodafone Park çevresi, Seyrantepe Mahallesi, Seyrantepe Metro ve Beşiktaş-Seyrantepe hattına 15-30 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Seyrantepe çilingir 0532 303 91 69, Seyrantepe çilingir desteği 7/24 aktiftir.",
+      "Seyrantepe çilingir arıyorsanız doğru yerdesiniz. Vodafone Park çevresi, Seyrantepe Mahallesi, Seyrantepe Metro ve Beşiktaş-Seyrantepe hattına 15-30 dakikada hizmet veriyoruz. Oda kayıtlı yetkili firma olarak hasarsız garantili çalışıyoruz. Seyrantepe çilingir 0536 940 56 56, Seyrantepe çilingir desteği 7/24 aktiftir.",
     h1: "Seyrantepe Çilingir — Metro, Vodafone Park ve Tüm Hatta 7/24",
     intro:
       "Seyrantepe’de çilingir mi arıyorsunuz? Vodafone Park çevresi, Beşiktaş-Seyrantepe hattı, Seyrantepe Mahallesi, İkitelli yolu ve Seyrantepe Metro bağlantısına ortalama 15-30 dakikada ulaşıyoruz. Maç günü güvenlik bariyerleri ve yol kapanışlarında alternatif yaya buluşma noktasıyla servis sürekliliğini koruyoruz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı yetkili firmamız 14 yıllık deneyimiyle Seyrantepe’de hasarsız ve garantili hizmet verir.",

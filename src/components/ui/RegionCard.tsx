@@ -8,7 +8,7 @@ import {
   trackPhoneCallClick,
 } from "@/lib/events";
 
-const PHONE_TEL = "tel:+905323039169";
+const PHONE_TEL = "tel:+905369405656";
 
 type RegionCardProps = {
   region: Region;

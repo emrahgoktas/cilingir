@@ -43,10 +43,10 @@ export function CertificationSection() {
               Belgemizi görmek için iletişime geçin
             </p>
             <a
-              href="tel:+905323039169"
+              href="tel:+905369405656"
               className="mt-6 inline-flex w-full max-w-xs items-center justify-center rounded-lg bg-accent px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-accent-light"
             >
-              Hemen Ara: 0532 303 91 69
+              Hemen Ara: 0536 940 56 56
             </a>
           </div>
         </div>

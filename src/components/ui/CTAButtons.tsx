@@ -9,8 +9,8 @@ import {
 } from "@/lib/fingerprint";
 import { pushEvent } from "@/lib/gtm";
 
-const PHONE_TEL = "tel:+905323039169";
-const WHATSAPP_BASE = "https://wa.me/905323039169";
+const PHONE_TEL = "tel:+905369405656";
+const WHATSAPP_BASE = "https://wa.me/905369405656";
 
 export type CTAButtonsProps = {
   size?: "lg" | "md" | "sm";

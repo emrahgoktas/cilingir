@@ -151,20 +151,20 @@ function buildDescription(region: Region, service: Service, h: number): string {
   const r = regionTitleLabel(region);
   const sv = serviceLabelForSentence(service);
   const variants = [
-    `${r} ${sv}: 7/24 çilingir, ortalama ${region.responseTime} hedefi, şeffaf fiyat. 0532 303 91 69 — hasarsız öncelik, garantili işçilik, yerinde keşif.`,
+    `${r} ${sv}: 7/24 çilingir, ortalama ${region.responseTime} hedefi, şeffaf fiyat. 0536 940 56 56 — hasarsız öncelik, garantili işçilik, yerinde keşif.`,
     `${r} bölgesinde ${sv} — mobil ekip, kimlik teyidi, profesyonel açılış ve montaj. Hızlı yönlendirme; İstanbul Avrupa yakası genelinde servis.`,
     `${sv} ${r}’ta: acil hat, tahmini varış ${region.responseTime}, Kale & Mul-T-Lock uyumu. Kapı, kasa ve oto kilitlerinde uzman destek — hemen arayın.`,
-    `${r} çevresi ${sv} hizmeti; site ve işyeri deneyimi, sürprizsiz ücret konuşması. 0532 303 91 69 ile adresinizi netleştirin, ekibimizi yönlendirelim.`,
+    `${r} çevresi ${sv} hizmeti; site ve işyeri deneyimi, sürprizsiz ücret konuşması. 0536 940 56 56 ile adresinizi netleştirin, ekibimizi yönlendirelim.`,
     `${r}’ta ${sv} talepleriniz için ölçü ve marka tespiti; güvenli müdahale, iş sonu test. 7/24 İstanbul çilingir hattı — garantili çözüm arayın.`,
   ];
   return variants[h % variants.length]!;
 }
 
 function buildTitle(region: Region, service: Service, h1: string): string {
-  const tail = "7/24 | İstanbul Çilingir | 0532 303 91 69";
+  const tail = "7/24 | İstanbul Çilingir | 0536 940 56 56";
   const base = `${h1} — ${tail}`;
   if (base.length <= 70) return base;
-  return `${h1} | 7/24 İstanbul | 0532 303 91 69`;
+  return `${h1} | 7/24 İstanbul | 0536 940 56 56`;
 }
 
 function makeCombo(region: Region, service: Service): RegionServiceCombo {

@@ -83,7 +83,7 @@ export default function GizlilikPage() {
                     href={`tel:${SITE_CONFIG.phone}`}
                     className="font-medium text-accent underline-offset-2 hover:underline"
                   >
-                    0532 303 91 69
+                    0536 940 56 56
                   </a>
                 </li>
               </ul>

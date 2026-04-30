@@ -7,8 +7,8 @@ import type { Service } from "@/data/services";
 export const SITE_CONFIG = {
   name: "İstanbul Çilingir Anahtarcı Servisi",
   url: "https://anahtarcicilingirservisi.com",
-  phone: "+905323039169",
-  whatsapp: "905323039169",
+  phone: "+905369405656",
+  whatsapp: "905369405656",
   address: "Ahi Evren Cad. No:120, İstanbul",
 } as const;
 
@@ -77,9 +77,9 @@ function baseTwitter(title: string, description: string): Metadata["twitter"] {
 /** Ana sayfa — sabit 155 karakterlik açıklama (anahtar kelime yoğun). */
 export function generateHomeMetadata(): Metadata {
   const title =
-    "İstanbul Çilingir 7/24 | Hasarsız Garantili | 0532 303 91 69";
+    "İstanbul Çilingir 7/24 | Hasarsız Garantili | 0536 940 56 56";
   const description =
-    "İstanbul çilingir 7/24: hasarsız kapı açma, kilit değişimi, Kale & Mul-T-Lock, acil servis. 0532 303 91 69 — hızlı ekip, garantili işçilik. Şeffaf ücret.";
+    "İstanbul çilingir 7/24: hasarsız kapı açma, kilit değişimi, Kale & Mul-T-Lock, acil servis. 0536 940 56 56 — hızlı ekip, garantili işçilik. Şeffaf ücret.";
   const canonical = SITE_CONFIG.url;
 
   return {
@@ -180,7 +180,7 @@ export function generateServiceMetadata(service: Service): Metadata {
 export function generateIletisimMetadata(): Metadata {
   const title = "İletişim | İstanbul Çilingir 7/24";
   const description = clipMetaDescription(
-    "0532 303 91 69 — İstanbul 7/24 çilingir iletişim, adres ve WhatsApp. Acil kapı açma ve kilit servisi için hemen arayın.",
+    "0536 940 56 56 — İstanbul 7/24 çilingir iletişim, adres ve WhatsApp. Acil kapı açma ve kilit servisi için hemen arayın.",
     155
   );
   const canonical = `${SITE_CONFIG.url}/iletisim`;

@@ -9,7 +9,7 @@ import {
 } from "@/lib/events";
 
 const SCROLL_THRESHOLD_PX = 200;
-const PHONE_TEL = "tel:+905323039169";
+const PHONE_TEL = "tel:+905369405656";
 const WHATSAPP_URL = "https://wa.me/905369405656";
 
 export function StickyCallBar() {

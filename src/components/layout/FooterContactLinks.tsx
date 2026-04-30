@@ -7,9 +7,9 @@ import {
   trackWhatsAppClick,
 } from "@/lib/events";
 
-const PHONE_DISPLAY = "0532 303 91 69";
-const PHONE_TEL = "tel:+905323039169";
-const WHATSAPP_URL = "https://wa.me/905323039169";
+const PHONE_DISPLAY = "0536 940 56 56";
+const PHONE_TEL = "tel:+905369405656";
+const WHATSAPP_URL = "https://wa.me/905369405656";
 
 /** Footer’daki önceden tanımlı mesaj yok — boş metin ile `whatsapp_click`. */
 const FOOTER_WHATSAPP_CONTEXT = "";

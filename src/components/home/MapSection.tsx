@@ -5,9 +5,9 @@ import { SITE_CONFIG } from "@/lib/metadata";
 export const MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.9148171098104!2d29.0230747!3d41.114551399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab525c73e5e5b%3A0x4c9476f07dc2ba37!2sMaslak%20Anahtarium%20anahtar%20ve%20%C3%87ilingir!5e0!3m2!1str!2str!4v1775910445552!5m2!1str!2str";
 
-const PHONE_DISPLAY = "0532 303 91 69";
-const PHONE_TEL = "tel:+905323039169";
-const WHATSAPP_URL = "https://wa.me/905323039169";
+const PHONE_DISPLAY = "0536 940 56 56";
+const PHONE_TEL = "tel:+905369405656";
+const WHATSAPP_URL = "https://wa.me/905369405656";
 const DIRECTIONS_URL =
   "https://maps.google.com/?q=Maslak+Anahtarium+İstanbul";
 
