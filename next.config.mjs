@@ -40,6 +40,15 @@ const nextConfig = {
       { source: "/iletisim", headers: securityHeaders },
       { source: "/hakkimizda", headers: securityHeaders },
       { source: "/yetki-belgeleri", headers: securityHeaders },
+      {
+        source: "/:all*(svg|jpg|png|webp|avif)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
   async redirects() {

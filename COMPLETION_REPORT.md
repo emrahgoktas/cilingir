@@ -771,3 +771,24 @@ Recorded after the final `npm install @next/third-parties@14.2.35` and successfu
     - `mainEntityOfPage.@id`: `https://anahtarcicilingirservisi.com/bolgeler/[slug]`
   - Bölge sayfasında bu şema ikinci `JsonLd` bloğu olarak koşullu render ediliyor.
 - **`npm run build`**: Succeeds (tek uyarı: `VideoEmbed.tsx` içinde mevcut `<img>` lint warning, önceki durumla aynı).
+
+---
+
+## Google Ads landing quality uplift — region pages (completion)
+
+- **Status**: Complete.
+- **`src/app/bolgeler/[regionSlug]/page.tsx`**:
+  - Above-the-fold alanında telefon ve WhatsApp CTA görünürlüğü mobilde ilk viewport içinde güçlendirildi (H1 öncesi iki buton).
+  - H1 server-side render akışı korunarak render-blocking öğe eklenmedi.
+  - Üst bölümde kritik içerik sıralaması (CTA → H1 → yanıt süresi → ana CTA) netleştirildi.
+- **`next.config.mjs`**:
+  - Statik görsel uzantıları için uzun süreli immutable cache header eklendi:
+    - `source: '/:all*(svg|jpg|png|webp|avif)'`
+    - `Cache-Control: public, max-age=31536000, immutable`
+- **`src/lib/schema.ts`**:
+  - Bölge sayfası `@graph` yapısına ana varlık olarak `Locksmith` düğümü eklendi.
+  - Bu ana varlığa istenen telefon alanı eklendi: `telephone: "+905369405656"`.
+  - `mainEntityOfPage` bölge URL’sine bağlandı.
+- **`src/components/home/RegionsSection.tsx`**:
+  - 9 hedef bölge kart sırası ve slug linkleri doğrulandı; kartlar `RegionCard` üzerinden `/bolgeler/[slug]` rotasına doğru yönleniyor.
+- **`npm run build`**: Succeeds (mevcut ve önceden var olan tek uyarı: `VideoEmbed.tsx` içindeki `<img>` lint warning).

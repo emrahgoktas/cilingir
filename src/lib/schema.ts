@@ -295,15 +295,29 @@ export function buildRegionServicesGraphSchema(
   services: Service[],
   region: Region
 ): JsonLdObject {
+  const regionMainEntity: JsonLdObject = {
+    "@type": "Locksmith",
+    "@id": `${SITE_CONFIG.url}/bolgeler/${region.slug}#locksmith`,
+    name: SITE_CONFIG.name,
+    telephone: "+905369405656",
+    url: `${SITE_CONFIG.url}/bolgeler/${region.slug}`,
+    areaServed: region.name,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_CONFIG.url}/bolgeler/${region.slug}`,
+    },
+  };
+
   const graph = services.map((service) => {
     const full = buildServiceSchema(service, region);
     const node = { ...full };
     delete node["@context"];
     return node;
   });
+
   return {
     "@context": "https://schema.org",
-    "@graph": graph,
+    "@graph": [regionMainEntity, ...graph],
   };
 }
 

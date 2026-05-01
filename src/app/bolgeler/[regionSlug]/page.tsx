@@ -62,6 +62,22 @@ export default function RegionPage({ params }: PageProps) {
       {/* Hero: telefon CTA mümkün olduğunca üstte (mobil üst katman) */}
       <section className="border-b border-border bg-gradient-to-b from-surface to-white px-4 pb-8 pt-2 md:pb-10 md:pt-4">
         <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-4 flex w-full max-w-md gap-2">
+            <a
+              href="tel:+905369405656"
+              className="inline-flex min-h-11 flex-1 items-center justify-center rounded-lg bg-accent px-4 text-sm font-bold text-white shadow-sm transition-opacity hover:opacity-95"
+            >
+              0536 940 56 56 Ara
+            </a>
+            <a
+              href="https://wa.me/905369405656"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-11 flex-1 items-center justify-center rounded-lg border border-primary/20 bg-white px-4 text-sm font-semibold text-primary shadow-sm transition-colors hover:bg-surface"
+            >
+              WhatsApp
+            </a>
+          </div>
           <h1 className="text-balance text-2xl font-bold leading-tight text-primary md:text-4xl">
             {region.h1}
           </h1>
