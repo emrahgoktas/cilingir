@@ -167,10 +167,9 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "levent-cilingir",
     name: "Levent Çilingir",
-    title:
-      "Levent Çilingir 7/24 | Büyükdere, Metrocity, Kanyon, 4.Levent | Hasarsız",
+    title: "Levent Çilingir 7/24 | Hasarsız | 0536 940 56 56",
     description:
-      "Levent çilingir hizmeti: Büyükdere Cad, Metrocity, Kanyon ve 4. Levent'e 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Levent çilingir 0536 940 56 56",
+      "Levent çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. Levent çilingir 0536 940 56 56",
     h1: "Levent Çilingir — Büyükdere, Metrocity ve Tüm Mahallelere 7/24",
     intro:
       "Levent'te çilingir hizmeti için en doğru adrestesiniz. 1. Levent, 2. Levent, 4. Levent, Büyükdere Caddesi plaza katları, Metrocity AVM ve Kanyon AVM çevresine ortalama 10-15 dakikada ulaşıyoruz. Levent'in kurumsal yapısını ve plaza giriş sistemlerini bilen ekibimiz, ofis ve rezidans kilit sorunlarını minimum beklemeyle çözüyor. Fiyatı önceden söyler, gelince kimlik teyidi yaparız. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Levent'in güvendiği çilingir servisidir.",
@@ -206,10 +205,9 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "maslak-cilingir",
     name: "Maslak Çilingir",
-    title:
-      "Maslak Çilingir 7/24 | Vadistanbul, Maslak 1453, Skyland | Hasarsız",
+    title: "Maslak Çilingir 7/24 | Hasarsız | 0536 940 56 56",
     description:
-      "Maslak çilingir hizmeti: Vadistanbul, Maslak 1453, Skyland ve Nidapark'a 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Maslak çilingir 0536 940 56 56",
+      "Maslak çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. Maslak çilingir 0536 940 56 56",
     h1: "Maslak Çilingir — Vadistanbul, 1453 ve Tüm Mahallelere 7/24",
     intro:
       "Maslak'ta çilingir ihtiyacı duyanlar için doğru adrestesiniz. Vadistanbul rezidans blokları, Maslak 1453 kuleleri, Skyland ve Nidapark AVM çevresine ortalama 10-15 dakikada ulaşıyoruz. Büyükdere Caddesi üzerindeki ofis kulelerine, Eski Büyükdere'deki sanayi yapılarına ve Maslak Mahallesi'nin ara sokaklarına olan derin bilgimizle en kısa rotayı kullanıyoruz. Ekibimiz geliş öncesinde size mutlaka fiyat bilgisi verir — kapıda sürpriz rakamla karşılaşmazsınız. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı 14 yıllık firmamız, Maslak'ta en çok tercih edilen yetkili çilingir servisidir.",
@@ -245,10 +243,9 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "vadistanbul-cilingir",
     name: "Vadistanbul Çilingir",
-    title:
-      "Vadistanbul Çilingir 7/24 | Vadi AVM, Rezidans, Ayazağa | Hasarsız",
+    title: "Vadistanbul Çilingir 7/24 | Hasarsız | 0536 940 56 56",
     description:
-      "Vadistanbul çilingir hizmeti: Vadi AVM, rezidans ve ofis bloklarına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Vadistanbul çilingir 0536 940 56 56",
+      "Vadistanbul çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. Vadistanbul çilingir 0536 940 56 56",
     h1: "Vadistanbul Çilingir — Vadi AVM, Rezidans ve Tüm Bloklara 7/24",
     intro:
       "Vadistanbul'da çilingir arıyorsanız en doğru yerdesiniz. Vadi İstanbul AVM, A ve B Rezidans Blokları, Ofis Kulesi ve Ayazağa Metro çıkışına ortalama 10 dakikada ulaşıyoruz. Vadistanbul kompleksinin katmanlı güvenlik sistemi ve blok numarası koordinasyonunu bildiğimizden bekleme süresini minimize ediyoruz. Gelmeden önce net fiyat, kapıda sürpriz yok. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Vadistanbul sakinlerine hizmet veriyor.",
@@ -462,10 +459,9 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "tarabya-cilingir",
     name: "Tarabya Çilingir",
-    title:
-      "Tarabya Çilingir 7/24 | Tarabya Marina, Kireçburnu, Boğaz | Hasarsız",
+    title: "Tarabya Çilingir 7/24 | Hasarsız | 0536 940 56 56",
     description:
-      "Tarabya çilingir hizmeti: Tarabya Marina, Kireçburnu ve Boğaz sahiline 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Tarabya çilingir 0536 940 56 56",
+      "Tarabya çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. Tarabya çilingir 0536 940 56 56",
     h1: "Tarabya Çilingir — Marina, Kireçburnu ve Boğaz Hattına 7/24",
     intro:
       "Tarabya'da çilingir ihtiyacınız için doğru yerdesiniz. Tarabya Marina, Kireçburnu Mahallesi, Tarabya Mahallesi, Boğaz sahil şeridi ve Yeniköy bağlantı hattına ortalama 10-15 dakikada ulaşıyoruz. Marina çevresindeki konutlarda nem ve tuz aşınmasına karşı deneyimli ekibimiz, açış sonrası bakım önerileriyle uzun vadeli çözüm sunar. Gelmeden fiyat, gelince teyit — sürpriz yok. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Tarabya'da güvenilir hizmet veriyor.",
@@ -799,10 +795,9 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "ayazaga-cilingir",
     name: "Ayazağa Çilingir",
-    title:
-      "Ayazağa Çilingir 7/24 | Metro, Şişli Ayazağa, Levent Hattı | Hasarsız",
+    title: "Ayazağa Çilingir 7/24 | Hasarsız | 0536 940 56 56",
     description:
-      "Ayazağa çilingir hizmeti: Ayazağa Metro, Şişli Ayazağa ve Levent hattına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Ayazağa çilingir 0536 940 56 56",
+      "Ayazağa çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. Ayazağa çilingir 0536 940 56 56",
     h1: "Ayazağa Çilingir — Metro, Şişli Ayazağa ve Tüm Mahallelere 7/24",
     intro:
       "Ayazağa'da çilingir ihtiyacınız için doğru firmadasınız. Ayazağa Metro İstasyonu çevresi, Şişli Ayazağa Mahallesi, Levent-Ayazağa bağlantı hattı ve Kanyon AVM yakınına ortalama 10-15 dakikada ulaşıyoruz. Ayazağa'nın hem toplu konut hem de kurumsal yapı karışımını bilen ekibimiz, sizi en kısa sürede kapınızda buluşturuyor. Gelmeden fiyat, gelince kimlik teyidi — şeffaf ve güvenli hizmet anlayışımız değişmez. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Ayazağa'da hizmet veriyor.",
@@ -838,10 +833,9 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "resitpasa-cilingir",
     name: "Reşitpaşa Çilingir",
-    title:
-      "Reşitpaşa Çilingir 7/24 | İTÜ, Maslak Sanayi, Ayazağa | Hasarsız",
+    title: "Reşitpaşa Çilingir 7/24 | Hasarsız | 0536 940 56 56",
     description:
-      "Reşitpaşa çilingir hizmeti: İTÜ Kampüsü, Maslak Sanayi ve Ayazağa hattına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Reşitpaşa çilingir 0536 940 56 56",
+      "Reşitpaşa çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. Reşitpaşa çilingir 0536 940 56 56",
     h1: "Reşitpaşa Çilingir — İTÜ, Maslak Sanayi ve Ayazağa'ya 7/24",
     intro:
       "Reşitpaşa'da çilingir hizmetinde doğru firmadasınız. İTÜ Ayazağa Kampüsü çevresi, Reşitpaşa Mahallesi, Maslak Sanayi bölgesi ve Ayazağa hattına ortalama 10-15 dakikada ulaşıyoruz. Hem üniversite yurdu ve öğrenci konutları hem de sanayi yapıları için deneyimli ekibimiz farklı kilit sistemlerine hızla uyum sağlar. Gelmeden fiyat, gelince teyit — değişmeyen hizmet anlayışımız. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Reşitpaşa'da güvenilir çilingir hizmeti sunuyor.",
@@ -1031,10 +1025,9 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "emirgan-cilingir",
     name: "Emirgan Çilingir",
-    title:
-      "Emirgan Çilingir 7/24 | Emirgan Korusu, Boğaz, Tarabya Hattı | Hasarsız",
+    title: "Emirgan Çilingir 7/24 | Hasarsız | 0536 940 56 56",
     description:
-      "Emirgan çilingir hizmeti: Emirgan Korusu, Boğaz sahili ve Tarabya hattına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Emirgan çilingir 0536 940 56 56",
+      "Emirgan çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. Emirgan çilingir 0536 940 56 56",
     h1: "Emirgan Çilingir — Korusu, Boğaz Sahili ve Tüm Mahallelere 7/24",
     intro:
       "Emirgan'da çilingir hizmeti için doğru adrestesiniz. Emirgan Korusu çevresi, Emirgan İskelesi, Boğaz sahil şeridi, Emirgan Mahallesi ve Tarabya-Emirgan hattına ortalama 10-15 dakikada ulaşıyoruz. Boğaz'a yakın konumdaki konutlarda tuzlu havanın kilit mekanizmalarına etkisini bilen ekibimiz, hem açış hem de uzun vadeli bakım önerileri sunar. Gelmeden fiyat, gelince teyit. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Emirgan'ın güvendiği çilingir servisidir.",
@@ -1080,10 +1073,9 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "istinye-cilingir",
     name: "İstinye Çilingir",
-    title:
-      "İstinye Çilingir 7/24 | İstinye Park, Yeniköy, Baltalimanı | Hasarsız",
+    title: "İstinye Çilingir 7/24 | Hasarsız | 0536 940 56 56",
     description:
-      "İstinye çilingir hizmeti: İstinye Park AVM, Yeniköy ve Baltalimanı'na 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. İstinye çilingir 0536 940 56 56",
+      "İstinye çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. İstinye çilingir 0536 940 56 56",
     h1: "İstinye Çilingir — İstinye Park, Yeniköy ve Tüm Hatta 7/24",
     intro:
       "İstinye'de çilingir arıyorsanız doğru firmadasınız. İstinye Park AVM, İstinye Mahallesi, Yeniköy Caddesi, Baltalimanı ve Sarıyer-İstinye hattına ortalama 10-15 dakikada ulaşıyoruz. İstinye'nin marina çevresindeki konutlarda nem kaynaklı silindir sorunlarına ve AVM içi mağaza kilitlerinde yetki prosedürlerine olan bilgi birikimimiz hız farkı yaratıyor. Gelmeden fiyat, gelince teyit — değişmeyen hizmet anlayışımız. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır İstinye'de güvenilir hizmet veriyor.",
@@ -1330,10 +1322,9 @@ const RAW_REGIONS: Region[] = [
   {
     slug: "kirecburnu-cilingir",
     name: "Kireçburnu Çilingir",
-    title:
-      "Kireçburnu Çilingir 7/24 | Tarabya, Yeniköy, Boğaz Hattı | Hasarsız",
+    title: "Kireçburnu Çilingir 7/24 | Hasarsız | 0536 940 56 56",
     description:
-      "Kireçburnu çilingir hizmeti: Tarabya, Yeniköy ve Boğaz hattına 10-15 dk. Oda kayıtlı yetkili firma, hasarsız garantili. Kireçburnu çilingir 0536 940 56 56",
+      "Kireçburnu çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. Kireçburnu çilingir 0536 940 56 56",
     h1: "Kireçburnu Çilingir — Tarabya, Yeniköy ve Boğaz Hattına 7/24",
     intro:
       "Kireçburnu'nda çilingir arıyorsanız doğru yerdesiniz. Kireçburnu Mahallesi, Tarabya hattı, Yeniköy Caddesi ve Boğaz sahil şeridine ortalama 10-15 dakikada ulaşıyoruz. Boğaz'a sıfır konumdaki bu mahallede nem ve tuz kaynaklı kilit aşınması sıktır — ekibimiz açış sonrası bakım önerileriyle uzun vadeli çözüm sunar. Gelmeden fiyat, gelince teyit. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Kireçburnu'nda güvenilir hizmet veriyor.",

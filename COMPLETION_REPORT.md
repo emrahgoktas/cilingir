@@ -792,3 +792,15 @@ Recorded after the final `npm install @next/third-parties@14.2.35` and successfu
 - **`src/components/home/RegionsSection.tsx`**:
   - 9 hedef bölge kart sırası ve slug linkleri doğrulandı; kartlar `RegionCard` üzerinden `/bolgeler/[slug]` rotasına doğru yönleniyor.
 - **`npm run build`**: Succeeds (mevcut ve önceden var olan tek uyarı: `VideoEmbed.tsx` içindeki `<img>` lint warning).
+
+---
+
+## Google Ads metadata alignment — 9 target regions (completion)
+
+- **Status**: Complete.
+- **Kapsam (`src/data/regions.ts`)**: 9 hedef bölge (`maslak`, `vadistanbul`, `ayazaga`, `levent`, `istinye`, `emirgan`, `tarabya`, `resitpasa`, `kirecburnu`) için `title` ve `description` alanları Google Ads kampanya başlıkları ve açıklamalarına uyumlu hale getirildi:
+  - **Title formatı**: `"[Bölge] Çilingir 7/24 | Hasarsız | 0536 940 56 56"` — maks 60 karakter, keyword-first.
+  - **Description formatı**: `"[Bölge] çilingir: 15 dakikada kapınızda, hasarsız garantili. Gelmeden net fiyat, sürpriz yok. 14 yıllık deneyim. [Bölge] çilingir 0536 940 56 56"` — maks 160 karakter, bölge adı + temel USP + telefon.
+- **og:title / twitter:title**: `generateRegionMetadata()` (`src/lib/metadata.ts`) zaten `region.title` değerini doğrudan `baseOpenGraph()` ve `baseTwitter()` fonksiyonlarına geçiriyordu — ek kod değişikliği gerekmedi.
+- **H1 etiketleri**: Hiçbir bölgede değiştirilmedi; mevcut landmark içeren formatlar korundu.
+- **`npm run build`**: Succeeds (161 statik sayfa; mevcut tek uyarı: `VideoEmbed.tsx` içindeki `<img>` lint warning).
