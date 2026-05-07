@@ -7,8 +7,8 @@ async function loadFpModule() {
   return mod.default;
 }
 
-/** İlk yüklemede ana iş parçacığını ve ağı korur — modül ~3 sn sonra indirilir. */
-const DEFER_MS = 3000;
+/** İlk yüklemede ana iş parçacığını ve ağı korur — modül ~5 sn sonra indirilir. */
+const DEFER_MS = 5000;
 
 let deferredAgentPromise: Promise<FPAgent> | null = null;
 
