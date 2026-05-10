@@ -1401,6 +1401,238 @@ const RAW_REGIONS: Region[] = [
       },
     ],
   },
+  {
+    slug: "balmumcu-cilingir",
+    name: "Balmumcu Çilingir",
+    title: "Balmumcu Çilingir | 7/24 Acil Kapı ve Kilit Servisi",
+    description: "Balmumcu'da çilingir: ofis, rezidans ve konutlarda acil kapı açılışı. Beşiktaş-Balmumcu hattında hızlı ekip ve şeffaf fiyat.",
+    h1: "Balmumcu Çilingir — Ofis ve Konut Hattına 7/24",
+    intro: "Balmumcu'da çilingir ihtiyacınız için doğru adrestesiniz. Balmumcu Caddesi, Beşiktaş-Balmumcu ofis hattı, Etiler bağlantısı ve çevre sokaklara ortalama 10-15 dakikada ulaşıyoruz. Ofis ve rezidans karışımı yapılarda farklı kilit sistemlerine hakim ekibimiz, gelmeden önce fiyat bildirerek şeffaf hizmet sunar. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıllık deneyimiyle Balmumcu'da güvenilir çilingir servisidir.",
+    responseTime: "10-15 dakika",
+    district: "Beşiktaş",
+    priority: 2,
+    faqs: [
+      {
+        question: "Balmumcu'da ofis katı için yönetim izni şart mı?",
+        answer: "Bina yönetimi veya ofis yetkilisinin onayı standart prosedürümüzdür; kimlik teyidi ile birlikte uygulanır.",
+      },
+      {
+        question: "Balmumcu Caddesi üzerinde park zorluğu olursa ne yapılır?",
+        answer: "Yan sokak veya en yakın uygun duruş noktasına yönlendiririz; yürüyüş mesafesi kısa tutulur.",
+      },
+      {
+        question: "Gece Balmumcu'da servis var mı?",
+        answer: "Evet, 7/24 aktif ekibimizle gece çilingir ihtiyacınızda da yanınızdayız.",
+      },
+      {
+        question: "Aynı gün silindir değişimi yapılabilir mi?",
+        answer: "Stokta uygun ölçü varsa aynı gün değişim yapılır; özel modellerde süre uzayabilir.",
+      },
+    ],
+  },
+  {
+    slug: "akatlar-cilingir",
+    name: "Akatlar Çilingir",
+    title: "Akatlar Çilingir | Site ve Konut Acil Kilit Servisi",
+    description: "Akatlar'da çilingir: kapalı siteler ve konutlarda acil kapı açılışı. Etiler-Akatlar hattında hızlı yönlendirme.",
+    h1: "Akatlar Çilingir — Site ve Konutlara 7/24",
+    intro: "Akatlar'da çilingir arıyorsanız doğru firmadasınız. Akatlar Mahallesi, Etiler-Akatlar bağlantısı, Levazım hattı ve çevre sitelere ortalama 10-15 dakikada ulaşıyoruz. Kapalı sitelerde güvenlik prosedürüne uyumlu çalışan ekibimiz, gelmeden önce fiyat bildirerek sürpriz yaşatmaz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıllık deneyimiyle Akatlar'da güvenilir hizmet veriyor.",
+    responseTime: "10-18 dakika",
+    district: "Beşiktaş",
+    priority: 2,
+    faqs: [
+      {
+        question: "Akatlar sitelerinde güvenlik kaydı süreci uzun mu?",
+        answer: "Siteye göre değişir; önceden isim ve plaka bildirmeniz süreci kısaltır.",
+      },
+      {
+        question: "Akatlar ile Etiler arasında fiyat farkı olur mu?",
+        answer: "Mesafeye göre tarifede küçük fark olabilir; çağrıda net aralık paylaşılır.",
+      },
+      {
+        question: "Gece Akatlar'a gelinir mi?",
+        answer: "Evet, 7/24 aktif ekibimiz Akatlar'da gece de hizmet veriyor.",
+      },
+      {
+        question: "Villa bahçe kapısı için ayrı ücretlendirme olur mu?",
+        answer: "İkinci kapı için makul ek işçilik yansıtılabilir; çağrıda kapı sayısını belirtmeniz fiyat netliği sağlar.",
+      },
+    ],
+  },
+  {
+    slug: "kurucesme-cilingir",
+    name: "Kuruçeşme Çilingir",
+    title: "Kuruçeşme Çilingir | Boğaz Sahili Konut ve Eğlence Kilit Servisi",
+    description: "Kuruçeşme'de çilingir: boğaz sahili konutlar ve eğlence mekânlarında acil kapı açılışı. Hafta sonu yoğunluğunda esnek servis.",
+    h1: "Kuruçeşme Çilingir — Boğaz Hattına 7/24",
+    intro: "Kuruçeşme'de çilingir ihtiyacınız için doğru adrestesiniz. Kuruçeşme sahil şeridi, Boğaz hattı konutları ve çevre sokaklara ortalama 10-15 dakikada ulaşıyoruz. Hafta sonu yoğunluğunda alternatif rota kullanan ekibimiz, gelmeden önce fiyat bildirerek şeffaf hizmet sunar. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Kuruçeşme'de güvenilir çilingir servisidir.",
+    responseTime: "12-20 dakika",
+    district: "Beşiktaş",
+    priority: 2,
+    faqs: [
+      {
+        question: "Hafta sonu Kuruçeşme'de ne kadar sürede gelirsiniz?",
+        answer: "Sahil yoğunluğunda süre uzayabilir; buluşmayı ana cadde üzerine almak hızlandırır.",
+      },
+      {
+        question: "Boğaz nemine bağlı kilit sıkışması için ne önerirsiniz?",
+        answer: "Zorlamayın; kontrollü açılış ve bakım sonrası silindir ömrü uzar, gerekirse değişim önerilir.",
+      },
+      {
+        question: "Eğlence mekânı arka kapısı için gece servis var mı?",
+        answer: "Evet, işletme yetkilisi yanında olmak şartıyla 7/24 hizmet veriyoruz.",
+      },
+      {
+        question: "Sahil yolunda park kısıtı olursa ne yapılır?",
+        answer: "Yan sokak veya yaya buluşması planlanır; ekibimiz kısa mesafeyi yürüyerek tamamlar.",
+      },
+    ],
+  },
+  {
+    slug: "bebek-cilingir",
+    name: "Bebek Çilingir",
+    title: "Bebek Çilingir | Boğaz Konutları ve Kafe Çevresi Kilit Servisi",
+    description: "Bebek'te çilingir: boğaz manzaralı konutlar ve kafe çevresinde acil kilit hizmeti. Dar sahil sokakları için deneyimli ekip.",
+    h1: "Bebek Çilingir — Boğaz Sahili ve Konutlara 7/24",
+    intro: "Bebek'te çilingir ihtiyacınız için doğru adrestesiniz. Bebek sahil şeridi, Boğaz hattı konutları, Bebek Parkı çevresi ve iç sokaklara ortalama 10-15 dakikada ulaşıyoruz. Boğaz'a yakın konumdaki konutlarda nem kaynaklı kilit sorunlarına hakim ekibimiz, açış sonrası bakım önerileriyle uzun vadeli çözüm sunar. Gelmeden fiyat, gelince teyit. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Bebek'te güvenilir hizmet veriyor.",
+    responseTime: "12-20 dakika",
+    district: "Beşiktaş",
+    priority: 2,
+    faqs: [
+      {
+        question: "Bebek sahilinde dar sokakta araç giremiyorsa ek ücret olur mu?",
+        answer: "Standart işçilik aynı kalır; uzun yürüme gerektiren özel durumlar önceden bildirilir.",
+      },
+      {
+        question: "Boğaz nemine bağlı kilit arızası için öneri nedir?",
+        answer: "Yılda bir silindir bakımı önerilir; müdahale sonrası ücretsiz değerlendirme yapıyoruz.",
+      },
+      {
+        question: "Kafe deposu kilidi gece açılır mı?",
+        answer: "İşletme yetkilisi yanında olmalıdır; 7/24 hizmet veriyoruz.",
+      },
+      {
+        question: "Bebek'te yüksek güvenlik silindir değişimi yapılır mı?",
+        answer: "Evet, yaygın markalarda stok bulunur; nadir modellerde özel sipariş süresi olabilir.",
+      },
+    ],
+  },
+  {
+    slug: "arnavutkoy-cilingir",
+    name: "Arnavutköy Çilingir",
+    title: "Arnavutköy Çilingir | Tarihi Yalı ve Konut Kilit Servisi",
+    description: "Arnavutköy'de çilingir: tarihi yalılar ve boğaz konutlarında acil kapı açılışı. Ahşap ve antika kapı mekanizmalarında deneyimli ekip.",
+    h1: "Arnavutköy Çilingir — Tarihi Yapılar ve Boğaz Hattına 7/24",
+    intro: "Arnavutköy'de çilingir arıyorsanız doğru firmadasınız. Arnavutköy sahil şeridi, tarihi yalılar, Boğaz hattı konutları ve iç sokaklara ortalama 12-20 dakikada ulaşıyoruz. Tarihi yapılarda ahşap kapı ve antika kilit mekanizmalarına özel tekniklerle zarar vermeden müdahale eden ekibimiz, gelmeden önce fiyat bildirerek şeffaf hizmet sunar. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Arnavutköy'de güvenilir hizmet veriyor.",
+    responseTime: "12-20 dakika",
+    district: "Beşiktaş",
+    priority: 2,
+    faqs: [
+      {
+        question: "Tarihi yalı kapısında hasarsız açılış mümkün mü?",
+        answer: "Ahşap ve antika kilit mekanizmalarında özel teknikler kullanıyoruz; kapı bütünlüğünü korumayı önceliklendiriyoruz.",
+      },
+      {
+        question: "Arnavutköy sahilinde dar sokakta araç giremez, ne yapılır?",
+        answer: "Yaya buluşması planlanır; kısa mesafeyi yürüyerek tamamlarız, ücrete yansımaz.",
+      },
+      {
+        question: "Boğaz nemine bağlı kilit sorunları için öneri nedir?",
+        answer: "Düzenli bakım ve grafit sprey önerilir; müdahale sonrası ücretsiz değerlendirme yapıyoruz.",
+      },
+      {
+        question: "Gece Arnavutköy'de servis var mı?",
+        answer: "Evet, 7/24 aktif ekibimizle gece de hizmet veriyoruz.",
+      },
+    ],
+  },
+  {
+    slug: "tesvikiye-cilingir",
+    name: "Teşvikiye Çilingir",
+    title: "Teşvikiye Çilingir | Lüks Konut ve Butik Mağaza Kilit Servisi",
+    description: "Teşvikiye'de çilingir: lüks konut ve butik mağazalarda acil kapı açılışı. Yüksek güvenlik sistemlerine deneyimli müdahale.",
+    h1: "Teşvikiye Çilingir — Lüks Konut ve Mağazalara 7/24",
+    intro: "Teşvikiye'de çilingir ihtiyacınız için doğru adrestesiniz. Teşvikiye Caddesi, Abdi İpekçi çevresi, lüks rezidanslar ve butik mağazalara ortalama 10-15 dakikada ulaşıyoruz. Yüksek güvenlikli silindir ve elektronik sistemlere hakim ekibimiz, gelmeden önce fiyat bildirerek şeffaf hizmet sunar. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Teşvikiye'de güvenilir çilingir servisidir.",
+    responseTime: "10-15 dakika",
+    district: "Şişli",
+    priority: 2,
+    faqs: [
+      {
+        question: "Teşvikiye'de yüksek güvenlik silindir açılışı yapılır mı?",
+        answer: "Evet, özel açılış setleriyle hasarı minimumda tutarak müdahale ediyoruz; riskli durumda alternatifleri açıklarız.",
+      },
+      {
+        question: "Butik mağaza vitrin kilidi için yetki gerekir mi?",
+        answer: "İşletme yetkilisinin yanında olması şarttır; kimlik ve mülkiyet teyidi standarttır.",
+      },
+      {
+        question: "Lüks rezidansta gece servisi var mı?",
+        answer: "Evet, 7/24 aktif ekibimizle gece de hizmet veriyoruz; gece tarifesi önceden bildirilir.",
+      },
+      {
+        question: "Aynı gün silindir değişimi mümkün mü?",
+        answer: "Stokta uygun model varsa aynı gün değişim yapılır; özel markalarda süre uzayabilir.",
+      },
+    ],
+  },
+  {
+    slug: "fulya-cilingir",
+    name: "Fulya Çilingir",
+    title: "Fulya Çilingir | Konut ve Ofis Acil Kilit Servisi",
+    description: "Fulya'da çilingir: konut ve ofislerde acil kapı açılışı. Şişli-Fulya hattında hızlı yönlendirme ve net fiyat.",
+    h1: "Fulya Çilingir — Konut ve Ofislere 7/24",
+    intro: "Fulya'da çilingir arıyorsanız doğru firmadasınız. Fulya Mahallesi, Şişli-Fulya hattı, Harbiye bağlantısı ve çevre sokaklara ortalama 10-15 dakikada ulaşıyoruz. Konut ve ofis karışımı bölgede farklı kilit sistemlerine hakim ekibimiz, gelmeden önce fiyat bildirerek şeffaf hizmet sunar. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Fulya'da güvenilir hizmet veriyor.",
+    responseTime: "10-15 dakika",
+    district: "Şişli",
+    priority: 2,
+    faqs: [
+      {
+        question: "Fulya'da ofis kapısı için yönetim izni şart mı?",
+        answer: "Bina yönetimi veya ofis yetkilisinin onayı standart prosedürümüzdür.",
+      },
+      {
+        question: "Gece Fulya'da servis var mı?",
+        answer: "Evet, 7/24 aktif ekibimizle gece de hizmet veriyoruz.",
+      },
+      {
+        question: "Fulya ile Şişli arasında fiyat farkı olur mu?",
+        answer: "Mesafeye göre küçük fark olabilir; çağrıda net aralık paylaşılır.",
+      },
+      {
+        question: "Apartman kapısı hasarsız açılır mı?",
+        answer: "Çoğu standart silindir ve gömme kilitte hasarsız açılış mümkündür; kilit tipine göre yöntem yerinde belirlenir.",
+      },
+    ],
+  },
+  {
+    slug: "levazim-cilingir",
+    name: "Levazım Çilingir",
+    title: "Levazım Çilingir | AVM ve Konut Acil Kilit Servisi",
+    description: "Levazım'da çilingir: Zorlu Center ve çevre konutlarda acil kapı açılışı. Hızlı yönlendirme ve şeffaf fiyat politikası.",
+    h1: "Levazım Çilingir — Zorlu Center ve Konutlara 7/24",
+    intro: "Levazım'da çilingir ihtiyacınız için doğru adrestesiniz. Levazım Mahallesi, Zorlu Center çevresi, Etiler-Levazım bağlantısı ve çevre konutlara ortalama 10-15 dakikada ulaşıyoruz. AVM ve rezidans karışımı bölgede güvenlik prosedürlerine hakim ekibimiz, gelmeden önce fiyat bildirerek sürpriz yaşatmaz. İstanbul Anahtarcılar ve Çilingirciler Odası kayıtlı firmamız 14 yıldır Levazım'da güvenilir çilingir servisidir.",
+    responseTime: "10-15 dakika",
+    district: "Beşiktaş",
+    priority: 2,
+    faqs: [
+      {
+        question: "Zorlu Center içindeki mağaza için AVM onayı şart mı?",
+        answer: "Evet, AVM yönetimi ve mağaza yetkilisinin onayı olmadan müdahale etmiyoruz.",
+      },
+      {
+        question: "Levazım rezidansında gece servis var mı?",
+        answer: "Evet, 7/24 aktif ekibimizle gece de hizmet veriyoruz; gece tarifesi önceden bildirilir.",
+      },
+      {
+        question: "Aynı gün silindir değişimi yapılabilir mi?",
+        answer: "Stokta uygun ölçü varsa aynı gün değişim yapılır.",
+      },
+      {
+        question: "Levazım'da park zorluğu olursa ne yapılır?",
+        answer: "AVM otopark veya yan sokak buluşması planlanır; kısa mesafe yürüyerek tamamlanır.",
+      },
+    ],
+  },
 ];
 
 export const REGIONS: Region[] = RAW_REGIONS.map((region) => ({
