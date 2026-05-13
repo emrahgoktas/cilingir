@@ -3,11 +3,56 @@
 import { MessageCircle, Phone } from "lucide-react";
 import type { GtmPageType } from "@/lib/events";
 import { trackPhoneCallClick, trackWhatsAppClick } from "@/lib/events";
-import {
-  getFingerprint,
-  markFingerprintSuspicious,
-} from "@/lib/fingerprint";
-import { pushEvent } from "@/lib/gtm";
+import type React from "react";
+
+
+class BotDetector {
+  private mouseMovements = 0;
+  private pageLoadTime = Date.now();
+  private lastClickCoords: { x: number; y: number } | null = null;
+  private sameCoordCount = 0;
+
+  constructor() {
+    if (typeof window !== "undefined") {
+      document.addEventListener("mousemove", () => {
+        this.mouseMovements++;
+      });
+    }
+  }
+
+  isBot(clickX: number, clickY: number): boolean {
+    if (typeof window === "undefined") return false;
+
+    // Sinyal 1: Playwright/Selenium flag
+    if ((navigator as any).webdriver) return true;
+
+    // Sinyal 2: Mouse hiç hareket etmedi
+    if (this.mouseMovements === 0) return true;
+
+    // Sinyal 3: Sayfa açılalı 1.5 saniyeden az
+    if (Date.now() - this.pageLoadTime < 1500) return true;
+
+    // Sinyal 4: Aynı koordinat tekrarı
+    if (this.lastClickCoords) {
+      if (
+        Math.abs(this.lastClickCoords.x - clickX) < 2 &&
+        Math.abs(this.lastClickCoords.y - clickY) < 2
+      ) {
+        this.sameCoordCount++;
+        if (this.sameCoordCount >= 2) return true;
+      }
+    }
+    this.lastClickCoords = { x: clickX, y: clickY };
+
+    // Sinyal 5: Plugins boş (headless browser)
+    if (navigator.plugins?.length === 0) return true;
+
+    return false;
+  }
+}
+
+const botDetector = new BotDetector();
+
 
 const PHONE_TEL = "tel:+905369405656";
 const WHATSAPP_BASE = "https://wa.me/905369405656";
@@ -64,50 +109,25 @@ export function CTAButtons({
 
   const isVertical = layout === "vertical";
 
-  const onPhoneClick = () => {
-    void (async () => {
-      const visitorId = await getFingerprint();
-      if (visitorId) {
-        const key = `fp_clicks_${visitorId}`;
-        const now = Date.now();
-        let timestamps: number[] = [];
-        try {
-          const raw = sessionStorage.getItem(key);
-          timestamps = raw ? (JSON.parse(raw) as number[]) : [];
-        } catch {
-          timestamps = [];
-        }
-        timestamps = timestamps.filter((t) => now - t < 60_000);
-        timestamps.push(now);
-        sessionStorage.setItem(key, JSON.stringify(timestamps));
-
-        if (timestamps.length >= 5) {
-          markFingerprintSuspicious(visitorId);
-          await pushEvent("suspicious_click_pattern", {
-            visitorId,
-            click_count: timestamps.length,
-          });
-          console.warn(
-            "[fingerprint]",
-            "suspicious_click_pattern",
-            visitorId,
-            timestamps.length
-          );
-        }
-      }
-
+  const handlePhoneClick = (e: React.MouseEvent) => {
+    const isBot = botDetector.isBot(e.clientX, e.clientY);
+    if (!isBot) {
       trackPhoneCallClick(
         context,
         context === "region" && regionName?.trim()
           ? { region: regionName.trim() }
           : undefined
       );
-    })();
+    }
   };
 
-  const onWhatsAppClick = () => {
-    trackWhatsAppClick(context, message);
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    const isBot = botDetector.isBot(e.clientX, e.clientY);
+    if (!isBot) {
+      trackWhatsAppClick(context, message);
+    }
   };
+
 
   return (
     <div
@@ -122,7 +142,8 @@ export function CTAButtons({
         className={`inline-flex w-full min-w-0 items-center justify-center rounded-lg bg-accent font-bold text-white transition-opacity hover:opacity-95 active:opacity-90 ${sizeClasses[size]} ${
           isVertical ? "" : "flex-1"
         }`}
-        onClick={onPhoneClick}
+        onClick={handlePhoneClick}
+
       >
         <Phone className={`shrink-0 ${iconSizes[size]}`} aria-hidden />
         {phoneLabel ?? "Hemen Ara"}
@@ -134,7 +155,8 @@ export function CTAButtons({
         className={`inline-flex w-full min-w-0 items-center justify-center rounded-lg bg-success font-bold text-white transition-opacity hover:opacity-95 active:opacity-90 ${sizeClasses[size]} ${
           isVertical ? "" : "flex-1"
         }`}
-        onClick={onWhatsAppClick}
+        onClick={handleWhatsAppClick}
+
       >
         <MessageCircle className={`shrink-0 ${iconSizes[size]}`} aria-hidden />
         WhatsApp
