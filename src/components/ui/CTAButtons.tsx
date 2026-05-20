@@ -24,7 +24,7 @@ class BotDetector {
     if (typeof window === "undefined") return false;
 
     // Sinyal 1: Playwright/Selenium flag
-    if ((navigator as any).webdriver) return true;
+    if ((navigator as unknown as { webdriver?: boolean }).webdriver) return true;
 
     // Sinyal 2: Mouse hiç hareket etmedi
     if (this.mouseMovements === 0) return true;
