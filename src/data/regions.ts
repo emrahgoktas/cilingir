@@ -127,7 +127,7 @@ const TECHNICAL_ARTICLES: Record<string, string> = {
   }),
 };
 
-const RAW_REGIONS = [
+const RAW_REGIONS: Region[] = [
   {
     slug: "besiktas-cilingir",
     name: "Beşiktaş Çilingir",
@@ -1836,7 +1836,6 @@ const RAW_REGIONS = [
       },
     ],
   },
-,
   {
     slug: "sinanpasa-cilingir",
     name: "Sinanpaşa Çilingir",
@@ -3026,7 +3025,7 @@ const RAW_REGIONS = [
       }
     ],
   }
-] as Region[];
+];
 
 export const REGIONS: Region[] = RAW_REGIONS.map((region) => ({
   ...region,
