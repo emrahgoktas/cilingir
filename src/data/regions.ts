@@ -127,7 +127,7 @@ const TECHNICAL_ARTICLES: Record<string, string> = {
   }),
 };
 
-const RAW_REGIONS: Region[] = [
+const RAW_REGIONS = [
   {
     slug: "besiktas-cilingir",
     name: "Beşiktaş Çilingir",
@@ -3026,7 +3026,7 @@ const RAW_REGIONS: Region[] = [
       }
     ],
   }
-];
+] as Region[];
 
 export const REGIONS: Region[] = RAW_REGIONS.map((region) => ({
   ...region,
