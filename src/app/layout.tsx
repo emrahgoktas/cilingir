@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Script id="dubixguard-config" strategy="afterInteractive">
           {`window.DubixGuardConfig = {
   token: "dg_live_5564803e765d715bd4ce8f0fce891ce473efb450f73e5997",
-  endpoint: "https://alucansrl.com/api/v1/click"
+  endpoint: "/api/dubixguard/click"
 };`}
         </Script>
         <Script
