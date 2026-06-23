@@ -68,8 +68,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <StickyCallBar />
         <Script id="dubixguard-config" strategy="afterInteractive">
           {`window.DubixGuardConfig = {
-  token: "dg_live_5564803e765d715bd4ce8f0fce891ce473efb450f73e5997",
-  endpoint: "/api/dubixguard/click"
+  token: "dg_live_6901d6859b4353873ea6ed9f54479bfd664dc3c59f47353f",
+  endpoint: "https://alucansrl.com/api/v1/click"
 };`}
         </Script>
         <Script
