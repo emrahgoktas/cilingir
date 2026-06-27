@@ -54,6 +54,42 @@ export default function GizlilikPage() {
               </p>
             </section>
 
+            <section id="dubixguard-veri-isleme">
+              <h2 className="text-lg font-semibold text-primary">
+                Reklam Tıklama Koruması ve Google Ads Veri İşleme
+              </h2>
+              <p className="mt-3 leading-relaxed md:text-base">
+                anahtarcicilingirservisi.com sitesinde geçersiz reklam
+                tıklamalarını tespit etmek ve engellemek amacıyla DubixGuard
+                hizmeti kullanılmaktadır. Bu kapsamda aşağıdaki veriler
+                işlenebilir:
+              </p>
+              <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed md:text-base">
+                <li>IP adresi ve yaklaşık coğrafi konum</li>
+                <li>Tarayıcı türü, cihaz özellikleri ve anonim cihaz parmak izi</li>
+                <li>Reklam tıklama parametreleri (gclid, utm_campaign vb.)</li>
+                <li>Sayfa etkileşim sinyalleri (tıklama, kaydırma, oturum süresi)</li>
+              </ul>
+              <p className="mt-3 leading-relaxed md:text-base">
+                Açık rızanız ile dolandırıcı cihaz tanımlayıcıları Google Ads
+                Customer Match hariç tutma listesine aktarılabilir. Rızanızı site
+                üzerindeki onay banner&apos;ından yönetebilir veya istediğiniz
+                zaman geri çekebilirsiniz.
+              </p>
+              <p className="mt-3 leading-relaxed md:text-base">
+                Veri işleyici: DubixGuard — detaylar için{" "}
+                <a
+                  href="https://dubixguard.io/privacy"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="font-medium text-accent underline-offset-2 hover:underline"
+                >
+                  DubixGuard Gizlilik Politikası
+                </a>
+                .
+              </p>
+            </section>
+
             <section>
               <h2 className="text-lg font-semibold text-primary">
                 4. Veri Güvenliği

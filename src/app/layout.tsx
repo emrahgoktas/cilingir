@@ -73,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   optOutEndpoint: "https://dubixguard.io/api/v1/opt-out",
   consent: {
     mode: "required",
-    privacyUrl: "https://dubixguard.io/privacy",
+    privacyUrl: "https://anahtarcicilingirservisi.com/gizlilik#dubixguard-veri-isleme",
     locale: "tr"
   }
 };`}
