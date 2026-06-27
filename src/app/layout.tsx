@@ -69,12 +69,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Script id="dubixguard-config" strategy="afterInteractive">
           {`window.DubixGuardConfig = {
   token: "dg_live_49103557698026361283bbfd3981864f5ac68b1c8750a692",
-  endpoint: "https://dubixguard.io/api/v1/click"
+  endpoint: "https://dubixguard.io/api/v1/click",
+  optOutEndpoint: "https://dubixguard.io/api/v1/opt-out",
+  consent: {
+    mode: "required",
+    privacyUrl: "https://dubixguard.io/privacy",
+    locale: "tr"
+  }
 };`}
         </Script>
         <Script
           id="dubixguard"
-          src="https://dubixguard.io/dubixguard.min.js?v=2.2.0"
+          src="https://dubixguard.io/dubixguard.min.js?v=2.3.0"
           strategy="afterInteractive"
           defer
         />
