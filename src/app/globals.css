@@ -26,6 +26,9 @@
   .blog-post h2 {
     @apply mt-8 text-xl font-semibold text-primary md:text-2xl;
   }
+  .blog-post h3 {
+    @apply mt-6 text-lg font-semibold text-primary;
+  }
   .blog-post h2:first-child {
     @apply mt-0;
   }

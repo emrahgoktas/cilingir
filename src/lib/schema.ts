@@ -425,3 +425,75 @@ export function buildArticleSchema(post: BlogPost): JsonLdObject {
     inLanguage: "tr-TR",
   };
 }
+
+/** Blog yazısı: Article + LocalBusiness + isteğe bağlı FAQPage (`@graph`). */
+export function buildBlogPostGraphSchema(post: BlogPost): JsonLdObject {
+  const articleUrl = `${SITE_CONFIG.url}/blog/${post.slug}`;
+  const articleId = `${articleUrl}#article`;
+
+  const graph: JsonLdObject[] = [
+    {
+      "@type": "Article",
+      "@id": articleId,
+      headline: post.title,
+      description: post.description,
+      url: articleUrl,
+      datePublished: post.publishDate,
+      dateModified: post.publishDate,
+      author: {
+        "@type": "Organization",
+        name: SITE_CONFIG.name,
+        url: SITE_CONFIG.url,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: SITE_CONFIG.name,
+        url: SITE_CONFIG.url,
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": articleUrl,
+      },
+      articleSection: post.category,
+      inLanguage: "tr-TR",
+      mentions: [
+        {
+          "@type": "SoftwareApplication",
+          name: "DubixGuard",
+          url: "https://dubixguard.io",
+          applicationCategory: "BusinessApplication",
+          description: "Google Ads odaklı click fraud koruması",
+          sameAs: "https://dubixguard.io/llms.txt",
+        },
+      ],
+      about: [
+        { "@type": "Thing", name: "Google Ads click fraud" },
+        { "@type": "Thing", name: "Local service advertising" },
+        { "@type": "Thing", name: "Anahtarcı reklam sahtekarlığı" },
+      ],
+    },
+    {
+      ...buildLocalBusinessGraphNode(),
+    },
+  ];
+
+  if (post.faqs?.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${articleUrl}#faq`,
+      mainEntity: post.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
+  };
+}

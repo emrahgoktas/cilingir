@@ -10,9 +10,15 @@ import { buildFAQSchema } from "@/lib/schema";
 export type FAQAccordionProps = {
   faqs: FAQ[];
   title?: string;
+  /** Varsayılan true; sayfa düzeyinde `@graph` FAQPage kullanılıyorsa false. */
+  includeSchema?: boolean;
 };
 
-export function FAQAccordion({ faqs, title }: FAQAccordionProps) {
+export function FAQAccordion({
+  faqs,
+  title,
+  includeSchema = true,
+}: FAQAccordionProps) {
   const baseId = useId();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -30,7 +36,7 @@ export function FAQAccordion({ faqs, title }: FAQAccordionProps) {
 
   return (
     <section className="w-full" aria-labelledby={title ? `${baseId}-heading` : undefined}>
-      <JsonLd schema={faqSchema} />
+      {includeSchema ? <JsonLd schema={faqSchema} /> : null}
       {title ? (
         <h2
           id={`${baseId}-heading`}

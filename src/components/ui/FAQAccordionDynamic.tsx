@@ -18,9 +18,16 @@ const FAQAccordion = dynamic(
 export type FAQAccordionDynamicProps = {
   faqs: FAQ[];
   title?: string;
+  includeSchema?: boolean;
 };
 
 /** Sunucu bileşenlerinden `FAQAccordion` istemci yükünü ayrı chunk’a böler. */
-export function FAQAccordionDynamic({ faqs, title }: FAQAccordionDynamicProps) {
-  return <FAQAccordion faqs={faqs} title={title} />;
+export function FAQAccordionDynamic({
+  faqs,
+  title,
+  includeSchema,
+}: FAQAccordionDynamicProps) {
+  return (
+    <FAQAccordion faqs={faqs} title={title} includeSchema={includeSchema} />
+  );
 }

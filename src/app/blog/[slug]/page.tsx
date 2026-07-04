@@ -3,9 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { BreadcrumbNav } from "@/components/ui/BreadcrumbNav";
+import { FAQAccordionDynamic } from "@/components/ui/FAQAccordionDynamic";
 import { BLOG_POSTS, getBlogPostBySlug } from "@/data/blog";
 import { generateBlogMetadata } from "@/lib/metadata";
-import { buildArticleSchema } from "@/lib/schema";
+import { buildArticleSchema, buildBlogPostGraphSchema } from "@/lib/schema";
 
 type PageProps = {
   params: { slug: string };
@@ -41,9 +42,13 @@ export default function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  const schema = post.faqs?.length
+    ? buildBlogPostGraphSchema(post)
+    : buildArticleSchema(post);
+
   return (
     <main className="pb-28">
-      <JsonLd schema={buildArticleSchema(post)} />
+      <JsonLd schema={schema} />
 
       <div className="mx-auto max-w-3xl px-4 pt-6 pb-4">
         <BreadcrumbNav
@@ -70,6 +75,28 @@ export default function BlogPostPage({ params }: PageProps) {
           className="blog-post pt-8"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        {post.faqs?.length ? (
+          <div className="mt-10">
+            <FAQAccordionDynamic
+              faqs={post.faqs}
+              title="Sık Sorulan Sorular"
+              includeSchema={false}
+            />
+          </div>
+        ) : null}
+
+        {post.llmsSummary ? (
+          <aside
+            className="mt-10 rounded-lg border border-border bg-surface/60 p-5"
+            aria-label="AI özeti"
+          >
+            <h2 className="text-lg font-semibold text-primary">AI özeti</h2>
+            <pre className="mt-3 whitespace-pre-wrap font-sans text-sm leading-relaxed text-muted">
+              {post.llmsSummary}
+            </pre>
+          </aside>
+        ) : null}
 
         <p className="mt-10">
           <Link

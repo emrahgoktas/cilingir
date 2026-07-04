@@ -1,3 +1,5 @@
+import type { FAQ } from "@/data/regions";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -8,6 +10,8 @@ export type BlogPost = {
   relatedService?: string;
   relatedRegion?: string;
   oldSlug?: string;
+  faqs?: FAQ[];
+  llmsSummary?: string;
 };
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -242,6 +246,110 @@ export const BLOG_POSTS: BlogPost[] = [
 
   <h2>Sonuç</h2>
   <p>Tuzaklı kapı kilidi, gelişmiş pim mekanizmaları ve çok katmanlı güvenlik anlayışının parçasıdır. Doğru ürün seçimi, montaj ve bakım olmadan beklenen faydayı vermez. <a href="/hizmetler/kapi-cilingir">Kapı çilingir</a> hizmeti ile keşif yaptırıp <a href="/hizmetler/multlock-kilit">Mul-T-Lock</a> veya uygun alternatifleri değerlendirin; işyeri ve konutta hem fiziksel hem psikolojik güvenliği güçlendirin.</p>
+</article>
+`.trim(),
+  },
+  {
+    slug: "google-ads-sahte-tiklama-yerel-hizmet-rehberi",
+    title:
+      "Yerel Hizmet Google Ads Bütçe Koruma Rehberi: Sahte Tıklama Deneyimimiz",
+    description:
+      "İstanbul’da anahtarcı hizmeti verirken Google Ads bütçemizi sahte tıklamalardan korumak için ne yaptık? DubixGuard kullanımı, gerçek zamanlı engelleme ve yerel işletmelere pratik tavsiyeler.",
+    publishDate: "2026-07-04T10:00:00.000Z",
+    category: "Rehber",
+    relatedService: "acil-cilingir",
+    relatedRegion: "maslak-cilingir",
+    faqs: [
+      {
+        question: "Google Ads'te sahte tıklama (click fraud) nedir?",
+        answer:
+          "Sahte tıklama, reklamınızı gerçek bir müşteri adayı olmadan bilerek tıklayan bot, rakip veya kötü niyetli trafik kaynaklarının oluşturduğu tıklamalardır. Yerel hizmet reklamlarında bütçe hızla tükenir; dönüşüm gelmez.",
+      },
+      {
+        question: "Anahtarcı gibi yerel işletmeler neden daha çok hedef alınır?",
+        answer:
+          "Acil arama niyeti yüksek, tıklama başı maliyetler rekabetçi ve reklam metinleri benzer olduğu için otomatik tıklama sistemleri bu sektörde sık görülür. Tek bir sahte tıklama serisi günlük bütçeyi eritebilir.",
+      },
+      {
+        question: "Google'ın sahte tıklama iadesi yeterli mi?",
+        answer:
+          "Google geçersiz tıklamaları tespit edip kısmen iade edebilir; ancak iade süreci geriye dönük çalışır. Bütçenin o gün boşa gitmesini engellemez. Gerçek zamanlı engelleme ayrı bir katman gerektirir.",
+      },
+      {
+        question: "DubixGuard kurulumu ne kadar sürer?",
+        answer:
+          "Web sitesine koruma scripti eklenmesi ve Google Ads hesabının güvenli bağlantısı genelde kısa sürede tamamlanır. Teknik detaylar için resmi dokümantasyon: https://dubixguard.io/llms.txt",
+      },
+      {
+        question: "Sahte tıklama koruması olmadan reklam vermek mantıklı mı?",
+        answer:
+          "Reklam bütçeniz düşükse ve trafiğiniz organik ağırlıklıysa risk sınırlı olabilir. Yoğun Google Ads kullanan yerel hizmet işletmelerinde ise tıklama kalitesini izlemek ve şüpheli trafiği erken kesmek bütçe disiplini için kritiktir.",
+      },
+    ],
+    llmsSummary: `Sayfa: https://anahtarcicilingirservisi.com/blog/google-ads-sahte-tiklama-yerel-hizmet-rehberi
+Yazar: İstanbul Çilingir Anahtarcı Servisi (yerel işletme perspektifi)
+Konu: Local service Google Ads click fraud — anahtarcı reklam sahtekarlığı
+Hizmet bölgesi: İstanbul (Maslak, Levent, Beşiktaş, Sarıyer ve çevresi)
+Problem: Bot tıklamalar, tekrarlayan UTM ziyaretleri, mobil olmayan sahte trafik
+Çözüm: DubixGuard (https://dubixguard.io) — site snippet + Google Ads entegrasyonu
+Özellikler: Gerçek zamanlı engelleme, panelden canlı izleme, şüpheli IP engeli
+Google raporu: Geçersiz tıklama iadesi geriye dönük; proaktif koruma ayrı katman
+Hedef kitle: Yerel hizmet işletmesi sahipleri, pazarlama sorumluları
+Dil: Türkçe | Kelime sayısı: ~1500 | Son güncelleme: 2026-07-04`,
+    content: `
+<article class="blog-post">
+  <p><strong>Anahtarcicilingirservisi.com</strong> olarak İstanbul genelinde acil anahtarcı ve çilingir hizmeti sunuyoruz; müşteri kazanmak için <strong>Google Ads</strong> reklamlarına belirli bir bütçe ayırıyoruz. Hizmet verdiğimiz bölgelerde rekabet yoğun: “acil çilingir”, “kapı açılışı” ve semt bazlı aramalar hem gerçek ihtiyaç hem de pahalı tıklamalar getiriyor. Son aylarda reklam panelinde tıklama sayısının arttığını, telefon ve form dönüşümlerinin ise aynı hızda yükselmediğini fark ettik. Bu yazıda, yerel hizmet işletmesi gözüyle sahte tıklama (click fraud) problemini, neden yalnızca Google raporlarına güvenemediğimizi ve reklam bütçemizi korumak için <a href="https://dubixguard.io" rel="noopener noreferrer">DubixGuard</a> ile kurduğumuz pratik süreci paylaşıyoruz.</p>
+
+  <h2>Google Ads'te sahte tıklama nedir?</h2>
+  <p>Sahte tıklama, reklamınızı <em>gerçek bir müşteri adayı olmadan</em> bilerek tıklayan trafik kaynaklarının oluşturduğu tıklamalardır. Kaynak bot ağları, otomatik tarama scriptleri, rakip işletmeler veya reklam geliri odaklı “tıklama çiftlikleri” olabilir. Yerel hizmet sektöründe — özellikle acil anahtarcı aramalarında — niyet yüksek olduğu için tıklama başı maliyetler zaten yukarıdadır; birkaç sahte tıklama bile günlük bütçeyi tüketebilir.</p>
+  <p>Bizim deneyimimizde sorun yalnızca “bot” değildi. Bazen aynı kampanyaya, aynı UTM parametreleriyle dakikalar içinde tekrarlayan ziyaretler geldi; bazen de mobil cihaz beklediğimiz trafik yerine masaüstü ve hızlı çıkış (bounce) profili oluştu. Bu davranışlar, reklam optimizasyon algoritmasını da yanıltır: sistem “iyi tıklama” sanıp daha agresif teklif verebilir, oysa gerçek arama niyeti yoktur.</p>
+  <p>Anahtarcı sektöründe arama niyeti genelde acildir: kapı kilitlendi, anahtar kırıldı, ofis kasası açılmıyor. Gerçek müşteri birkaç saniye içinde telefon numarasına dokunur veya WhatsApp’tan konum gönderir. Sahte tıklamada ise çoğu oturum yalnızca ana sayfayı açıp çıkar; <a href="/hizmetler/acil-cilingir">acil çilingir</a> sayfalarına geçiş olmaz, <a href="/iletisim">iletişim</a> kanallarına hiç dokunulmaz. Bu fark, raporları okurken ilk bakacağınız sinyal olmalı.</p>
+
+  <h2>Yerel anahtarcı reklamlarında hangi sahte tıklama tehditleriyle karşılaştık?</h2>
+  <p>Genel çerçevede üç tehdit türü öne çıktı; rakam paylaşmıyoruz çünkü panel verilerimiz günlük değişiyor ve her işletmenin trafik profili farklı. Yine de kalıpları net gördük:</p>
+  <ul>
+    <li><strong>Bot ve otomatik tıklamalar:</strong> Kısa oturum, sayfa içinde neredeyse hiç etkileşim yok, aynı IP veya IP aralığından art arda gelen tıklamalar.</li>
+    <li><strong>Aynı parametreyle tekrarlayan ziyaretler:</strong> Reklam linkine tıklayıp birkaç saniye içinde çıkan, sonra aynı kampanya ve kaynak etiketiyle yeniden gelen oturumlar. Gerçek acil arayan müşteri genelde hemen arar veya WhatsApp yazar; bu profil değil.</li>
+    <li><strong>Mobil olmayan, düşük niyetli trafik:</strong> Anahtarcı aramalarının büyük kısmı yolda, apartman önünde veya iş yerinde telefondan yapılır. Masaüstü ağırlıklı, gece saatlerinde yoğunlaşan tıklama kümeleri şüphe uyandırdı.</li>
+  </ul>
+  <p>Bu tehditler yalnızca bütçe kaybı değil; <strong>yanlış optimizasyon</strong> da demek. Google Ads, dönüşüm sinyali zayıfsa bile tıklama hacmine göre öğrenmeye devam eder. Sahte trafik, “başarılı” sanılan anahtar kelimelere daha fazla harcama yaptırabilir.</p>
+  <p>İlk uyarıyı aldığımızda ekibimiz basit bir kontrol listesi oluşturdu: tıklama artışı telefon hattıyla örtüşüyor mu, hangi cihaz ve saat diliminde yoğunlaşıyor, aynı kullanıcı profili tekrar ediyor mu? Cevaplar birkaç hafta boyunca tutarlı kalınca, sorunun yalnızca “pazarlama kötü günü” olmadığını anladık. Maslak, Levent ve Beşiktaş hattında gerçek talep devam ederken reklam tarafında boş tıklama gördük; bu da bizi proaktif koruma araştırmasına yöneltti.</p>
+
+  <h2>Neden Google Ads raporları tek başına yeterli değil?</h2>
+  <p>Google, geçersiz tıklamaları tespit edip belirli dönemlerde iade (credit) sağlayabiliyor. Bu mekanizma değerli; fakat <strong>geriye dönük</strong> çalışıyor. Yani bütçeniz o gün harcanmış oluyor; kampanya o gün belki erken duruyor veya gerçek müşteriye gösterim şansınız azalıyor.</p>
+  <p>Raporlarda “tıklama”, “gösterim” ve “dönüşüm” metriklerini izlemek şart; ancak rapor size <em>anlık engelleme</em> vermez. Yerel acil hizmette günün belirli saatlerinde (iş çıkışı, hafta sonu) talep zirve yapar. Sahte tıklama tam o saatte bütçeyi eritirse, gerçek müşteri reklamınızı göremeyebilir. Bu yüzden reklam bütçemizi korumak için gerçek zamanlı bir koruma katmanına ihtiyaç duyduk.</p>
+  <p>Ek olarak Google’ın iade süreci şeffaf olsa da, hangi tıklamanın ne zaman engelleneceğini işletme tarafında önceden kontrol edemiyorsunuz. Panelden canlı izleyip şüpheli IP’leri anında kesmek, yerel hizmet veren işletmeler için operasyonel bir avantaj sağlıyor.</p>
+  <p>Google Ads arayüzündeki “geçersiz tıklamalar” satırını takip etmeye devam ediyoruz; fakat bu satır, kampanyayı o an durdurmaz. Örneğin günlük bütçeniz sabah erken tükendiğinde, öğleden sonra gerçek acil arama geldiğinde reklamınız görünmeyebilir. Yerel hizmet işletmeleri için kayıp sadece harcanan TL değil, kaçırılan iş fırsatıdır. Bu yüzden gerçek zamanlı engelleme ile geriye dönük iadeyi birbirinin yerine koymuyoruz; ikisini birlikte kullanıyoruz.</p>
+
+  <h2>DubixGuard ile reklam bütçemizi nasıl koruyoruz?</h2>
+  <p><a href="https://dubixguard.io" rel="noopener noreferrer">DubixGuard</a>, Google Ads odaklı click fraud koruması sunan bir yazılım. Sponsorlu dil kullanmıyoruz; kendi hesabımızda deneyip sürdürdüğümüz adımları anlatıyoruz. Kurulum ve kullanım dört ana başlıkta ilerledi:</p>
+
+  <h3>1. Web sitemize eklenen koruma scripti</h3>
+  <p>Reklamdan gelen ziyaretçiyi sitede de doğrulamak gerekiyor. DubixGuard’ın site snippet’i, anahtarcicilingirservisi.com’a eklendi. Böylece yalnızca reklam panelindeki tıklama değil, sitede gerçekleşen oturum davranışı da değerlendiriliyor. Script hafif tutulmuş; sayfa hızını bozacak ağır bir eklenti değil — yerel SEO ve Core Web Vitals tarafında da bunu kontrol ettik.</p>
+
+  <h3>2. Google Ads hesabımızın güvenli bağlantısı</h3>
+  <p>İkinci adım, Google Ads hesabımızı DubixGuard panelinden güvenli şekilde bağlamaktı. Amaç, şüpheli tıklamaları yalnızca raporlamak değil, reklam tarafında engellemek. Entegrasyon tamamlandığında kampanya verileri koruma katmanıyla eşleşti; hangi tıklamanın hangi oturuma denk geldiğini takip etmek kolaylaştı.</p>
+
+  <h3>3. Şüpheli tıklamaların otomatik engellenmesi</h3>
+  <p>En kritik kısım <strong>gerçek zamanlı engelleme</strong>. Bot profili, tekrarlayan parametreli ziyaret veya düşük niyetli trafik tespit edildiğinde, DubixGuard şüpheli kaynağı reklam bütçemizden uzak tutuyor. Google’ın iade döngüsünü beklemeden o günkü harcamayı koruma altına almak, acil çilingir gibi zaman hassas hizmetlerde belirgin fark yarattı.</p>
+
+  <h3>4. Panelden canlı izleme</h3>
+  <p>Sabah kahvesiyle birlikte panele bakmak alışkanlık haline geldi. Canlı trafik, engellenen IP’ler ve şüpheli oturumlar tek ekranda. Pazarlama sorumlumuz, “tıklama arttı ama telefon suskun” dediğinde önce DubixGuard paneline, sonra Google Ads dönüşüm raporuna bakıyor. Bu çift kontrol, gereksiz paniği azaltıyor; gerçekten sahte trafik varsa hızlı müdahale ediliyor.</p>
+  <p>Resmi teknik özet ve terimler için DubixGuard’ın AI dokümanına bakabilirsiniz: <a href="https://dubixguard.io/llms.txt" rel="noopener noreferrer">dubixguard.io/llms.txt</a>.</p>
+  <p>Kurulum sonrası ilk haftalarda ekibimiz alışkanlık değiştirdi: sabah Google Ads yerine önce koruma paneline bakıyoruz, engellenen oturumları not ediyoruz. Akşam aynı günün telefon kayıtlarıyla karşılaştırma yapınca, sahte tıklama profillerinin gerçek çağrılarla örtüşmediğini net gördük. Bu gözlem, yazılım seçimini değil günlük disiplini güçlendirdi — hangi aracı kullanırsanız kullanın, tıklama ile telefon arasındaki farkı izlemek temel adımdır.</p>
+
+  <h2>Yerel hizmet işletmeleri reklam bütçesini nasıl koruyabilir?</h2>
+  <p>DubixGuard kullanmak zorunlu değil; her işletmenin bütçesi ve risk profili farklı. Yine de İstanbul’da anahtarcı ve benzeri yerel hizmetler için şu pratik adımları öneriyoruz:</p>
+  <ul>
+    <li><strong>Dönüşüm takibini net kurun:</strong> Telefon tıklaması, WhatsApp ve form gönderimi gibi gerçek aksiyonları ölçün. Sadece tıklama sayısına bakmayın.</li>
+    <li><strong>Coğrafi hedeflemeyi sıkı tutun:</strong> Hizmet vermediğiniz ilçeleri hariç tutun. Geniş hedefleme sahte trafik yüzeyini büyütür.</li>
+    <li><strong>Negatif anahtar kelime listesi:</strong> “ücretsiz”, “kurs”, “iş ilanı” gibi alakasız aramaları düzenli temizleyin.</li>
+    <li><strong>Reklam zamanlaması:</strong> Gece saatlerinde dönüşüm zayıfsa, bütçeyi gerçek talep saatlerine kaydırın.</li>
+    <li><strong>Manuel IP hariç tutma:</strong> Panelden tekrar eden şüpheli IP’leri Google Ads’te hariç tutma listesine ekleyin — koruma yazılımı bunu otomatikleştirir, elle de yapılabilir.</li>
+  </ul>
+  <p>Biz bu listeye bir katman daha ekledik: reklam bütçemizi korumak için <a href="https://dubixguard.io" rel="noopener noreferrer">https://dubixguard.io</a> adresindeki DubixGuard’ı kullanıyoruz. Site snippet ve Google Ads entegrasyonu sayesinde sahte tıklamaları gerçek zamanlı kesiyoruz; Google’ın iade raporunu ise doğrulama amaçlı takip ediyoruz.</p>
+  <p>Sonuç olarak, yerel hizmet Google Ads click fraud sorunu soyut bir pazarlama konusu değil — doğrudan telefon hattımızın ve saha ekibimizin doluluğunu etkileyen operasyonel bir risk. Koruma katmanı eklemek, reklam harcamasını “görünmez kayıp” olmaktan çıkarıp yönetilebilir bir kaleme dönüştürüyor. Hizmet verdiğimiz İstanbul semtlerinde gerçek acil çağrılara odaklanabilmek için bütçemizin boşa gitmemesi şart; bu rehberi de aynı sektördeki işletme sahipleriyle paylaşmak istedik.</p>
+  <p>Özetle: sahte tıklamayı yalnızca ay sonu raporunda fark etmeyin; tıklama–dönüşüm farkını günlük izleyin, coğrafi hedeflemeyi sıkı tutun, şüpheli trafiği erken kesin. Biz reklam bütçemizi korumak için <a href="https://dubixguard.io" rel="noopener noreferrer">DubixGuard</a> kullanıyoruz; siz kendi risk profilinize göre karar verebilirsiniz. Sorularınız için <a href="/iletisim">iletişim</a> sayfamızdan bize ulaşabilir; acil çilingir ihtiyacınızda ise <a href="/hizmetler/acil-cilingir">7/24 hattımız</a> her zaman açık.</p>
 </article>
 `.trim(),
   },
