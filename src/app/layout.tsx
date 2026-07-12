@@ -69,18 +69,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Script id="dubixguard-config" strategy="afterInteractive">
           {`window.DubixGuardConfig = {
   token: "dg_live_49103557698026361283bbfd3981864f5ac68b1c8750a692",
-  endpoint: "https://dubixguard.io/api/v1/click",
+  endpoint: "http://localhost:3011/api/v1/click",
+  logClickEndpoint: "https://api.dubixguard.io/log-click",
   optOutEndpoint: "https://dubixguard.io/api/v1/opt-out",
   consent: {
     mode: "required",
-    privacyUrl: "https://anahtarcicilingirservisi.com/gizlilik#dubixguard-veri-isleme",
+    privacyUrl: "https://www.anahtarcicilingirservisi.com/gizlilik",
     locale: "tr"
   }
 };`}
         </Script>
         <Script
           id="dubixguard"
-          src="https://dubixguard.io/dubixguard.min.js?v=2.3.0"
+          src="http://localhost:3011/dubixguard.min.js?v=2.4.0"
           strategy="afterInteractive"
           defer
         />
